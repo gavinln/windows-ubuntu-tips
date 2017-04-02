@@ -1,0 +1,11 @@
+---
+# includes tasks executed as logged in user
+- hosts: localhost
+  gather_facts: yes
+
+  tasks:
+    - name: install bash_it for better bash
+      git:
+        repo: https://github.com/Bash-it/bash-it.git
+        dest: ~/.bash_it
+        depth: 1
