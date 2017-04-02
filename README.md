@@ -19,10 +19,34 @@ sudo apt-get update
 sudo apt-get install ansible
 ```
 
-## Run ansible on localhost
+## Test ansible on localhost
 ```
 ansible all -i localhost, -c local -m ping
-sudo ansible-playbook -i localhost, -c local playbook2.yml
+```
+
+## Run ansible on localhost
+```
+cd ansible
+sudo ansible-playbook -i localhost, -c local playbook.yml
+# may need to add the following to .bashrc
+# for f in /etc/profile.d/*; do source $f; done
+```
+
+## Run ansible to install user utilities
+```
+ansible-playbook -i localhost, -c local user-util-setup.yml
+```
+
+## First login setup
+
+1. Install legit git aliases
+```
+legit install
+```
+
+2. Install bash-it
+```
+~/.bash_it/install.sh
 ```
 
 ## Get Docker client binaries
@@ -35,18 +59,8 @@ sudo cp docker /usr/local/bin
 sudo cp completion/bash/docker /etc/bash_completion.d
 ```
 
-## setup bash-id
-```
-git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-```
-
 ## install bash-it
 ```
 ~/.bash_it/install.sh
 bash-it enable completion docker
 ```
-
-export DOCKER_HOST=tcp://192.168.99.100:2376
-export DOCKER_TLS_VERIFY=1
-export DOCKER_CERT_PATH=/mnt/c/Users/gavin/.docker/machine/machines/default
-

@@ -10,3 +10,4 @@
   tasks:
     - include: windows-bash-setup.yml
     - include: cli_setup.yml
+    - include: py3-setup.yml
