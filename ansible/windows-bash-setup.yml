@@ -1,9 +1,3 @@
 ---
 - name: upgrade system and packages
   apt: upgrade=dist
-
-- name: install python dev
-  apt: name=python-dev state=installed
-
-- name: Install htop
-  apt: name=htop state=installed
