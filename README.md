@@ -112,3 +112,36 @@ Filtering the results using jq
     ```
     bash-it enable completion docker
     ```
+
+# Windows cli-tools
+
+Using choco install the following
+
+    * 7zip
+    * ag
+    * fzf
+    * jq 1.5
+    * neovim
+    * osquery
+    * putty
+
+Other tools to install on windows
+
+    * ccat.exe
+    * ctags.exe
+    * dbxcli.exe
+    * docker-machine.exe
+    * fd.exe
+    * helm.exe
+    * hub.exe
+    * jid.exe
+    * kubectl.exe
+    * lazygit.exe
+    * lf.exe
+    * mc.exe
+    * rclone.exe
+    * rg.exe
+    * sqlite3.exe
+    * tiller.exe
+    * wuzz.exe
+    * xsv.exe

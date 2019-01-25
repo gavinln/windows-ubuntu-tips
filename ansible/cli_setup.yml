@@ -2,6 +2,9 @@
 - name: Install git
   apt: name=git state=present
 
+- name: Install tig
+  apt: name=tig state=present
+
 - name: Install tree
   apt: name=tree state=present
 
