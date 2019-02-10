@@ -113,7 +113,24 @@ Filtering the results using jq
     bash-it enable completion docker
     ```
 
-# Windows cli-tools
+## install sqlite
+
+    ```
+    # install latest version instead of one in repo
+    cd ~
+    mkdir ~/sqlite
+    cd ~/sqlite
+    SQLITE_FILE=sqlite-autoconf-3270100
+    wget https://www.sqlite.org/2019/$SQLITE_FILE.tar.gz
+    tar xvfz $SQLITE_FILE.tar.gz
+    cd $SQLITE_FILE
+    ./configure --prefix=/usr/local
+    make
+    sudo make install
+    sqlite3 -version
+    ```
+
+## Windows cli-tools
 
 Using choco install the following
 
