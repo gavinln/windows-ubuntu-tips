@@ -132,33 +132,59 @@ Filtering the results using jq
 
 ## Windows cli-tools
 
+### Git
+
+[git-extras][1000] - tools for command line git
+
+[1000]: https://github.com/tj/git-extras.git
+
 Using choco install the following
 
-    * 7zip
-    * ag
-    * fzf
-    * jq 1.5
-    * neovim
-    * osquery
-    * putty
+* [7zip][1010]: archiving utility
+* [ag][1020]: command line searcher
+* [fzf][1030]: fuzzy finder
+* [jq][1040]: command line json processor
+* [neovim][1050]: modern version of vim
+* [osquery][1060]: query operating systems using SQL
+* [putty][1070]: ssh client terminal
+* [kubectl][1080]: control Kubernetes
+
+[1010]: https://en.wikipedia.org/wiki/7-Zip
+[1020]: https://github.com/ggreer/the_silver_searcher
+[1030]: https://github.com/junegunn/fzf
+[1040]: https://github.com/stedolan/jq
+[1050]: https://github.com/neovim/neovim
+[1060]: https://osquery.io/
+[1070]: https://www.putty.org/
+[1080]: https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
 Other tools to install on windows
 
-    * ccat.exe
-    * ctags.exe
-    * dbxcli.exe
-    * docker-machine.exe
-    * fd.exe
-    * helm.exe
-    * hub.exe
-    * jid.exe
-    * kubectl.exe
-    * lazygit.exe
-    * lf.exe
-    * mc.exe
-    * rclone.exe
-    * rg.exe
-    * sqlite3.exe
-    * tiller.exe
-    * wuzz.exe
-    * xsv.exe
+* [ccat.exe][1090]: cat with syntax highlighting
+* [ctags.exe][1100]: ctags utility
+* [dbxcli.exe][1110]: command line client for Dropbox
+* [fd.exe][1130]: fast find utility
+* [hub.exe][1150]: command line tool to work with Github
+* [jid.exe][1160]: json incremental debugger
+* [lazygit.exe][1170]
+* [lf.exe][1180]
+* [mc.exe][1190]
+* [rclone.exe][1200]
+* [rg.exe][1210]
+* [sqlite3.exe][1220]
+* [wuzz.exe][1240]
+* [xsv.exe][1250]
+
+[1090]: https://github.com/jingweno/ccat
+[1100]: https://github.com/universal-ctags/ctags
+[1110]: https://github.com/dropbox/dbxcli
+[1130]: https://github.com/sharkdp/fd
+[1150]: https://github.com/github/hub
+[1160]: https://github.com/simeji/jid
+
+Python tools
+
+* [legit][1260]
+* [mycli][1270]
+* [httpie][1280]
+* [http-prompt][1290]
