@@ -148,6 +148,9 @@ Using choco install the following
 * [osquery][1060]: query operating systems using SQL
 * [putty][1070]: ssh client terminal
 * [kubectl][1080]: control Kubernetes
+* [pandoc][1090]: convert documents from one format to another
+* [fd.exe][1130]: fast find utility
+* [hub.exe][1150]: command line tool to work with Github
 
 [1010]: https://en.wikipedia.org/wiki/7-Zip
 [1020]: https://github.com/ggreer/the_silver_searcher
@@ -157,30 +160,37 @@ Using choco install the following
 [1060]: https://osquery.io/
 [1070]: https://www.putty.org/
 [1080]: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+[1090]: https://pandoc.org/
+[1130]: https://github.com/sharkdp/fd
+[1150]: https://github.com/github/hub
 
 Other tools to install on windows
 
-* [ccat.exe][1090]: cat with syntax highlighting
 * [ctags.exe][1100]: ctags utility
 * [dbxcli.exe][1110]: command line client for Dropbox
-* [fd.exe][1130]: fast find utility
-* [hub.exe][1150]: command line tool to work with Github
 * [jid.exe][1160]: json incremental debugger
-* [lazygit.exe][1170]
-* [lf.exe][1180]
-* [mc.exe][1190]
-* [rclone.exe][1200]
-* [rg.exe][1210]
-* [sqlite3.exe][1220]
-* [wuzz.exe][1240]
-* [xsv.exe][1250]
+* [lazygit.exe][1170]: Git terminal user interface
+* [lf.exe][1180]: Terminal file manager
+* [mc.exe][1190]: Minio client for cloud storage
+* [rclone.exe][1200]: rsync for cloud storage
+* [rg.exe][1210]: recursively search directories
+* [sqlite3.exe][1220]: Sqlite database
+* [wuzz.exe][1230]: Interactive cli tool for HTTP
+* [xsv.exe][1240]: Command line CSV toolkit
+* [ccat.exe][1250]: cat with syntax highlighting
 
-[1090]: https://github.com/jingweno/ccat
 [1100]: https://github.com/universal-ctags/ctags
 [1110]: https://github.com/dropbox/dbxcli
-[1130]: https://github.com/sharkdp/fd
-[1150]: https://github.com/github/hub
 [1160]: https://github.com/simeji/jid
+[1170]: https://github.com/jesseduffield/lazygit
+[1180]: https://github.com/gokcehan/lf
+[1190]: https://github.com/minio/mc
+[1200]: https://github.com/ncw/rclone
+[1210]: https://github.com/BurntSushi/ripgrep
+[1220]: https://www.sqlite.org/download.html
+[1230]: https://github.com/asciimoo/wuzz
+[1240]: https://github.com/BurntSushi/xsv
+[1250]: https://github.com/jingweno/ccat
 
 Python tools
 
