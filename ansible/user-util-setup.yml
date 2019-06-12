@@ -20,3 +20,4 @@
     - name: install fzf
       command: "~/.fzf/install --all"
       when: fzf_status.changed
+
