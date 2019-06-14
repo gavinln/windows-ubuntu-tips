@@ -159,6 +159,7 @@ Using choco install the following
 * [fd.exe][1130]: fast find utility
 * [hub.exe][1150]: command line tool to work with Github
 * [bat.exe][1160]: Cat with color formatting
+* [vifm.exe][1170]: terminal file manager with vi like shortcuts
 
 [1010]: https://en.wikipedia.org/wiki/7-Zip
 [1020]: https://github.com/ggreer/the_silver_searcher
@@ -172,6 +173,7 @@ Using choco install the following
 [1130]: https://github.com/sharkdp/fd
 [1150]: https://github.com/github/hub
 [1160]: https://github.com/sharkdp/bat
+[1170]: https://vifm.info/downloads.shtml
 
 Other tools to install on windows
 
