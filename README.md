@@ -203,7 +203,19 @@ Other tools to install on windows
 
 Python tools
 
-* [legit][1400]
+* conda install [legit][1400]
 * [mycli][1410]
 * [httpie][1420]
 * [http-prompt][1430]
+* conda install python-language-server[all] [python-language-server][1440]
+* pip install [pre-commit][1450]
+
+Using [pre-commit with Python][1460]
+
+[1400]: 
+[1410]: 
+[1420]: 
+[1430]: 
+[1440]: 
+[1450]: https://pre-commit.com/
+[1460]: https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/

@@ -5,6 +5,9 @@
 - name: Install tig
   apt: name=tig state=present
 
+- name: Install git-extras
+  apt: name=git-extras state=present
+
 - name: Install tree
   apt: name=tree state=present
 
@@ -13,18 +16,15 @@
 
 - name: Install ripgrep from .deb package
   apt:
-    deb: https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb
+    deb: https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_11.0.1_amd64.deb
 
 - name: Install fd from .deb package
   apt:
-    deb: https://github.com/sharkdp/fd/releases/download/v7.2.0/fd_7.2.0_amd64.deb
+    deb: https://github.com/sharkdp/fd/releases/download/v7.3.0/fd_7.3.0_amd64.deb
 
-- apt_repository:
-    repo: ppa:neovim-ppa/stable
-    update_cache: yes
-
-- name: Install neovim
-  apt: name=neovim state=present
+- name: Install bat from .deb package
+  apt:
+    deb: https://github.com/sharkdp/bat/releases/download/v0.11.0/bat_0.11.0_amd64.deb
 
 - name: Install jq
   apt: name=jq state=present
@@ -32,8 +32,45 @@
 - name: Install unzip
   apt: name=unzip state=present
 
-- name: Install unzip
-  apt: name=unzip state=present
+- name: Install vifm
+  apt: name=vifm state=present
+
+- name: Install pandoc
+  apt: name=pandoc state=present
+
+- apt_repository:
+    repo: ppa:lazygit-team/release
+    state: present
+
+- name: install lazygit
+  apt: name=lazygit state=present
+
+- name: Install wuzz
+  apt: name=wuzz state=present
+
+- name: Install ctags
+  apt: name=ctags state=present
+
+# https://kifarunix.com/how-to-install-osquery-on-ubuntu-18-04/
+- name: Add osquery signing key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 1484120AC4E9F8A1A577AEEE97A80C63C9D8B80B
+
+- apt_repository:
+    repo: "deb [arch=amd64] https://pkg.osquery.io/deb deb main" 
+    state: present
+
+- name: install osquery
+  apt: name=osquery state=present
+
+# install xsv - utilities for csv from 
+# https://github.com/BurntSushi/xsv/releases/latest
+
+# bat - https://github.com/sharkdp/bat/releases/download/v0.11.0/bat_0.11.0_amd64.deb
+# vifm
+# ctags
+# xsv
 
 - name: Install autojump
   apt: name=autojump state=present

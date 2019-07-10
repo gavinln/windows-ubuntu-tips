@@ -19,3 +19,9 @@
 
 - name: install pipenv
   pip: name=pipenv state=present
+
+- name: install proselint
+  pip: name=proselint state=present
+
+- name: install dotbot to manage dot files
+  pip: name=dotbot state=present
