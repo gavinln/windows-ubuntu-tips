@@ -238,3 +238,9 @@ https://github.com/jarun/googler
 Execute programs when files or directories change
 
 https://github.com/watchexec/watchexec
+
+### shutit
+
+Automation framework for programmers
+
+https://github.com/ianmiell/shutit
