@@ -219,3 +219,22 @@ Using [pre-commit with Python][1460]
 [1440]: 
 [1450]: https://pre-commit.com/
 [1460]: https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/
+
+Other
+
+### icdiff
+
+diff on the command line; works with git
+https://github.com/jeffkaufman/icdiff
+
+### googler
+
+search google from the cli
+
+https://github.com/jarun/googler
+
+### watchexec
+
+Execute programs when files or directories change
+
+https://github.com/watchexec/watchexec
