@@ -186,6 +186,7 @@ Other tools to install on windows
 * [rclone.exe][1260]: rsync for cloud storage
 * [rg.exe][1270]: recursively search directories
 * [sqlite3.exe][1280]: Sqlite database
+* [usql.exe][1285]: command line sql tool for multiple database
 * [wuzz.exe][1290]: Interactive cli tool for HTTP
 * [xsv.exe][1300]: Command line CSV toolkit
 
@@ -198,6 +199,7 @@ Other tools to install on windows
 [1260]: https://github.com/ncw/rclone
 [1270]: https://github.com/BurntSushi/ripgrep
 [1280]: https://www.sqlite.org/download.html
+[1285]: https://github.com/xo/usql
 [1290]: https://github.com/asciimoo/wuzz
 [1300]: https://github.com/BurntSushi/xsv
 
