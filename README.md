@@ -17,12 +17,34 @@ software provisioning, configuration management, and application deployment.
 
 [30]: https://www.ansible.com/
 
-## Setup the Ubuntu bash environment using Ansible
+### WSL commands
 
-Start the bash environment
+Example wsl commands
 
 ```
-bash
+wsl --list --all  # list all distributions
+wsl --list --running  # list running distribution
+wsl --terminate "Ubuntu-18.04"  # terminate the distribution
+```
+
+## Setup the Ubuntu bash environment using Ansible
+
+1. Start the bash environment
+
+```
+wsl
+```
+
+2. Install Python
+
+```
+sudo apt install python3
+```
+
+3. Install pip
+
+```
+sudo apt install python3-pip
 ```
 
 ### Install Ansible on Ubuntu
@@ -91,7 +113,13 @@ legit --install
 ~/.bash_it/install.sh
 ```
 
-3. To remove any bash-it theme edit ~/.bashrc and set BASH_IT_THEME=''
+3. Change theme to demula using set BASH_IT_THEME=''
+
+```
+vim ~/.bashrc
+```
+
+4. To remove any bash-it theme edit ~/.bashrc and set BASH_IT_THEME=''
 
 ## Get Docker client binaries
 
@@ -136,6 +164,13 @@ cd ~/.config/nvim
 ```
 
 2. Create a configuration file called init.vim
+
+## Windows source code font
+
+Install a font designed for [source
+code](https://github.com/source-foundry/Hack). Use the font in terminals such
+as cmder by changing the settings. Use the font in vim by changing the guifont
+settings.
 
 ## Windows cli-tools
 

@@ -21,3 +21,14 @@
       command: "~/.fzf/install --all"
       when: fzf_status.changed
 
+    # Has errors on Windows subsystem for Linux. See link
+    # https://stackfame.com/installing-nix-in-wsl-ubuntu
+    # - name: download nix install script
+    #   get_url:
+    #     url: https://nixos.org/nix/install
+    #     dest: ~/nix-install.sh
+
+    # - name: install nix
+    #   script: ~/nix-install.sh
+    #   args:
+    #     executable: sh
