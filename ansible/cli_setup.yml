@@ -11,9 +11,6 @@
 - name: Install tree
   apt: name=tree state=present
 
-- name: Install ag
-  apt: name=silversearcher-ag state=present
-
 - name: Install ripgrep from .deb package
   apt:
     deb: https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
@@ -37,6 +34,9 @@
 
 - name: Install pandoc
   apt: name=pandoc state=present
+
+- name: Install ncdu
+  apt: name=ncdu state=present
 
 - apt_repository:
     repo: ppa:lazygit-team/release
@@ -68,7 +68,6 @@
 # https://github.com/BurntSushi/xsv/releases/latest
 
 # ctags
-# exa - https://github.com/ogham/exa
 # xsv - https://github.com/BurntSushi/xsv 
 # fselect - https://github.com/jhspetersson/fselect
 
@@ -81,3 +80,75 @@
     src=/usr/share/autojump/autojump.sh
     dest=/etc/profile.d/autojump.sh
   when: autojump_status.changed
+
+# Install exa - a replacement for ls
+# https://github.com/ogham/exa
+- name: download exa package
+  get_url:
+    url: https://github.com/ogham/exa/releases/download/v0.9.0/exa-linux-x86_64-0.9.0.zip
+    dest: ~/exa-linux.zip
+  register: exa_download
+
+- name: unzip exa
+  unarchive:
+    src: ~/exa-linux.zip
+    dest: ~/
+  when: exa_download.changed
+
+- name: copy exa
+  copy:
+    src: ~/exa-linux-x86_64
+    dest: /usr/local/bin/exa
+    mode: u=rwx,g=rx,o=rx
+  when: exa_download.changed
+
+- name: delete exa download
+  file:
+    path: ~/exa-linux.zip
+    state: absent
+  when: exa_download.changed
+
+# install minio client (mc) an S3 compatible client
+# https://docs.min.io/docs/minio-client-quickstart-guide.html
+- name: download minio client
+  get_url:
+    url: https://dl.min.io/client/mc/release/linux-amd64/mc
+    dest: ~/mc
+    mode: u=rwx,g=rx,o=rx
+  register: mc_download
+
+- name: copy mc
+  copy:
+    src: ~/mc
+    dest: /usr/local/bin/mc
+    mode: u=rwx,g=rx,o=rx
+  when: mc_download.changed
+
+- name: delete mc download
+  file:
+    path: ~/mc
+    state: absent
+  when: mc_download.changed
+
+# install minio server - an S3 compatible server
+# https://docs.min.io/docs/minio-quickstart-guide.html
+- name: download minio server
+  get_url:
+    url: https://dl.min.io/server/minio/release/linux-amd64/minio
+    dest: ~/minio
+    mode: u=rwx,g=rx,o=rx
+  register: minio_download
+
+- name: copy minio server
+  copy:
+    src: ~/minio
+    dest: /usr/local/bin/minio
+    mode: u=rwx,g=rx,o=rx
+  when: minio_download.changed
+
+- name: delete mc download
+  file:
+    path: ~/minio
+    state: absent
+  when: minio_download.changed
+

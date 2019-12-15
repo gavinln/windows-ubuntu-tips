@@ -25,3 +25,6 @@
 
 - name: install dotbot to manage dot files
   pip: name=dotbot state=present
+
+- name: install tmuxp
+  pip: name=tmuxp state=present

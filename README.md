@@ -79,6 +79,43 @@ sudo ansible-playbook -i localhost, -c local playbook.yml -e 'ansible_python_int
 ansible-playbook -i localhost, -c local user-util-setup.yml -e 'ansible_python_interpreter=python3'
 ```
 
+## Install pyenv
+
+1. Install build-essential
+
+```
+sudo apt install -y make build-essential libssl-dev zlib1g-dev
+sudo apt install -y libbz2-dev libreadline-dev libsqlite3-dev
+sudo apt install -y llvm libncurses5-dev libncursesw5-dev
+sudo apt install -y xz-utils tk-dev libffi-dev liblzma-dev
+```
+
+2. Install pyenv
+
+```
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+```
+
+3. Add to .bashrc
+
+```
+export PATH="/home/gavin/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
+4. Update pyenv
+
+```
+pyenv update
+```
+
+5. List python versions
+
+```
+pyenv install --list
+```
+
 ## Using curl, httpie
 
 An example of using curl
@@ -155,6 +192,10 @@ sudo make install
 sqlite3 -version
 ```
 
+## Install exa
+
+[exa](https://github.com/ogham/exa) replacement for ls
+
 ## nvim setup
 
 1. Change to the configuration directory
@@ -171,6 +212,12 @@ Install a font designed for [source
 code](https://github.com/source-foundry/Hack). Use the font in terminals such
 as cmder by changing the settings. Use the font in vim by changing the guifont
 settings.
+
+## Miscellaneous
+
+* [fselect][900]
+
+[900]: https://github.com/jhspetersson/fselect
 
 ## Windows cli-tools
 
@@ -285,3 +332,118 @@ https://github.com/watchexec/watchexec
 Automation framework for programmers
 
 https://github.com/ianmiell/shutit
+
+## Using nix
+
+### Setup nix on Windows subsystem for Linux
+
+1. Create the /etc/nix directory
+
+```
+mkdir -p /etc/nix
+```
+
+2. Create & edit /etc/nix/nix.conf, add following items:
+
+```
+sandbox = false
+use-sqlite-wal = false
+```
+
+3. Install nix
+
+```
+curl https://nixos.org/nix/install | sh
+```
+
+### Install nix completions
+
+1. Get help on nix-env
+
+```
+nix-env --help
+```
+
+2. List the generations of packages
+
+```
+nix-env --list-generations
+```
+
+3. Find an available package (-a)
+
+```
+nix-env -qa 'nix-bash.*'
+```
+
+4. Install the `nix-bash-completions` package
+
+```
+nix-env -i nix-bash-completions
+```
+
+5. List the installed packages
+
+```
+nix-env -q --installed
+```
+
+6. Add to your `.bashrc` file
+
+```
+export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
+```
+
+7. Restart your shell. Type the following to see the completions
+
+```
+nix-env -<TAB>
+```
+
+### Install nix packages
+
+```
+nix-env -i tig git-extras lazygit  # git utilities
+
+nix-env -i fd ripgrep  # search for files and within files
+
+nix-env -i jq unzip vifm pandoc ncdu
+
+nix-env -i wuzz  # interactive curl
+
+nix-env -i ctags
+
+nix-env -i tree  # directories as a tree
+
+nix-env -i exa  # replacement for ls
+
+nix-env -i minio minio-client  # minio server and client
+
+nix-env -i direnv  # create directory environments
+```
+### Setup direnv
+
+TODO:
+
+### Install Python packages
+
+```
+nix-env -i tmuxp  # Python tmux manager
+
+nix-env -i httpie  # user-friendly curl
+
+nix-env -i http-prompt  # interactive httpie
+```
+
+### Install pyenv and then these Python packages use pipenv
+
+```
+proselint  # linter for Prose
+pipenv  # a Python package manager
+stormssh  # manage the ssh config
+legit  # git utils in Python
+```
+
+### Other utilities
+
+osquery from Facebook cannot be found in nix
