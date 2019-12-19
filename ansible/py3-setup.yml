@@ -1,15 +1,6 @@
 ---
-- name: install httpie
-  pip: name=httpie state=present
-
-- name: install stormssh
+- name: install stormssh - manage the ssh config
   pip: name=stormssh state=present
-
-- name: install legit
-  pip: name=legit state=present
-
-- name: install http-prompt
-  pip: name=http_prompt state=present
 
 - name: install flake8
   pip: name=flake8 state=present
@@ -17,14 +8,25 @@
 - name: install joblib
   pip: name=joblib state=present
 
-- name: install pipenv
+- name: install pipenv - a Python package manager
   pip: name=pipenv state=present
 
-- name: install proselint
+- name: install proselint - linter for prose
   pip: name=proselint state=present
 
 - name: install dotbot to manage dot files
   pip: name=dotbot state=present
 
-- name: install tmuxp
-  pip: name=tmuxp state=present
+- name: install pre-commit for git precommit hooks
+  pip: name=pre-commit state=present
+
+## commented utilities are installed using nix
+#
+# - name: install httpie
+#   pip: name=httpie state=present
+#
+# - name: install http-prompt
+#   pip: name=http_prompt state=present
+#
+# - name: install tmuxp
+#   pip: name=tmuxp state=present

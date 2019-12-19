@@ -66,17 +66,31 @@ ansible --version
 ansible all -i localhost, -c local -m ping
 ```
 
-2. Run Ansible as sudo on localhost
+3. Run Ansible as sudo on localhost
 
 ```
 cd ansible
 sudo ansible-playbook -i localhost, -c local playbook.yml -e 'ansible_python_interpreter=python3'
 ```
 
+4. Setup autojump by adding this line to your ~/.bashrc file
+
+```
+source /usr/share/autojump/autojump.sh
+```
+
 ### Run Ansible as the logged in user to install user utilities
 
 ```
 ansible-playbook -i localhost, -c local user-util-setup.yml -e 'ansible_python_interpreter=python3'
+```
+
+## fzf aliases
+
+Add these functions to your ~/.bashrc file
+
+```
+fzf-functions.sh
 ```
 
 ## Install pyenv
@@ -138,19 +152,13 @@ http petstore.swagger.io/v2/pet/findByStatus?status=pending | jq '.[] | {cat_id:
 
 ## First login setup
 
-1. Install legit git aliases
-
-```
-legit --install
-```
-
-2. Install bash-it
+1. Install bash-it
 
 ```
 ~/.bash_it/install.sh
 ```
 
-3. Change theme to demula using set BASH_IT_THEME=''
+2. Change theme to demula using set BASH_IT_THEME=''
 
 ```
 vim ~/.bashrc
@@ -267,7 +275,6 @@ Other tools to install on windows
 * [dbxcli.exe][1210]: command line client for Dropbox
 * [jid.exe][1220]: json incremental debugger
 * [lazygit.exe][1230]: Git terminal user interface
-* [lf.exe][1240]: Terminal file manager
 * [mc.exe][1250]: Minio client for cloud storage
 * [rclone.exe][1260]: rsync for cloud storage
 * [rg.exe][1270]: recursively search directories
@@ -280,7 +287,6 @@ Other tools to install on windows
 [1210]: https://github.com/dropbox/dbxcli
 [1220]: https://github.com/simeji/jid
 [1230]: https://github.com/jesseduffield/lazygit
-[1240]: https://github.com/gokcehan/lf
 [1250]: https://github.com/minio/mc
 [1260]: https://github.com/ncw/rclone
 [1270]: https://github.com/BurntSushi/ripgrep
@@ -300,11 +306,11 @@ Python tools
 
 Using [pre-commit with Python][1460]
 
-[1400]: 
-[1410]: 
-[1420]: 
-[1430]: 
-[1440]: 
+[1400]:
+[1410]:
+[1420]:
+[1430]:
+[1440]:
 [1450]: https://pre-commit.com/
 [1460]: https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/
 
@@ -415,35 +421,41 @@ nix-env -i ctags
 
 nix-env -i tree  # directories as a tree
 
-nix-env -i exa  # replacement for ls
+nix-env -i exa  # replacement for ls: https://github.com/ogham/exa
 
 nix-env -i minio minio-client  # minio server and client
 
 nix-env -i direnv  # create directory environments
+
+nix-env -i fselect  # search for files using SQL like queries
+
+nix-env -i xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
 ```
+
 ### Setup direnv
 
-TODO:
+Add this to the end of the `~/.profile` file
+
+```
+"$(direnv hook bash)"
+```
 
 ### Install Python packages
 
 ```
 nix-env -i tmuxp  # Python tmux manager
 
-nix-env -i httpie  # user-friendly curl
+nix-env -i httpie  # user-friendly curl. Type: http python.org
 
 nix-env -i http-prompt  # interactive httpie
-```
 
 ### Install pyenv and then these Python packages use pipenv
-
-```
-proselint  # linter for Prose
-pipenv  # a Python package manager
-stormssh  # manage the ssh config
-legit  # git utils in Python
 ```
 
-### Other utilities
+## Install dot files
 
-osquery from Facebook cannot be found in nix
+Run dotbot to install dot files (from vimrc repo)
+
+```
+dotbot -c install.conf.yaml
+```

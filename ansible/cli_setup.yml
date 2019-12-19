@@ -1,56 +1,4 @@
 ---
-- name: Install git
-  apt: name=git state=present
-
-- name: Install tig
-  apt: name=tig state=present
-
-- name: Install git-extras
-  apt: name=git-extras state=present
-
-- name: Install tree
-  apt: name=tree state=present
-
-- name: Install ripgrep from .deb package
-  apt:
-    deb: https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
-
-- name: Install fd from .deb package
-  apt:
-    deb: https://github.com/sharkdp/fd/releases/download/v7.4.0/fd_7.4.0_amd64.deb
-
-- name: Install bat from .deb package
-  apt:
-    deb: https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
-
-- name: Install jq
-  apt: name=jq state=present
-
-- name: Install unzip
-  apt: name=unzip state=present
-
-- name: Install vifm
-  apt: name=vifm state=present
-
-- name: Install pandoc
-  apt: name=pandoc state=present
-
-- name: Install ncdu
-  apt: name=ncdu state=present
-
-- apt_repository:
-    repo: ppa:lazygit-team/release
-    state: present
-
-- name: install lazygit
-  apt: name=lazygit state=present
-
-- name: Install wuzz
-  apt: name=wuzz state=present
-
-- name: Install ctags
-  apt: name=ctags state=present
-
 # https://kifarunix.com/how-to-install-osquery-on-ubuntu-18-04/
 - name: Add osquery signing key
   apt_key:
@@ -58,97 +6,137 @@
     id: 1484120AC4E9F8A1A577AEEE97A80C63C9D8B80B
 
 - apt_repository:
-    repo: "deb [arch=amd64] https://pkg.osquery.io/deb deb main" 
+    repo: "deb [arch=amd64] https://pkg.osquery.io/deb deb main"
     state: present
 
 - name: install osquery
   apt: name=osquery state=present
 
-# install xsv - utilities for csv from 
-# https://github.com/BurntSushi/xsv/releases/latest
-
-# ctags
-# xsv - https://github.com/BurntSushi/xsv 
-# fselect - https://github.com/jhspetersson/fselect
-
 - name: Install autojump
   apt: name=autojump state=present
   register: autojump_status
 
-- name: copy autojump profile
-  copy:
-    src=/usr/share/autojump/autojump.sh
-    dest=/etc/profile.d/autojump.sh
-  when: autojump_status.changed
+# commented items are installed using nix
+#
+# - name: Install git
+#   apt: name=git state=present
+#
+# - name: Install tig
+#   apt: name=tig state=present
+#
+# - name: Install git-extras
+#   apt: name=git-extras state=present
+#
+# - name: Install tree
+#   apt: name=tree state=present
+#
+# - name: Install ripgrep from .deb package
+#   apt:
+#     deb: https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
+#
+# - name: Install fd from .deb package
+#   apt:
+#     deb: https://github.com/sharkdp/fd/releases/download/v7.4.0/fd_7.4.0_amd64.deb
+#
+# - name: Install bat from .deb package
+#   apt:
+#     deb: https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
+#
+# - name: Install jq
+#   apt: name=jq state=present
+#
+# - name: Install unzip
+#   apt: name=unzip state=present
+#
+# - name: Install vifm
+#   apt: name=vifm state=present
+#
+# - name: Install pandoc
+#   apt: name=pandoc state=present
+#
+# - name: Install ncdu
+#   apt: name=ncdu state=present
+#
+# - apt_repository:
+#     repo: ppa:lazygit-team/release
+#     state: present
+#
+# - name: install lazygit
+#   apt: name=lazygit state=present
+#
+# - name: Install wuzz
+#   apt: name=wuzz state=present
+#
+# - name: Install ctags
+#   apt: name=ctags state=present
+#
+# - name: download exa package
+#   get_url:
+#     url: https://github.com/ogham/exa/releases/download/v0.9.0/exa-linux-x86_64-0.9.0.zip
+#     dest: ~/exa-linux.zip
+#   register: exa_download
+#
+# - name: unzip exa
+#   unarchive:
+#     src: ~/exa-linux.zip
+#     dest: ~/
+#   when: exa_download.changed
+#
+# - name: copy exa
+#   copy:
+#     src: ~/exa-linux-x86_64
+#     dest: /usr/local/bin/exa
+#     mode: u=rwx,g=rx,o=rx
+#   when: exa_download.changed
+#
+# - name: delete exa download
+#   file:
+#     path: ~/exa-linux.zip
+#     state: absent
+#   when: exa_download.changed
+#
+## install minio client (mc) an S3 compatible client
+## https://docs.min.io/docs/minio-client-quickstart-guide.html
+# - name: download minio client
+#   get_url:
+#     url: https://dl.min.io/client/mc/release/linux-amd64/mc
+#     dest: ~/mc
+#     mode: u=rwx,g=rx,o=rx
+#   register: mc_download
+#
+# - name: copy mc
+#   copy:
+#     src: ~/mc
+#     dest: /usr/local/bin/mc
+#     mode: u=rwx,g=rx,o=rx
+#   when: mc_download.changed
+#
+# - name: delete mc download
+#   file:
+#     path: ~/mc
+#     state: absent
+#   when: mc_download.changed
 
-# Install exa - a replacement for ls
-# https://github.com/ogham/exa
-- name: download exa package
-  get_url:
-    url: https://github.com/ogham/exa/releases/download/v0.9.0/exa-linux-x86_64-0.9.0.zip
-    dest: ~/exa-linux.zip
-  register: exa_download
+## install minio server - an S3 compatible server
+## https://docs.min.io/docs/minio-quickstart-guide.html
+# - name: download minio server
+#   get_url:
+#     url: https://dl.min.io/server/minio/release/linux-amd64/minio
+#     dest: ~/minio
+#     mode: u=rwx,g=rx,o=rx
+#   register: minio_download
+#
+# - name: copy minio server
+#   copy:
+#     src: ~/minio
+#     dest: /usr/local/bin/minio
+#     mode: u=rwx,g=rx,o=rx
+#   when: minio_download.changed
+#
+# - name: delete mc download
+#   file:
+#     path: ~/minio
+#     state: absent
+#   when: minio_download.changed
 
-- name: unzip exa
-  unarchive:
-    src: ~/exa-linux.zip
-    dest: ~/
-  when: exa_download.changed
-
-- name: copy exa
-  copy:
-    src: ~/exa-linux-x86_64
-    dest: /usr/local/bin/exa
-    mode: u=rwx,g=rx,o=rx
-  when: exa_download.changed
-
-- name: delete exa download
-  file:
-    path: ~/exa-linux.zip
-    state: absent
-  when: exa_download.changed
-
-# install minio client (mc) an S3 compatible client
-# https://docs.min.io/docs/minio-client-quickstart-guide.html
-- name: download minio client
-  get_url:
-    url: https://dl.min.io/client/mc/release/linux-amd64/mc
-    dest: ~/mc
-    mode: u=rwx,g=rx,o=rx
-  register: mc_download
-
-- name: copy mc
-  copy:
-    src: ~/mc
-    dest: /usr/local/bin/mc
-    mode: u=rwx,g=rx,o=rx
-  when: mc_download.changed
-
-- name: delete mc download
-  file:
-    path: ~/mc
-    state: absent
-  when: mc_download.changed
-
-# install minio server - an S3 compatible server
-# https://docs.min.io/docs/minio-quickstart-guide.html
-- name: download minio server
-  get_url:
-    url: https://dl.min.io/server/minio/release/linux-amd64/minio
-    dest: ~/minio
-    mode: u=rwx,g=rx,o=rx
-  register: minio_download
-
-- name: copy minio server
-  copy:
-    src: ~/minio
-    dest: /usr/local/bin/minio
-    mode: u=rwx,g=rx,o=rx
-  when: minio_download.changed
-
-- name: delete mc download
-  file:
-    path: ~/minio
-    state: absent
-  when: minio_download.changed
 
