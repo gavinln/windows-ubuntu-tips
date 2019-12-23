@@ -1,0 +1,8 @@
+[X] Inside Windows insider slow
+[_] Uninstall VirtualBox 5.x
+[_] Install VirtualBox 6.x
+[X] Install WSL2
+[X] Write default.nix to install all packages
+[X] Install nix packages
+[X] Fix nix channel
+[_] Create S3 archive on minio
