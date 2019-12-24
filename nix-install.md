@@ -27,63 +27,6 @@ curl https://nixos.org/nix/install | sh
 if [ -e /home/gavinln/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gavinln/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 ```
 
-## Pinning nix packages
-
-Go to the https://github.com/NixOS/nixpkgs/releases page and copy the URL of
-the tar.gz file. The same page contains the commits of the release.
-
-Then type the following
-
-```
-nix-prefetch-url --unpack https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz
-```
-
-This display the following lines with the correct sha256 hash on the last line.
-
-```
-unpacking...
-[16.7 MiB DL]
-path is '/nix/store/l8mm1gylamrl22c4gmy70wxgqxmi5pjk-19.09.tar.gz'
-0mhqhq21y5vrr1f30qd2bvydv4bbbslvyzclhw0kdxmkgg3z4c92
-```
-
-The tar.gz archive using the commit in the name can be used and is of the form
-
-```
-https://github.com/NixOS/nixpkgs/commit/d5291756487d70bc336e33512a9baf9fa1788faf
-```
-
-If you run the same operation on the file with the commit in the name you can get the archive.
-
-```
-nix-prefetch-url --unpack https://github.com/NixOS/nixpkgs/archive/d5291756487d70bc336e33512a9baf9fa1788faf.tar.gz
-```
-
-This displays the same sha256 hash
-
-```
-unpacking...
-[16.7 MiB DL]
-path is '/nix/store/cg90kd2dmv3spa1d9vsgcxz6r2b9pri0-d5291756487d70bc336e33512a9baf9fa1788faf.tar.gz'
-0mhqhq21y5vrr1f30qd2bvydv4bbbslvyzclhw0kdxmkgg3z4c92
-```
-
-To specify the archive for the packages type the following
-
-```
-nix-shell -p fzf -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz --command 'fzf --version'
-nix-shell -p fzf -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/17.09.tar.gz --command 'fzf --version'
-```
-
-Different versions of the fzf utility are installed depending on the archive.
-
-To install using channels type the following
-
-```
-nix-env -f https://github.com/NixOS/nixpkgs/archive/17.09.tar.gz -i fzf && fzf --version
-nix-env -f https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz -i fzf && fzf --version
-```
-
 ## Test a nix package without installing it
 
 1. Find the system  pandoc
@@ -163,7 +106,7 @@ nix-env -f https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz -i fzf && fzf -
 5. List the installed packages
 
     ```
-    nix-env -q --installed
+    nix-env -q
     ```
 
 6. Add to your .bashrc file
@@ -178,121 +121,89 @@ nix-env -f https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz -i fzf && fzf -
     nix-env -<TAB>
     ```
 
-## Package dependencies
+## Install packages using Nix
 
-1. Display the run time dependencies of fzf
-
-```
-nix-store -qR $(which fzf)
-```
-
-2. Display the build time dependencies of fzf
+1. Install all the packages using a nix file
 
 ```
-nix-store -qR $(nix-store -qd $(which fzf))
+nix-env -f default.nix -i
 ```
 
-To export and import a closure run these commands
+## Install packages that cannot be installed by nix
 
-1. Write a closure to a file
+### Autojump
 
-```
-nix-store --export $(nix-store -qR $(type -p fzf)) > fzf.closure
-```
+1. Install autojump
+sudo apt install autojump
 
-2. You can then copy this file to another machine and install the closure:
-
-```
-nix-store --import < fzf.closure
-```
-
-# clean up
-nix-env -e fzf && nix-collect-garbage -d
-
-# time after clean up - 27s
-time nix-env -i fzf
-
-# time before clean up - 8s
-time nix-env -i fzf
-
-# clean up
-nix-env -e fzf && nix-collect-garbage -d
-
-# add fzf to store
-```
-nix-store --import < fzf.closure
-```
-# time after import closure to store - 24
-time nix-env -i fzf
-
-ARCHIVE=https://github.com/NixOS/nixpkgs/archive/17.09.tar.gz
-
-# clean up
-nix-env -e python3-3.7.4 && nix-collect-garbage -d
-
-# time after clean up - 48s
-time nix-env -i python3-3.4.7 -f $ARCHIVE
-
-# time before clean up - 30s
-time nix-env -i python3-3.4.7 -f $ARCHIVE
-
-# write closure to a file
-nix-store --export $(nix-store -qR $(type -p python3)) > python3-3.4.7.closure
-
-# clean up
-nix-env -e python3-3.4.7 && nix-collect-garbage -d
-
-# add python3-3.7.4 to store
-```
-nix-store --import < python3-3.4.7.closure
-```
-# time after import closure to store - 20
-time nix-env -i python3-3.4.7 -f $ARCHIVE
-
-/nix/store/fd3y1ad57cgxgfwa9pvf8ph074zafk2r-user-environment.drv
-
-
-## Generations
-
-Generations are used in nix to rollback or forward to a different state
-
-1. List generations
+2. Setup autojump by adding this line to your ~/.bashrc file
 
 ```
-nix-env --list-generations
+source /usr/share/autojump/autojump.sh
 ```
 
-## Install nix packages
+### fzf aliases
+
+Add these functions to your ~/.bashrc file from the vimrc project
 
 ```
-nix-env -i nix-bash-completions  # bash completions for nix
+source fzf-functions.sh
 ```
 
-Add to ~/.bashrc after the `source "$BASH_IT"/bash_it.sh` command
+### Install bash-it
+
+1. Install bash-it
 
 ```
-export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+~/.bash_it/install.sh
 ```
 
-Install other nix packages
-
-1. Try a dry run before actuall installing
+2. Change theme to demula using set BASH_IT_THEME=''
 
 ```
-nix-env -i -f default.nix --dry-run
+vim ~/.bashrc
 ```
 
-2. Install the packages
+4. To remove any bash-it theme edit ~/.bashrc and set BASH_IT_THEME=''
+
+### Git extras
+
+[git-extras][https://github.com/tj/git-extras.git] - tools for command line git
+
+Install git-extras using nix
 
 ```
-nix-env -i -f default.nix
+nix-env -i git-extras
 ```
 
-3. Install these separately
+Install hub that works with Github
 
 ```
-nix-env -i git-extras  # additional git commands
 nix-env -i hub  # git utilities that work with GitHub
+```
+
+### Manage dotfiles
+
+Use [chezmoi](https://github.com/twpayne/chezmoi) to manage dotfiles
+
+1. Install chezmoi
+
+```
+nix-env -i chezmoi
+chezmoi help  # display commands
+chezmoi init  # create a git repo in ~/.local/share/chezmoi
+chezmoi add ~/.tmux.conf  # add file ~/.local/share/chezmoi/dot_tmux.conf to repo
+chezmoi add ~/.config/vifm/vifmrc
+chezmoi edit ~/.tmux.conf  # edit file ~/.local/share/chezmoi/dot_tmux.conf
+chezmoi diff  # see what difference chezmoi would make
+chezmoi -v apply  # apply changes
+chezmoi cd  # change to ~/.local/share/chezmoi
+# add and commit files
+# push files to remote repository
+exit
+chezmoi doctor  # display problems
+chezmoi verify  # fail if destination state does not match target state
 ```
 
 ### Packages that cannot be installed using nix
@@ -319,18 +230,12 @@ nix-env -i http-prompt  # interactive httpie
 ### Install pyenv and then these Python packages use pipenv
 ```
 
-## Install dot files
+### Install dot files (replaced by chezmoi)
 
 Run dotbot to install dot files (from vimrc repo)
 
 ```
-dotbot -c install.conf.yaml
-```
-
-## Testing with a default.nix file
-
-```
-nix-env -f default.nix -i --remove-all
+# dotbot -c install.conf.yaml
 ```
 
 ## Links

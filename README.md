@@ -18,6 +18,13 @@ Install WSL2 as in these instructions
 
 https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
 
+Run these in powershell
+
+```
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
 To install Docker on WSL2 follow these instructions
 
 https://nickymeuleman.netlify.com/blog/linux-on-windows-wsl2-zsh-docker
@@ -149,10 +156,10 @@ ansible-playbook -i localhost, -c local user-util-setup.yml -e 'ansible_python_i
 
 ## fzf aliases
 
-Add these functions to your ~/.bashrc file
+Add these functions to your ~/.bashrc file from the vimrc project
 
 ```
-fzf-functions.sh
+source fzf-functions.sh
 ```
 
 ## Install pyenv
