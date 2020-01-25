@@ -162,6 +162,14 @@ Add these functions to your ~/.bashrc file from the vimrc project
 source fzf-functions.sh
 ```
 
+## Install ctags
+
+Do not install ctags using nix. Install ctags using the following command.
+
+```
+sudo apt install ctags
+```
+
 ## Install pyenv
 
 1. Install build-essential

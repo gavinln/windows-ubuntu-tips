@@ -47,8 +47,6 @@ let
     
     xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
     
-    ctags  # tags in source files
-    
     tldr  # brief documentation on usage
     
     wuzz  # HTTP utilities
