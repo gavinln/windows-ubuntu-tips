@@ -218,6 +218,7 @@ pipx install httpie  # user-friendly curl. e.g. http python.org
 pipx install http-prompt  # interactive httpie
 pipx install tldr  # brief documentation on software usage
 pipx install tmuxp  # manage tmux sessions
+pipx install stormssh  # manage the ~/.ssh/config file
 ```
 
 ### Setup direnv
