@@ -167,20 +167,19 @@ vim ~/.bashrc
 
 4. To remove any bash-it theme edit ~/.bashrc and set BASH_IT_THEME=''
 
-### Git extras
+### Git extras - cannot install using nix
+
 
 [git-extras][https://github.com/tj/git-extras.git] - tools for command line git
 
-Install git-extras using nix
-
 ```
-nix-env -i git-extras
+nix-env -i git-extras  # do not install using nix
 ```
 
-Install hub that works with Github
+Install hub that works with Github. Cannot install using nix
 
 ```
-nix-env -i hub  # git utilities that work with GitHub
+https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz
 ```
 
 ### Manage dotfiles
@@ -190,7 +189,6 @@ Use [chezmoi](https://github.com/twpayne/chezmoi) to manage dotfiles
 1. Install chezmoi
 
 ```
-nix-env -i chezmoi
 chezmoi help  # display commands
 chezmoi init  # create a git repo in ~/.local/share/chezmoi
 chezmoi add ~/.tmux.conf  # add file ~/.local/share/chezmoi/dot_tmux.conf to repo
@@ -206,10 +204,20 @@ chezmoi doctor  # display problems
 chezmoi verify  # fail if destination state does not match target state
 ```
 
-### Packages that cannot be installed using nix
+### Install pipx to install Python utilities (cannot be installed using nix
 
 ```
-nix-env -i httpie http-prompt
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+```
+
+#### Install Python packages using pipx
+
+```
+pipx install httpie  # user-friendly curl. e.g. http python.org
+pipx install http-prompt  # interactive httpie
+pipx install tldr  # brief documentation on software usage
+pipx install tmuxp  # manage tmux sessions
 ```
 
 ### Setup direnv
@@ -218,24 +226,6 @@ Add this to the end of the `~/.profile` file
 
 ```
 eval "$(direnv hook bash)"
-```
-
-### Install Python packages
-
-```
-nix-env -i httpie  # user-friendly curl. Type: http python.org
-
-nix-env -i http-prompt  # interactive httpie
-
-### Install pyenv and then these Python packages use pipenv
-```
-
-### Install dot files (replaced by chezmoi)
-
-Run dotbot to install dot files (from vimrc repo)
-
-```
-# dotbot -c install.conf.yaml
 ```
 
 ## Links

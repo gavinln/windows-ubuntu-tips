@@ -138,5 +138,3 @@
 #     path: ~/minio
 #     state: absent
 #   when: minio_download.changed
-
-

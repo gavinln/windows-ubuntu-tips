@@ -31,8 +31,6 @@ let
     
     tmux  # terminal multiplexer
     
-    tmuxp  # manage tmux sessions
-    
     fzf  # fuzzy finder
     
     tig  # terminal ui for git
@@ -47,8 +45,6 @@ let
     
     xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
     
-    tldr  # brief documentation on usage
-    
     wuzz  # HTTP utilities
     
     unzip  # unzip files
@@ -56,5 +52,7 @@ let
     tree  # directories as a tree
     
     minio minio-client  # S3 compatible server and client
+
+    chezmoi  # manage user configurations (dotfiles) across machines
   ];
 in all
