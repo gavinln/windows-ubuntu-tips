@@ -261,6 +261,11 @@ sudo cp completion/bash/docker /etc/bash_completion.d
 bash-it enable completion docker
 ```
 
+## Install graphviz
+
+```
+sudo apt install graphviz
+```
 ## install sqlite
 
 Install the latest version instead of one in repo

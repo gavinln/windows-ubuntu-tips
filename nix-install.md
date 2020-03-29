@@ -129,6 +129,12 @@ if [ -e /home/gavinln/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gavinln/
 nix-env -f default.nix -i
 ```
 
+2. Upgrade nix packages - does not work
+
+```
+nix-env -u
+```
+
 ## Install packages that cannot be installed by nix
 
 ### Autojump
