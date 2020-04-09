@@ -54,5 +54,7 @@ let
     minio minio-client  # S3 compatible server and client
 
     chezmoi  # manage user configurations (dotfiles) across machines
+
+    sqlite  # sqlite command line interface
   ];
 in all
