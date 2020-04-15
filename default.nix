@@ -59,7 +59,5 @@ let
 
     vim  # terminal vim - latest version
     
-    # export NVIM_LISTEN_ADDRESS=127.0.0.1:7777 nvim --headless
-    # nvim-qt --server localhost:7777
     neovim  # neovim editor
 in all
