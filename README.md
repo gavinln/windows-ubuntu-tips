@@ -382,11 +382,11 @@ choco install lazygit hub
 ### Cloud tools
 
 ```
-choco install rclone minio-client
+choco install rclone
 ```
 
 * [rclone][1300]: rsync for cloud storage
-* [minio-client][1310]: Minio client for cloud storage
+* [minio-client][1310]: Minio client for cloud storage - clashes with midnight commander
 * [minio-server][1320]: Minio server for cloud storage
 
 [1300]: https://github.com/ncw/rclone

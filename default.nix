@@ -51,7 +51,9 @@ let
 
     tree  # directories as a tree
 
-    minio minio-client  # S3 compatible server and client
+    minio  # S3 compatible server
+
+    # minio-client  # S3 compatible client - clashes with midnight commander
 
     chezmoi  # manage user configurations (dotfiles) across machines
 
@@ -62,6 +64,10 @@ let
     neovim  # neovim editor
 
     rclone  # rsync for the cloud (like S3)
+
+    cargo  # rust package manager
+
+    mc  # midnight commander - file manager that works with sftp
   ];
 
 in all
