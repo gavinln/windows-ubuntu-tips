@@ -225,6 +225,7 @@ pipx install http-prompt  # interactive httpie
 pipx install tldr  # brief documentation on software usage
 pipx install tmuxp  # manage tmux sessions
 pipx install stormssh  # manage the ~/.ssh/config file
+pipx install cookiecutter  # template to create projects
 ```
 
 ### Setup direnv

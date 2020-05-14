@@ -68,6 +68,8 @@ let
     cargo  # rust package manager
 
     mc  # midnight commander - file manager that works with sftp
+
+    shellcheck  # shell script static analysis tool
   ];
 
 in all
