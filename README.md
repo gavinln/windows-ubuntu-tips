@@ -470,3 +470,11 @@ Automation framework for programmers
 https://github.com/ianmiell/shutit
 
 ## Use [nix](./nix-install.md) to install packages
+## Docker on Windows
+
+Issues with Docker on WSL
+
+* Need WSL2
+* May stop VirtualBox from working (may work with Virtualbox 6.x)
+
+https://www.tcg.com/blog/yes-you-can-run-docker-and-virtualbox-on-windows-10-home/
