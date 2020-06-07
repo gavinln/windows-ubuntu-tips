@@ -74,6 +74,8 @@ let
     redis  # key value store
 
     watchman  # file watching service
+
+    gitAndTools.delta  # view git diff with colors
   ];
 
 in all
