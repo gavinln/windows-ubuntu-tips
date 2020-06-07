@@ -393,6 +393,7 @@ choco install rclone
 [1310]: https://min.io/
 [1320]: https://min.io/
 
+
 ### Miscellaneous
 
 ```
@@ -425,6 +426,8 @@ Other tools to install on windows
 * [jid.exe][1530]: json incremental debugger
 * [wuzz.exe][1540]: Interactive cli tool for HTTP
 * [xsv.exe][1550]: Command line CSV toolkit
+* [gimp][1560]: Image manipulation tool - like Photoshop
+* [imagemagick][1570]: CLI image tool
 
 [1500]: https://github.com/universal-ctags/ctags
 [1510]: https://github.com/dropbox/dbxcli
@@ -432,6 +435,8 @@ Other tools to install on windows
 [1530]: https://github.com/simeji/jid
 [1540]: https://github.com/asciimoo/wuzz
 [1550]: https://github.com/BurntSushi/xsv
+[1560]: https://www.gimp.org/
+[1570]: https://imagemagick.org/index.php
 
 ### Python tools
 

@@ -70,6 +70,10 @@ let
     mc  # midnight commander - file manager that works with sftp
 
     shellcheck  # shell script static analysis tool
+
+    redis  # key value store
+
+    watchman  # file watching service
   ];
 
 in all
