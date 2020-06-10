@@ -76,6 +76,8 @@ let
     watchman  # file watching service
 
     gitAndTools.delta  # view git diff with colors
+
+    fpp  # pick file paths on the command line
   ];
 
 in all

@@ -468,6 +468,18 @@ Execute programs when files or directories change
 
 https://github.com/watchexec/watchexec
 
+### watchman
+
+Watch for file changes and trigger actions
+
+https://github.com/facebook/watchman
+
+### PathPicker - fpp
+
+Choose files from bash output
+
+https://github.com/facebook/PathPicker
+
 ### shutit
 
 Automation framework for programmers
