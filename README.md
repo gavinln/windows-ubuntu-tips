@@ -480,6 +480,14 @@ Choose files from bash output
 
 https://github.com/facebook/PathPicker
 
+### Refactor code with human intervention
+
+https://github.com/facebook/codemod
+
+### Boostrapped confidence intervals
+
+https://github.com/facebookincubator/bootstrapped
+
 ### shutit
 
 Automation framework for programmers
