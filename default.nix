@@ -78,6 +78,10 @@ let
     gitAndTools.delta  # view git diff with colors
 
     fpp  # pick file paths on the command line
+
+    pastel  # colors in the terminal
+
+    graphviz  # language for drawing graphs: executable dot, neato
   ];
 
 in all

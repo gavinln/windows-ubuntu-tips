@@ -1,14 +1,22 @@
 # Install nix
 
+[Nix][10] is a package manager for Linux and other Unix like operating systems.
+
+[10]: https://nixos.org/ 
+
 ## Setup nix on Windows subsystem for Linux
 
 1. Create the /etc/nix directory
 
 ```
-mkdir -p /etc/nix
+sudo install -d -m755 -o $(id -u) -g $(id -g) /nix
 ```
 
 2. Create & edit /etc/nix/nix.conf, add following items:
+
+For WSL2 may not need the following
+
+For WSL1
 
 ```
 sandbox = false
@@ -18,13 +26,13 @@ use-sqlite-wal = false
 3. Install nix
 
 ```
-curl https://nixos.org/nix/install | sh
+curl -L https://nixos.org/nix/install | sh
 ```
 
 4. Check whether this command is added to ~/.profile
 
 ```
-if [ -e /home/gavinln/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gavinln/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e /home/gavin/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gavin/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 ```
 
 ## Test a nix package without installing it
@@ -91,7 +99,7 @@ if [ -e /home/gavinln/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gavinln/
     nix-env --list-generations
     ```
 
-3. Find an available package (-a)
+3. Find an available package (-a), the bash completions package
 
     ```
     nix-env -qa 'nix-bash.*'
@@ -135,12 +143,29 @@ nix-env -f default.nix -i
 nix-env -u
 ```
 
+## Github setup
+
+On WSL the ssh configuration is in $HOME/.ssh
+
+Check access to github using ssh
+
+```
+ssh -T git@github.com
+```
+
 ## Install packages that cannot be installed by nix
 
 ### Autojump
 
+[Autojump][20] is a `cd` command that learns making navigating directories easier.
+
+[20]: https://github.com/wting/autojump
+
 1. Install autojump
+
+```
 sudo apt install autojump
+```
 
 2. Setup autojump by adding this line to your ~/.bashrc file
 
@@ -148,15 +173,11 @@ sudo apt install autojump
 source /usr/share/autojump/autojump.sh
 ```
 
-### fzf aliases
-
-Add these functions to your ~/.bashrc file from the vimrc project
-
-```
-source fzf-functions.sh
-```
-
 ### Install bash-it
+
+[Bash-it][30] is a collection of scripts for Bash that includes autocompletion, themes, aliases and custom functions.
+
+[30]: https://github.com/Bash-it/bash-it
 
 1. Install bash-it
 
@@ -171,26 +192,86 @@ git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 vim ~/.bashrc
 ```
 
-4. To remove any bash-it theme edit ~/.bashrc and set BASH_IT_THEME=''
+3. To remove any bash-it theme edit ~/.bashrc and set BASH_IT_THEME=''
+
+#### bash-it extensions
+
+1. Enable autojump
+
+```
+bash-it enable plugin autojump
+```
+
+### Tmux plugins
+
+Install [tmux plugins][40]
+
+[40]: https://github.com/tmux-plugins/tpm
+
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
 
 ### Git extras - cannot install using nix
 
+[Git extras][50] are additional git commands.
 
-[git-extras][https://github.com/tj/git-extras.git] - tools for command line git
+[50]: https://github.com/tj/git-extras.git
 
 ```
-nix-env -i git-extras  # do not install using nix
+sudo apt install git-extras
 ```
 
 Install hub that works with Github. Cannot install using nix
 
+python3 -m pipx ensurepath
 ```
 https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz
+```
+
+### Install pipx to install Python utilities (cannot be installed using nix
+
+```
+python3 -m pip install --user pipx
+sudo apt-get install -y python3-venv
+python3 -m pipx ensurepath
+```
+
+#### Install Python packages using pipx
+
+```
+pipx install httpie  # user-friendly curl. e.g. http python.org
+pipx install http-prompt  # interactive httpie
+pipx install tmuxp  # manage tmux sessions
+pipx install stormssh  # manage the ~/.ssh/config file
+pipx install cookiecutter  # template to create projects
+# do not install pipenv using pipx. Use the default Python
+# pipx install pipenv  # manage environments using Pipenv
+```
+
+### fzf aliases
+
+Add these functions to your ~/.bashrc file from the vimrc project
+
+```
+source fzf-functions.sh
 ```
 
 ### Manage dotfiles
 
 Use [chezmoi](https://github.com/twpayne/chezmoi) to manage dotfiles
+
+1. Setup chezmoi
+
+```
+chezmoi init https://github.com/gavinln/dotfiles.git
+```
+
+2. Apply chezmoi
+
+```
+chezmoi apply
+```
 
 1. Install chezmoi
 
@@ -208,24 +289,6 @@ chezmoi cd  # change to ~/.local/share/chezmoi
 exit
 chezmoi doctor  # display problems
 chezmoi verify  # fail if destination state does not match target state
-```
-
-### Install pipx to install Python utilities (cannot be installed using nix
-
-```
-python3 -m pip install --user pipx
-python3 -m pipx ensurepath
-```
-
-#### Install Python packages using pipx
-
-```
-pipx install httpie  # user-friendly curl. e.g. http python.org
-pipx install http-prompt  # interactive httpie
-pipx install tldr  # brief documentation on software usage
-pipx install tmuxp  # manage tmux sessions
-pipx install stormssh  # manage the ~/.ssh/config file
-pipx install cookiecutter  # template to create projects
 ```
 
 ### Setup direnv

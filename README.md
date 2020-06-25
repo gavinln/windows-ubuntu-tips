@@ -12,17 +12,17 @@ Follow these [instructions][20]
 
 [20]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
-### WSL 2
-
-Install WSL2 as in these instructions
-
-https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
-
 Run these in powershell
 
 ```
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
+Check the version of Ubuntu
+
+```
+cat /etc/lsb-release
 ```
 
 To install Docker on WSL2 follow these instructions
@@ -91,10 +91,28 @@ software provisioning, configuration management, and application deployment.
 Example wsl commands
 
 ```
-wsl --list --all  # list all distributions
-wsl --list --running  # list running distribution
-wsl --terminate "Ubuntu-18.04"  # terminate the distribution
+echo list all distributions
+wsl --list --all  # list all
+echo list running distributions
+wsl --list --running
+echo terminate a distribution, misspelled on purpose
+wsl --terminate "Ubuntu-18.04--"
 ```
+
+## Windows ls colors
+
+Directories in Windows are often "other writable" (ow). The default color
+chosen to list them is 34;32 (blue text on green background). The code for blue
+is 34 and green is 32. To change the background to black (40) use the following
+LS_COLORS environment variable.
+
+```
+LS_COLORS=$LS_COLORS:'ow=34;40:'; export LS_COLORS; ls
+```
+
+[Change colors for directory list][40]
+
+[40]: https://askubuntu.com/questions/466198/how-do-i-change-the-color-for-directories-with-ls-in-the-console
 
 ## Setup the Ubuntu bash environment using Ansible
 
@@ -104,16 +122,10 @@ wsl --terminate "Ubuntu-18.04"  # terminate the distribution
 wsl
 ```
 
-2. Install Python
+2. Install pip
 
 ```
-sudo apt install python3
-```
-
-3. Install pip
-
-```
-sudo apt install python3-pip
+sudo apt install -y python3-pip
 ```
 
 ### Install Ansible on Ubuntu
@@ -154,7 +166,7 @@ source /usr/share/autojump/autojump.sh
 ansible-playbook -i localhost, -c local user-util-setup.yml -e 'ansible_python_interpreter=python3'
 ```
 
-## fzf aliases
+## fzf aliases - moved to nix-install.md
 
 Add these functions to your ~/.bashrc file from the vimrc project
 
@@ -167,7 +179,7 @@ source fzf-functions.sh
 Do not install ctags using nix. Install ctags using the following command.
 
 ```
-sudo apt install ctags
+sudo apt install -y universal-ctags
 ```
 
 ## Install pyenv
@@ -244,29 +256,19 @@ vim ~/.bashrc
 
 4. To remove any bash-it theme edit ~/.bashrc and set BASH_IT_THEME=''
 
-## Get Docker client binaries
-
-```
-mkdir docker
-wget https://test.docker.com/builds/Linux/x86_64/docker-17.04.0-ce-rc1.tgz
-tar -xvf docker-17.04.0-ce-rc1.tgz
-cd docker
-sudo cp docker /usr/local/bin
-sudo cp completion/bash/docker /etc/bash_completion.d
-```
-
 ## install bash-it
 
 ```
 bash-it enable completion docker
 ```
 
-## Install graphviz
+## Install graphviz - installed using nix
 
 ```
-sudo apt install graphviz
+sudo apt install -y graphviz
 ```
-## install sqlite
+
+## install sqlite - already available in Ubuntu 20.04
 
 Install the latest version instead of one in repo
 
