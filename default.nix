@@ -82,6 +82,8 @@ let
     pastel  # colors in the terminal
 
     graphviz  # language for drawing graphs: executable dot, neato
+
+    imagemagick  # image view, modify tools
   ];
 
 in all
