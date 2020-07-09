@@ -222,6 +222,12 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sudo apt install git-extras
 ```
 
+### Microsoft fonts
+
+```
+sudo apt install -y ttf-mscorefonts-installer
+```
+
 Install hub that works with Github. Cannot install using nix
 
 python3 -m pipx ensurepath
