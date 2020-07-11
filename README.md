@@ -286,6 +286,22 @@ sudo make install
 sqlite3 -version
 ```
 
+## Install node.js and npm
+
+1. Install nodejs and check the version
+
+```
+sudo apt install nodejs
+node -v
+```
+
+2. Install npm and check the version
+
+```
+sudo apt install npm
+npm -v
+```
+
 ## nvim setup
 
 1. Change to the configuration directory
