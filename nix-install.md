@@ -281,20 +281,29 @@ chezmoi apply
 
 1. Install chezmoi
 
-```
-chezmoi help  # display commands
-chezmoi init  # create a git repo in ~/.local/share/chezmoi
-chezmoi add ~/.tmux.conf  # add file ~/.local/share/chezmoi/dot_tmux.conf to repo
+```bash
+echo display commands
+chezmoi help
+echo create a git repo in ~/.local/share/chezmoi
+chezmoi init
+echo add file ~/.local/share/chezmoi/dot_tmux.conf to repo
+chezmoi add ~/.tmux.conf
 chezmoi add ~/.config/vifm/vifmrc
-chezmoi edit ~/.tmux.conf  # edit file ~/.local/share/chezmoi/dot_tmux.conf
-chezmoi diff  # see what difference chezmoi would make
-chezmoi -v apply  # apply changes
-chezmoi cd  # change to ~/.local/share/chezmoi
-# add and commit files
-# push files to remote repository
+echo edit file ~/.local/share/chezmoi/dot_tmux.conf
+chezmoi edit ~/.tmux.conf
+echo see what difference chezmoi would make
+chezmoi diff
+echo apply changes
+chezmoi -v apply
+echo change to ~/.local/share/chezmoi
+chezmoi cd
+echo add and commit files
+echo push files to remote repository
+echo display problems
+chezmoi doctor
+echo fail if destination state does not match target state
+chezmoi verify
 exit
-chezmoi doctor  # display problems
-chezmoi verify  # fail if destination state does not match target state
 ```
 
 ### Setup direnv
@@ -303,6 +312,14 @@ Add this to the end of the `~/.profile` file
 
 ```
 eval "$(direnv hook bash)"
+```
+
+### Setup alias for ls
+
+Setup the alias in `~/.bashrc` for exa
+
+```
+alias lg='exa -l --git'
 ```
 
 ## Links
