@@ -288,18 +288,40 @@ sqlite3 -version
 
 ## Install node.js and npm
 
-1. Install nodejs and check the version
+Install the latest verions of node.js and npm
+
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
+
+1. Download the node setup script
+
+```
+curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
+```
+
+2. Setup the repositories
+
+```
+sudo -E bash nodesource_setup.sh
+```
+
+3. Install nodejs and check the version
 
 ```
 sudo apt install nodejs
 node -v
 ```
 
-2. Install npm and check the version
+4. Install npm and check the version
 
 ```
 sudo apt install npm
 npm -v
+```
+
+### Install pyright to type check Python code
+
+```
+sudo npm install -g pyright
 ```
 
 ## nvim setup
