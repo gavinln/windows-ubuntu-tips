@@ -212,6 +212,26 @@ Install [tmux plugins][40]
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
+### vifm color schemes
+
+1. Remove the default color scheme directory with only one colorscheme
+
+```
+rm -rf ~/.config/vifm/colors
+```
+
+2. Clone the colorschems
+
+```
+git clone https://github.com/vifm/vifm-colors ~/.config/vifm/colors
+```
+
+3. Change the colorscheme in vifm
+
+```
+:colorscheme solarized-light
+```
+
 ### Git extras - cannot install using nix
 
 [Git extras][50] are additional git commands.
