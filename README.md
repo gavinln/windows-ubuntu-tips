@@ -313,10 +313,7 @@ node -v
 
 4. Install npm and check the version
 
-```
-sudo apt install npm
-npm -v
-```
+No need to install npm as it is automatically installed with nodejs.
 
 ### Install pyright to type check Python code
 
