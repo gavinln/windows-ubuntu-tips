@@ -37,7 +37,7 @@ let
 
     lazygit  # alternative terminal ui for git
 
-    git  # git version control
+    # git  # git version control, already installed ubuntu 20.04
 
     jq jid  # JSON utilities
 
