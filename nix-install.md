@@ -4,7 +4,9 @@
 
 [10]: https://nixos.org/ 
 
-## Setup nix on Windows subsystem for Linux
+## Setup nix
+
+###  Windows subsystem for Linux
 
 1. Create the /etc/nix directory
 
@@ -35,99 +37,109 @@ curl -L https://nixos.org/nix/install | sh
 if [ -e /home/gavin/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gavin/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 ```
 
+## Ubuntu
+
+1. Setup nix by running a script
+
+```
+curl -L https://nixos.org/nix/install | sh
+```
+
+2. Logout and login to setup environment variables
+
 ## Test a nix package without installing it
 
 1. Find the system  pandoc
 
-    ```
-    which pandoc
-    ```
+```
+which pandoc
+```
 
 2. Try pandoc without installing it
 
-    ```
-    nix-shell -p pandoc --run 'which pandoc'
-    ```
+```
+nix-shell -p pandoc --run 'which pandoc'
+```
 
 3. Switch back to the system pandoc
 
-    ```
-    which pandoc
-    ```
+```
+which pandoc
+```
 
 4. Try pandoc without installing it and starting a new shell
 
-    ```
-    nix-shell -p pandoc
-    ```
+```
+nix-shell -p pandoc
+```
 
 5. Display the pandoc in the new shell
 
-    ```
-    which pandoc
-    ```
+```
+which pandoc
+```
 
 6. Exit the new shell
 
-    ```
-    exit
-    ```
+```
+exit
+```
 
 7. Switch back to the system pandoc
 
-    ```
-    which pandoc
-    ```
+```
+which pandoc
+```
 
 8. Clean up the space used
 
-    ```
-    nix-collect-garbage
-    ```
+```
+nix-collect-garbage
+```
 
 ## Install nix completions
 
 1. Get help on nix-env
 
-    ```
-    nix-env --help
-    ```
+```
+nix-env --help
+```
 
 2. List the generations of packages
 
-    ```
-    nix-env --list-generations
-    ```
+```
+nix-env --list-generations
+```
 
 3. Find an available package (-a), the bash completions package
 
-    ```
-    nix-env -qa 'nix-bash.*'
-    ```
+```
+nix-env -qa 'nix-bash.*'
+```
 
 4. Install the nix-bash-completions package
 
-    ```
-    nix-env -i nix-bash-completions
-    ```
+```
+nix-env -i nix-bash-completions
+```
 
 5. List the installed packages
 
-    ```
-    nix-env -q
-    ```
+```
+nix-env -q
+```
 
 6. Add to your .bashrc file
 
-    ```
-    export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
-    ```
+```
+export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
+```
 
 7. Restart your shell. Type the following to see the completions
 
-    ```
-    nix-env -<TAB>
-    ```
+```
+nix-env -<TAB>
+```
 
 ## Install packages using Nix
 
@@ -248,19 +260,19 @@ sudo apt install git-extras
 sudo apt install -y ttf-mscorefonts-installer
 ```
 
-Install hub that works with Github. Cannot install using nix
+### Setup pipx and  Python utilities (cannot be installed using nix)
 
-python3 -m pipx ensurepath
-```
-https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz
-```
-
-### Install pipx to install Python utilities (cannot be installed using nix
+1. Install pipx
 
 ```
 python3 -m pip install --user pipx
-sudo apt-get install -y python3-venv
 python3 -m pipx ensurepath
+```
+
+2. Update pipx
+
+```
+python3 -m pip install --user -U pipx
 ```
 
 #### Install Python packages using pipx
