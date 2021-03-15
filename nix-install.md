@@ -244,6 +244,26 @@ git clone https://github.com/vifm/vifm-colors ~/.config/vifm/colors
 :colorscheme solarized-light
 ```
 
+### nnn file manager plugin configuration
+
+1. Setup up plugin p to preview file with bat
+
+```
+export NNN_PLUG='p:_bat -p $nnn'
+```
+
+2. Setup rclone to mount remote
+
+```
+export NNN_RCLONE='rclone mount'
+```
+
+3. Pick files and send to stdout
+
+```
+nnn -p - | fpp
+```
+
 ### Git extras - cannot install using nix
 
 [Git extras][50] are additional git commands.
