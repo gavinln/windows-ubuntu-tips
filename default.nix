@@ -29,6 +29,10 @@ let
 
     vifm  # text mode file manager
 
+    nnn  # command line file manager
+
+    nushell  # alternative shell
+
     tmux  # terminal multiplexer
 
     fzf  # fuzzy finder
