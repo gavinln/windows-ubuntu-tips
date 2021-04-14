@@ -303,6 +303,7 @@ pipx install http-prompt  # interactive httpie
 pipx install tmuxp  # manage tmux sessions
 pipx install stormssh  # manage the ~/.ssh/config file
 pipx install cookiecutter  # template to create projects
+pipx install poetry  # manage virtual environments instead of pipenv
 # do not install pipenv using pipx. Use the default Python
 # pipx install pipenv  # manage environments using Pipenv
 ```
