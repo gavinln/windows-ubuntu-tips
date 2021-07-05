@@ -13,81 +13,81 @@ let
   all = [
     nix-bash-completions  # nix bash completions
 
+    bat  # replacement for cat with syntax highlighting
+
+    cargo  # rust package manager
+
+    chezmoi  # manage user configurations (dotfiles) across machines
+
+    gitAndTools.delta  # view git diff with colors
+
     direnv  # directory environments
 
     exa  # replacement for ls
 
-    bat  # replacement for cat with syntax highlighting
-
-    pandoc  # convert documents into multiple formats
-
-    ripgrep  # alternative to rep
-
     fd  # alternative to find
 
-    fselect  # search for files using SQL like queries
+    fpp  # pick file paths on the command line
 
-    vifm  # text mode file manager
-
-    nnn  # command line file manager
-
-    nushell  # alternative shell
-
-    tmux  # terminal multiplexer
+    # REMOVE fselect  # search for files using SQL like queries 
 
     fzf  # fuzzy finder
 
-    tig  # terminal ui for git
-
-    lazygit  # alternative terminal ui for git
-
     # git  # git version control, already installed ubuntu 20.04
+
+    graphviz  # language for drawing graphs: executable dot, neato
+
+    imagemagick  # image view, modify tools
 
     jq jid  # JSON utilities
 
-    ncdu  # display disk usage
+    lazygit  # alternative terminal ui for git
 
-    xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
-
-    wuzz  # HTTP utilities
-
-    unzip  # unzip files
-
-    tree  # directories as a tree
+    # REMOVE mc  # midnight commander - file manager that works with sftp
 
     minio  # S3 compatible server
 
     # minio-client  # S3 compatible client - clashes with midnight commander
 
-    chezmoi  # manage user configurations (dotfiles) across machines
-
-    sqlite  # sqlite command line interface
-
-    vim  # terminal vim - latest version
+    ncdu  # display disk usage
 
     neovim  # neovim editor
 
-    rclone  # rsync for the cloud (like S3)
+    nnn  # command line file manager
 
-    cargo  # rust package manager
+    nushell  # alternative shell
 
-    mc  # midnight commander - file manager that works with sftp
-
-    shellcheck  # shell script static analysis tool
-
-    redis  # key value store
-
-    watchman  # file watching service
-
-    gitAndTools.delta  # view git diff with colors
-
-    fpp  # pick file paths on the command line
+    pandoc  # convert documents into multiple formats
 
     pastel  # colors in the terminal
 
-    graphviz  # language for drawing graphs: executable dot, neato
+    rclone  # rsync for the cloud (like S3)
 
-    imagemagick  # image view, modify tools
+    redis  # key value store
+
+    ripgrep  # alternative to rep
+
+    shellcheck  # shell script static analysis tool
+
+    sqlite  # sqlite command line interface
+
+    tig  # terminal ui for git
+
+    tmux  # terminal multiplexer
+
+    tree  # directories as a tree
+
+    unzip  # unzip files
+
+    vifm  # text mode file manager
+
+    vim  # terminal vim - latest version
+
+    watchman  # file watching service
+
+    wuzz  # HTTP utilities
+
+    xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
   ];
 
 in all
