@@ -402,6 +402,28 @@ choco install microsoft-windows-terminal
 [1100]: https://cmder.net/
 [1110]: https://github.com/Microsoft/Terminal
 
+#### Alacritty terminal
+
+[Alacritty][1120] a GUI accelerated terminal emulator
+
+[1120]: https://github.com/alacritty/alacritty
+
+Use "Ctrl+Shift+Space" to start VI mode
+
+```
+choco install alacritty
+```
+
+Install [alacritty-colorscheme][1130]
+
+[1130]: https://github.com/toggle-corp/alacritty-colorscheme/
+
+```
+pipx install alacritty-colorscheme
+```
+
+Get colors from https://github.com/aarowill/base16-alacritty
+
 ### Git
 
 ```
