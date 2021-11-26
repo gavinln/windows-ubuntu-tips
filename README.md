@@ -362,7 +362,7 @@ choco install git hackfont
 ### File utils
 
 ```
-choco install fd 7zip fzf jq bat vifm ripgrep fselect
+choco install fd 7zip fzf jq bat vifm ripgrep
 ```
 
 * [fd.exe][1010]: fast find utility
@@ -372,7 +372,6 @@ choco install fd 7zip fzf jq bat vifm ripgrep fselect
 * [bat.exe][1050]: Cat with color formatting
 * [vifm.exe][1060]: terminal file manager with vi like shortcuts
 * [ripgrep][1070]: recursively search directories
-* [fselect][1080]: use sql like statements to find files
 
 [1010]: https://github.com/sharkdp/fd
 [1020]: https://en.wikipedia.org/wiki/7-Zip
@@ -381,7 +380,6 @@ choco install fd 7zip fzf jq bat vifm ripgrep fselect
 [1050]: https://github.com/sharkdp/bat
 [1060]: https://vifm.info/downloads.shtml
 [1070]: https://github.com/BurntSushi/ripgrep
-[1080]: https://github.com/jhspetersson/fselect
 
 ### Terminals
 
