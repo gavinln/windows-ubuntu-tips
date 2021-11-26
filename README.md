@@ -442,11 +442,10 @@ choco install rclone
 ### Miscellaneous
 
 ```
-choco install osquery putty pandoc zeal graphviz
+choco install osquery pandoc zeal graphviz
 ```
 
 * [osquery][1400]: query operating systems using SQL
-* [putty][1410]: ssh client terminal
 * [pandoc][1420]: convert documents from one format to another
 * [hackfont][1430]: font for source code
 * [zeal][1440]: offline documentation
@@ -455,7 +454,6 @@ choco install osquery putty pandoc zeal graphviz
 * [usql.exe][1470]: command line sql tool for multiple database
 
 [1400]: https://osquery.io/
-[1410]: https://www.putty.org/
 [1420]: https://pandoc.org/
 [1430]: https://github.com/source-foundry/Hack
 [1440]: https://github.com/zealdocs/zeal
