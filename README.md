@@ -334,8 +334,7 @@ cd ~/.config/nvim
 ## Windows source code font
 
 Install a font designed for [source
-code](https://github.com/source-foundry/Hack). Use the font in terminals such
-as cmder by changing the settings. Use the font in vim by changing the guifont
+code](https://github.com/source-foundry/Hack). Use the font in terminals by changing the settings. Use the font in vim by changing the guifont
 settings.
 
 ## Windows cli-tools
@@ -357,14 +356,8 @@ choco list -l
 Install these first
 
 ```
-choco install git cmder hackfont
+choco install git hackfont
 ```
-
-Go to cmder/settings/General/Fonts and change the "Main console font" to
-"Hack" size 13.
-
-Go to cmder/settings/Features/Colors and change the "Schemes" to
-`<Solarized Git>`.
 
 ### File utils
 
@@ -396,10 +389,8 @@ choco install fd 7zip fzf jq bat vifm ripgrep fselect
 choco install microsoft-windows-terminal
 ```
 
-* [cmder.exe][1100]: Console emulator on Windows
 * [microsoft-windows-terminal][1110]: Windows terminal
 
-[1100]: https://cmder.net/
 [1110]: https://github.com/Microsoft/Terminal
 
 #### Alacritty terminal
