@@ -2,7 +2,7 @@
 
 [Nix][10] is a package manager for Linux and other Unix like operating systems.
 
-[10]: https://nixos.org/ 
+[10]: https://nixos.org/
 
 ## Setup nix
 
@@ -298,12 +298,17 @@ python3 -m pip install --user -U pipx
 #### Install Python packages using pipx
 
 ```
-pipx install httpie  # user-friendly curl. e.g. http python.org
-pipx install http-prompt  # interactive httpie
+pipx install poetry  # manage virtual environments instead of pipenv
 pipx install tmuxp  # manage tmux sessions
 pipx install stormssh  # manage the ~/.ssh/config file
-pipx install cookiecutter  # template to create projects
-pipx install poetry  # manage virtual environments instead of pipenv
+pipx install kedro  # manage machine learning pipeline
+pipx install docker-compose  # manage Docker environments
+pipx install pre-commit  # add pre-commit checks to git
+
+# may not be so useful
+# pipx install httpie  # user-friendly curl. e.g. http python.org
+# pipx install http-prompt  # interactive httpie
+# pipx install cookiecutter  # template to create projects
 # do not install pipenv using pipx. Use the default Python
 # pipx install pipenv  # manage environments using Pipenv
 ```

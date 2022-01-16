@@ -440,13 +440,13 @@ choco install rclone
 ### Miscellaneous
 
 ```
-choco install osquery pandoc zeal graphviz
+choco install osquery pandoc graphviz
 ```
 
 * [osquery][1400]: query operating systems using SQL
 * [pandoc][1420]: convert documents from one format to another
 * [hackfont][1430]: font for source code
-* [zeal][1440]: offline documentation
+* [chezmoi][1440]: manage dot files
 * [graphviz][1450]: Graph visualization
 * [kubectl][1460]: control Kubernetes
 * [usql.exe][1470]: command line sql tool for multiple database
@@ -454,7 +454,7 @@ choco install osquery pandoc zeal graphviz
 [1400]: https://osquery.io/
 [1420]: https://pandoc.org/
 [1430]: https://github.com/source-foundry/Hack
-[1440]: https://github.com/zealdocs/zeal
+[1440]: https://github.com/twpayne/chezmoi
 [1450]: https://emden.github.io/
 [1460]: https://kubernetes.io/docs/tasks/tools/install-kubectl/
 [1470]: https://github.com/xo/usql

@@ -29,7 +29,7 @@ let
 
     fpp  # pick file paths on the command line
 
-    # REMOVE fselect  # search for files using SQL like queries 
+    # REMOVE fselect  # search for files using SQL like queries
 
     fzf  # fuzzy finder
 
@@ -42,6 +42,8 @@ let
     jq jid  # JSON utilities
 
     lazygit  # alternative terminal ui for git
+
+    # gitui
 
     # REMOVE mc  # midnight commander - file manager that works with sftp
 
