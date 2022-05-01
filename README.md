@@ -323,6 +323,12 @@ sudo npm install -g pyright
 
 ## nvim setup
 
+```
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt update
+sudo apt install neovim
+```
+
 1. Change to the configuration directory
 
 ```
