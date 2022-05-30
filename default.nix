@@ -35,6 +35,8 @@ let
 
     # git  # git version control, already installed ubuntu 20.04
 
+    gh  # Gihub command line client
+
     graphviz  # language for drawing graphs: executable dot, neato
 
     imagemagick  # image view, modify tools
@@ -43,7 +45,7 @@ let
 
     lazygit  # alternative terminal ui for git
 
-    # gitui
+    gitui  # modern git terminal ui in Rust
 
     # REMOVE mc  # midnight commander - file manager that works with sftp
 
@@ -84,6 +86,8 @@ let
     vifm  # text mode file manager
 
     vim  # terminal vim - latest version
+
+    watchexec  # watch a path and run a command on changes (newer utility)
 
     watchman  # file watching service
 
