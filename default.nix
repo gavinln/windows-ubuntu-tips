@@ -83,6 +83,8 @@ let
 
     unzip  # unzip files
 
+    viddy  # watch replacement with history
+
     vifm  # text mode file manager
 
     vim  # terminal vim - latest version
