@@ -15,6 +15,8 @@ let
 
     bat  # replacement for cat with syntax highlighting
 
+    bottom  # htop replacement, command btm
+
     cargo  # rust package manager
 
     chezmoi  # manage user configurations (dotfiles) across machines
@@ -64,6 +66,10 @@ let
     pandoc  # convert documents into multiple formats
 
     pastel  # colors in the terminal
+
+    procs  # replacement for ps
+
+    pueue  # command line manager for parallel/long running task
 
     rclone  # rsync for the cloud (like S3)
 

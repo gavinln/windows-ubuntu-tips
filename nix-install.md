@@ -224,6 +224,16 @@ Install [tmux plugins][40]
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
+#### Install tmux plugins
+
+Add to the `~/.tmux.conf`
+
+```
+set -g @plugin 'tmux-plugins/tpm'  # tmux plugin manager on github
+```
+
+Choose plugins from the [plugins list](https://github.com/tmux-plugins/list).
+
 ### vifm color schemes
 
 1. Remove the default color scheme directory with only one colorscheme
