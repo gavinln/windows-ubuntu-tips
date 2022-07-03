@@ -6,7 +6,7 @@ without needed an entire Linux virtual machine
 
 [10]: https://msdn.microsoft.com/en-us/commandline/wsl/about
 
-## Setup Bash on Windows
+## Setup Windows subsystem for Linux
 
 Follow these [instructions][20]
 
@@ -88,16 +88,117 @@ software provisioning, configuration management, and application deployment.
 
 ### WSL commands
 
-Example wsl commands
+#### Example wsl commands
+
+1. List all distributions
 
 ```
-echo list all distributions
 wsl --list --all  # list all
-echo list running distributions
+```
+
+2. List running distributions
+
+```
 wsl --list --running
-echo terminate a distribution, misspelled on purpose
+```
+
+3. Terminate a distribution, misspelled on purpose
+
+```
 wsl --terminate "Ubuntu-18.04--"
 ```
+
+4. List available distributions
+
+
+#### Install WSL on a non-system (C) drive
+
+1. Change to the folder that will contain
+
+```
+cd/d d:\wsl
+```
+
+2. List the available distributions
+
+```
+wsl --list --online
+```
+
+3. Alternatively find the amd64 wsl image
+
+https://cloud-images.ubuntu.com/jammy/current/
+
+4. Make a directory for the download
+
+```
+mkdir d:\ws\ubuntu-22.04\download
+```
+
+5. Download image
+
+```
+curl -O https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64-wsl.rootfs.tar.gz
+```
+
+6. Install the distribution image
+
+```
+wsl --import ubuntu-22.04 D:\wsl\ubuntu-22.04\instance D:\wsl\ubuntu-22.04\download\jammy-server-cloudimg-amd64-wsl.rootfs.tar.gz
+```
+
+7. List the installed distributions
+
+```
+wsl --list --all -v
+```
+
+8. Start the distribution
+
+```
+wsl -d ubuntu-22.04
+```
+
+#### Setup the user
+
+1.  Add a user
+
+```
+adduser gavin
+```
+
+2. Add the user to sudo group
+
+```
+usermod -aG sudo gavin
+```
+
+3. Set the user when launching WSL using a wsl.conf file
+
+```
+rm -rf /etc/wsl.conf
+tee /etc/wsl.conf << EOF
+# Set the user when launching a distribution with WSL.
+[user]
+default=gavin
+EOF
+```
+
+#### Notes
+
+1. Install Ubuntu 22.04 on WSL
+
+https://castorfou.github.io/guillaume_blog/blog/install-ubuntu-22.04-on-WSL.html
+
+2. Manual installation of WSL
+
+https://docs.microsoft.com/en-us/windows/wsl/install-manual#installing-your-distro
+
+3. Expand the size of the WSL2 virtual hard disk
+
+Have not tried these instructions.
+
+https://docs.microsoft.com/en-us/windows/wsl/vhd-size
 
 ## Windows ls colors
 
@@ -108,6 +209,12 @@ LS_COLORS environment variable.
 
 ```
 LS_COLORS=$LS_COLORS:'ow=34;40:'; export LS_COLORS; ls
+```
+
+Alternatively add to your .bashrc file
+
+```
+LS_COLORS=$LS_COLORS:'ow=34;40:'
 ```
 
 [Change colors for directory list][40]
@@ -129,6 +236,8 @@ sudo apt install -y python3-pip
 ```
 
 ### Install Ansible on Ubuntu
+
+This may not be needed if using nix
 
 ```
 # install ansible using pip3 (default on Ubuntu 18.04 or higher)
@@ -541,7 +650,10 @@ Automation framework for programmers
 
 https://github.com/ianmiell/shutit
 
-## Use [nix](./nix-install.md) to install packages
+## Install packages
+
+Use [nix](./nix-install.md) to install packages
+
 ## Docker on Windows
 
 Issues with Docker on WSL
@@ -550,3 +662,12 @@ Issues with Docker on WSL
 * May stop VirtualBox from working (may work with Virtualbox 6.x)
 
 https://www.tcg.com/blog/yes-you-can-run-docker-and-virtualbox-on-windows-10-home/
+
+## Links
+
+Configuration files
+
+1. .wslconfig - for WSL2 only
+2. wsl.conf - for WSL 1 or WSL 2
+
+https://docs.microsoft.com/en-us/windows/wsl/wsl-config

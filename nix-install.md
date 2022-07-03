@@ -6,7 +6,19 @@
 
 ## Setup nix
 
+### Install nix on the Windows subsystem for Linux
+
+1. Setup Nix on WSL using the sing-user installation for Linux
+
+```
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
+```
+
+https://nixos.org/manual/nix/stable/installation/installing-binary.html
+
 ###  Windows subsystem for Linux
+
+This section is OUTDATED
 
 1. Create the /etc/nix directory
 
@@ -42,7 +54,7 @@ if [ -e /home/gavin/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gavin/.nix
 1. Setup nix by running a script
 
 ```
-curl -L https://nixos.org/nix/install | sh
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
 ```
 
 2. Logout and login to setup environment variables
@@ -347,7 +359,7 @@ chezmoi init https://github.com/gavinln/dotfiles.git
 chezmoi apply
 ```
 
-1. Install chezmoi
+#### Example chezmoi commands
 
 ```bash
 echo display commands
