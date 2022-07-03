@@ -57,7 +57,7 @@ let
 
     ncdu  # display disk usage
 
-    neovim  # neovim editor
+    # neovim  # neovim editor causes nix to crash
 
     nnn  # command line file manager
 
