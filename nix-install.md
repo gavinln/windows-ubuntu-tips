@@ -304,17 +304,33 @@ sudo apt install -y ttf-mscorefonts-installer
 
 ### Setup pipx and  Python utilities (cannot be installed using nix)
 
-1. Install pipx
+1. Install pip if needed
+
+```
+sudo apt install python3-pip
+```
+
+2. Install and update pipx
+
+```
+python3 -m pip install --user pipx
+python3 -m pip install --user -U pipx
+```
+
+WARNING: The script userpath is installed in '/home/gavin/.local/bin' which is
+not on PATH.
+
+3. Install pipx
 
 ```
 python3 -m pip install --user pipx
 python3 -m pipx ensurepath
 ```
 
-2. Update pipx
+4. Install venv
 
 ```
-python3 -m pip install --user -U pipx
+sudo apt install python3.10-venv
 ```
 
 #### Install Python packages using pipx
@@ -350,7 +366,8 @@ Use [chezmoi](https://github.com/twpayne/chezmoi) to manage dotfiles
 1. Setup chezmoi
 
 ```
-chezmoi init https://github.com/gavinln/dotfiles.git
+# chezmoi init https://github.com/gavinln/dotfiles.git
+chezmoi init git@github.com:gavinln/dotfiles.git
 ```
 
 2. Apply chezmoi

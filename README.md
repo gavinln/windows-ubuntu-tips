@@ -298,8 +298,8 @@ sudo apt install -y universal-ctags
 ```
 sudo apt install -y make build-essential libssl-dev zlib1g-dev
 sudo apt install -y libbz2-dev libreadline-dev libsqlite3-dev
-sudo apt install -y llvm libncurses5-dev libncursesw5-dev
-sudo apt install -y xz-utils tk-dev libffi-dev liblzma-dev
+sudo apt install -y wget curl llvm libncursesw5-dev xz-utils
+sudo apt install -y tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 ```
 
 2. Install pyenv
@@ -311,9 +311,9 @@ curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer 
 3. Add to .bashrc
 
 ```
-export PATH="/home/gavin/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 ```
 
 4. Update pyenv
@@ -348,9 +348,24 @@ Filtering the results using jq
 http petstore.swagger.io/v2/pet/findByStatus?status=pending | jq '.[] | {cat_id: .category.id, name: .name}'
 ```
 
-## First login setup
+## Setup git
 
-1. Install bash-it
+Git is already install on the latest versions of Ubuntu
+
+1. Setup git
+
+```
+git config --global user.name "Gavin Noronha"
+git config --global user.email "gavinln@hotmail.com"
+```
+
+2. Check git settings
+
+```
+git config --list
+```
+
+## Install bash-it
 
 ```
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
@@ -364,8 +379,6 @@ vim ~/.bashrc
 ```
 
 4. To remove any bash-it theme edit ~/.bashrc and set BASH_IT_THEME=''
-
-## install bash-it
 
 ```
 bash-it enable completion docker
@@ -430,21 +443,48 @@ No need to install npm as it is automatically installed with nodejs.
 sudo npm install -g pyright
 ```
 
+## vim setup
+
+
+1. Setup vim plug
+
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+2. Start vim
+
+```
+vim
+```
+
+3. Install plugins
+
+```
+:PlugInstall
+```
+
 ## nvim setup
 
-```
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt update
-sudo apt install neovim
-```
-
-1. Change to the configuration directory
+1. Setup nvim plug
 
 ```
-cd ~/.config/nvim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-2. Create a configuration file called init.vim
+2. Start vim
+
+```
+nvim
+```
+
+3. Install plugins
+
+```
+:PlugInstall
+```
 
 ## Windows source code font
 
