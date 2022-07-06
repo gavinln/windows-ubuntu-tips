@@ -6,6 +6,10 @@ without needed an entire Linux virtual machine
 
 [10]: https://msdn.microsoft.com/en-us/commandline/wsl/about
 
+## Slow WSL network speeds
+
+https://answers.microsoft.com/en-us/windows/forum/all/low-internet-speed-in-wsl-2/21524829-18be-4611-bb5f-cabccd2cae31
+
 ## Setup Windows subsystem for Linux
 
 Follow these [instructions][20]
@@ -351,6 +355,9 @@ http petstore.swagger.io/v2/pet/findByStatus?status=pending | jq '.[] | {cat_id:
 ## Setup git
 
 Git is already install on the latest versions of Ubuntu
+
+Add to ~/.bashrc
+export EDITOR="/usr/bin/vim"
 
 1. Setup git
 

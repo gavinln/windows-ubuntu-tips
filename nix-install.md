@@ -161,11 +161,15 @@ nix-env -<TAB>
 nix-env -f default.nix -i
 ```
 
-2. Upgrade nix packages - does not work
+### Setup zoxide (replacement for z or autojump)
+
+1. Add to ~/.bashrc
 
 ```
-nix-env -u
+eval "$(zoxide init bash)"
 ```
+
+2. Logout and login to setup environment variables.
 
 ## Github setup
 
@@ -180,6 +184,8 @@ ssh -T git@github.com
 ## Install packages that cannot be installed by nix
 
 ### Autojump
+
+This may NOT be needed.
 
 [Autojump][20] is a `cd` command that learns making navigating directories easier.
 
@@ -220,7 +226,15 @@ vim ~/.bashrc
 
 #### bash-it extensions
 
-1. Enable autojump
+1. Enable completions
+
+```
+bash-it enable completion awscli bash-it cargo conda docker-compose docker
+bash-it enable completion fabric git github-cli invoke makefile notify-send
+bash-it enable completion npm pip pip3 pipenv pipx rustup ssh tmux todo
+```
+
+2. Enable autojump - NOT NEEDED
 
 ```
 bash-it enable plugin autojump

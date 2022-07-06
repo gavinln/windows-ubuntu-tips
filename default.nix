@@ -102,6 +102,8 @@ let
     wuzz  # HTTP utilities
 
     xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
+
+    zoxide  # smarter cd command like z or autojump
   ];
 
 in all
