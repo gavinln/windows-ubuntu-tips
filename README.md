@@ -16,7 +16,7 @@ Follow these [instructions][20]
 
 [20]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
-Run these in powershell
+Run these in powershell - MAY NOT be needed
 
 ```
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
@@ -241,7 +241,7 @@ sudo apt install -y python3-pip
 
 ### Install Ansible on Ubuntu
 
-This may not be needed if using nix
+This MAY NOT be needed if using nix
 
 ```
 # install ansible using pip3 (default on Ubuntu 18.04 or higher)
@@ -472,26 +472,66 @@ vim
 :PlugInstall
 ```
 
-## nvim setup
+## neovim (nvim) setup
 
-1. Setup nvim plug
+1. Install neovim (not installed using nix)
+
+```
+sudo apt install neovim
+```
+
+2. Check version
+
+```
+nvim -version
+```
+
+3. Setup nvim plug
 
 ```
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-2. Start vim
+4. Start nvim
 
 ```
 nvim
 ```
 
-3. Install plugins
+5. Install plugins
 
 ```
 :PlugInstall
 ```
+
+6. Update remote plugins
+
+```
+:UpdateRemotePlugins
+```
+
+7. Check health
+
+```
+:checkhealth
+```
+
+### Copy from/to Windows clipboard
+
+1. Run the following to use neovim with the Windows WSL clipboard
+
+```
+curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+chmod +x /tmp/win32yank.exe
+sudo mv /tmp/win32yank.exe /usr/local/bin/
+```
+
+Notes:
+
+https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
+https://github.com/equalsraf/win32yank
 
 ## Windows source code font
 
@@ -686,10 +726,6 @@ https://github.com/facebook/PathPicker
 ### Refactor code with human intervention
 
 https://github.com/facebook/codemod
-
-### Boostrapped confidence intervals
-
-https://github.com/facebookincubator/bootstrapped
 
 ### shutit
 

@@ -4,18 +4,6 @@
 
 [10]: https://nixos.org/
 
-## Setup nix
-
-### Install nix on the Windows subsystem for Linux
-
-1. Setup Nix on WSL using the sing-user installation for Linux
-
-```
-sh <(curl -L https://nixos.org/nix/install) --no-daemon
-```
-
-https://nixos.org/manual/nix/stable/installation/installing-binary.html
-
 ###  Windows subsystem for Linux
 
 This section is OUTDATED
@@ -37,13 +25,19 @@ sandbox = false
 use-sqlite-wal = false
 ```
 
-3. Install nix
+## Setup nix
+
+### Install nix on the Windows subsystem for Linux
+
+https://nix.dev/tutorials/install-nix
+
+1. Setup Nix on WSL using the single-user installation for Linux
 
 ```
-curl -L https://nixos.org/nix/install | sh
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
 ```
 
-4. Check whether this command is added to ~/.profile
+2. Check whether this command is added to ~/.profile
 
 ```
 if [ -e /home/gavin/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gavin/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
@@ -341,7 +335,7 @@ python3 -m pip install --user pipx
 python3 -m pipx ensurepath
 ```
 
-4. Install venv
+4. Install venv for Ubuntu 22.04
 
 ```
 sudo apt install python3.10-venv
