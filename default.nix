@@ -41,6 +41,8 @@ let
 
     graphviz  # language for drawing graphs: executable dot, neato
 
+    gron  # make JSON greppable
+
     imagemagick  # image view, modify tools
 
     jq jid  # JSON utilities
@@ -67,7 +69,7 @@ let
 
     pastel  # colors in the terminal
 
-    procs  # replacement for ps
+    # procs  # replacement for ps - marked as broken
 
     pueue  # command line manager for parallel/long running task
 

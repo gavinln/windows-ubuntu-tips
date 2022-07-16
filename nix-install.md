@@ -105,6 +105,8 @@ nix-collect-garbage
 
 ## Install nix completions
 
+### For bash shell users
+
 1. Get help on nix-env
 
 ```
@@ -146,6 +148,29 @@ export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share
 ```
 nix-env -<TAB>
 ```
+
+### For zsh shell users
+
+1. Install zsh completions
+
+```
+nix-env -i nix-zsh-completions
+```
+
+2. Add to zshrc
+
+```
+# For nix completions
+fpath=(~/.nix-profile/share/zsh/site-functions $fpath)
+```
+
+3. Rebuild zsh completions data
+
+```
+rm -f ~/.zcompdump; compinit  # rebuild zcompdump completions database
+```
+
+4. You may have to restart the zsh shell
 
 ## Install packages using Nix
 
