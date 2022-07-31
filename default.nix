@@ -31,13 +31,13 @@ let
 
     fpp  # pick file paths on the command line
 
-    # REMOVE fselect  # search for files using SQL like queries
-
     fzf  # fuzzy finder
 
     # git  # git version control, already installed ubuntu 20.04
 
     gh  # Gihub command line client
+
+    go  # go language
 
     graphviz  # language for drawing graphs: executable dot, neato
 
@@ -77,7 +77,7 @@ let
 
     redis  # key value store
 
-    ripgrep  # alternative to rep
+    ripgrep  # alternative to grep
 
     shellcheck  # shell script static analysis tool
 
@@ -90,6 +90,8 @@ let
     tree  # directories as a tree
 
     unzip  # unzip files
+
+    usql  # command line sql client
 
     viddy  # watch replacement with history
 

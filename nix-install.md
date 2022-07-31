@@ -369,12 +369,15 @@ sudo apt install python3.10-venv
 #### Install Python packages using pipx
 
 ```
-pipx install poetry  # manage virtual environments instead of pipenv
-pipx install tmuxp  # manage tmux sessions
-pipx install stormssh  # manage the ~/.ssh/config file
-pipx install kedro  # manage machine learning pipeline
+pipx install gita  # manage multiple git repositories
 pipx install docker-compose  # manage Docker environments
+pipx install kedro  # manage machine learning pipeline
+pipx install poetry  # manage virtual environments instead of pipenv
 pipx install pre-commit  # add pre-commit checks to git
+pipx speedtest-cli  # test internet bandwith
+pipx install stormssh  # manage the ~/.ssh/config file
+pipx install tmuxp  # manage tmux sessions
+pipx install visidata  # explore tabular data
 
 # may not be so useful
 # pipx install httpie  # user-friendly curl. e.g. http python.org
@@ -451,6 +454,16 @@ Setup the alias in `~/.bashrc` for exa
 ```
 alias lg='exa -l --git'
 ```
+
+## New utilities to try
+
+### Git time metrics
+
+https://github.com/git-time-metric/gtm
+
+### Multiple git repo management
+
+https://github.com/nosarthur/gita
 
 ## Links
 
