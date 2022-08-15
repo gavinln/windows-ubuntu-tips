@@ -45,6 +45,8 @@ let
 
     imagemagick  # image view, modify tools
 
+    just  # make like task runner
+
     jq jid  # JSON utilities
 
     lazygit  # alternative terminal ui for git
