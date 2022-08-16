@@ -188,7 +188,15 @@ nix-env -f default.nix -i
 eval "$(zoxide init bash)"
 ```
 
-2. Logout and login to setup environment variables.
+2. For zsh add zoxide to plugins, typically in `~/.zshrc`
+
+```
+plugins=(git tmux zoxide)
+```
+
+https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+
+3. Logout and login to setup environment variables.
 
 ## Github setup
 
@@ -317,6 +325,44 @@ export NNN_RCLONE='rclone mount'
 
 ```
 nnn -p - | fpp
+```
+
+#### Setup nnn to cd on quit
+
+This function may be in fzf-functions.sh
+
+```
+# setup nnn to cd on quit
+n ()
+{
+    # Block nesting of nnn in subshells
+    if [[ "${NNNLVL:-0}" -ge 1 ]]; then
+        echo "nnn is already running"
+        return
+    fi
+
+    # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # If NNN_TMPFILE is set to a custom path, it must be exported for nnn to
+    # see. To cd on quit only on ^G, remove the "export" and make sure not to
+    # use a custom path, i.e. set NNN_TMPFILE *exactly* as follows:
+    #     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+    # stty start undef
+    # stty stop undef
+    # stty lwrap undef
+    # stty lnext undef
+
+    # The backslash allows one to alias n to nnn if desired without making an
+    # infinitely recursive alias
+    \nnn "$@"
+
+    if [ -f "$NNN_TMPFILE" ]; then
+            . "$NNN_TMPFILE"
+            rm -f "$NNN_TMPFILE" > /dev/null
+    fi
+}
 ```
 
 ### Git extras - cannot install using nix
