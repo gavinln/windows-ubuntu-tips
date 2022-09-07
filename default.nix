@@ -25,6 +25,8 @@ let
 
     direnv  # directory environments
 
+    difftastic  # semantic diff
+
     exa  # replacement for ls
 
     fd  # alternative to find
@@ -42,6 +44,8 @@ let
     graphviz  # language for drawing graphs: executable dot, neato
 
     gron  # make JSON greppable
+
+    hadolint  # Dockerfile linter
 
     imagemagick  # image view, modify tools
 
