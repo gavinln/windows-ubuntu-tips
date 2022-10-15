@@ -47,9 +47,9 @@ let
 
     hadolint  # Dockerfile linter
 
-    imagemagick  # image view, modify tools
+    helix  # vim like modal terminal editor
 
-    just  # make like task runner
+    imagemagick  # image view, modify tools
 
     jq jid  # JSON utilities
 
@@ -75,8 +75,6 @@ let
 
     pastel  # colors in the terminal
 
-    # procs  # replacement for ps - marked as broken
-
     pueue  # command line manager for parallel/long running task
 
     rclone  # rsync for the cloud (like S3)
@@ -92,6 +90,8 @@ let
     tig  # terminal ui for git
 
     tmux  # terminal multiplexer
+
+    tokei  # count lines of code
 
     tree  # directories as a tree
 

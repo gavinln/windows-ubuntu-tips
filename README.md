@@ -733,6 +733,14 @@ Automation framework for programmers
 
 https://github.com/ianmiell/shutit
 
+## Install Windows GUI apps
+
+### Lapce GUI modal editor with LSP support and remote editing via SSH
+
+winget install lapce
+
+https://github.com/lapce/lapce
+
 ## Install packages
 
 Use [nix](./nix-install.md) to install packages
@@ -754,3 +762,9 @@ Configuration files
 2. wsl.conf - for WSL 1 or WSL 2
 
 https://docs.microsoft.com/en-us/windows/wsl/wsl-config
+
+### Other software
+
+[Steampipe queries APIs using SQL][1100]
+
+[1100]: https://github.com/turbot/steampipe
