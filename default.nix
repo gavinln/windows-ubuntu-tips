@@ -57,6 +57,8 @@ let
 
     gitui  # modern git terminal ui in Rust
 
+    kondo  # clean up projects. Supports Cargo, Python, Jupyter and others
+
     # REMOVE mc  # midnight commander - file manager that works with sftp
 
     minio  # S3 compatible server
