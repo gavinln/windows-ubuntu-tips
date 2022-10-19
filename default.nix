@@ -47,7 +47,9 @@ let
 
     hadolint  # Dockerfile linter
 
-    helix  # vim like modal terminal editor
+    helix  # vim like modal terminal editor with lsp support
+
+    hyperfine  # command line benchmarking tool
 
     imagemagick  # image view, modify tools
 
@@ -78,6 +80,8 @@ let
     pastel  # colors in the terminal
 
     pueue  # command line manager for parallel/long running task
+
+    pv  # monitor the progress of data through a pipeline
 
     rclone  # rsync for the cloud (like S3)
 
