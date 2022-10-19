@@ -768,3 +768,11 @@ https://docs.microsoft.com/en-us/windows/wsl/wsl-config
 [Steampipe queries APIs using SQL][1100]
 
 [1100]: https://github.com/turbot/steampipe
+
+### Mutagen
+
+[Mutagen][1110] is a remote development tool that enables local tools to work
+with remove environments by offering real-time file synchronization and network
+forwarding.
+
+[1110]: https://github.com/mutagen-io/mutagen
