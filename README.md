@@ -29,11 +29,17 @@ Check the version of Ubuntu
 cat /etc/lsb-release
 ```
 
-To install Docker on WSL2 follow these instructions
+### Install Docker
+
+#### Docker on Ubuntu 22.04
+
+https://linuxconfig.org/how-to-install-docker-on-ubuntu-22-04
+
+Older documentation
 
 https://nickymeuleman.netlify.com/blog/linux-on-windows-wsl2-zsh-docker
 
-### Install Docker
+#### Docker on older versions of Ubuntu
 
 1. Update the software and install pre-requisites
 
@@ -114,6 +120,59 @@ wsl --terminate "Ubuntu-18.04--"
 
 4. List available distributions
 
+
+#### Move Windows subsystem for Linux
+
+http://woshub.com/move-wsl-another-drive-windows/
+
+1. Shutdown the system
+
+```
+wsl --shutdown
+```
+
+2. Backup the WSL environment
+
+```
+mkdir d:\wsl-backup
+wsl --export Ubuntu-22.04 d:\wsl-backup\Ubuntu-22.04.tar
+```
+
+3. Remove files from the original location
+
+```
+wsl --unregister Ubuntu-22.04
+```
+
+4. Create a directory for the WSL Linux image
+
+```
+mkdir d:\wsl
+```
+
+5. Import the image
+
+```
+wsl --import Ubuntu-22.04 d:\wsl d:\wsl-backup\Ubuntu-22.04.tar
+```
+
+6. Get location of wsl executable
+
+```
+dir %userprofile%\AppData\Local\Microsoft\WindowsApps\ubuntu2204.exe
+```
+
+7. Setup the default username for WSL
+
+```
+%userprofile%\AppData\Local\Microsoft\WindowsApps\ubuntu2204.exe config --default-user user-name
+```
+
+6. Start the WSL environment
+
+```
+wsl -d Ubuntu-22.04
+```
 
 #### Install WSL on a non-system (C) drive
 

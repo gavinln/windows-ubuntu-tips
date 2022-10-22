@@ -113,8 +113,6 @@ let
 
     watchexec  # watch a path and run a command on changes (newer utility)
 
-    watchman  # file watching service
-
     wuzz  # HTTP utilities
 
     xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
