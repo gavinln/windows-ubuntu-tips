@@ -17,7 +17,7 @@ let
 
     bottom  # htop replacement, command btm
 
-    cargo  # rust package manager
+    # cargo  # rust package manager
 
     chezmoi  # manage user configurations (dotfiles) across machines
 
