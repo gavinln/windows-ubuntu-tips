@@ -33,7 +33,69 @@ cat /etc/lsb-release
 
 #### Docker on Ubuntu 22.04
 
-https://linuxconfig.org/how-to-install-docker-on-ubuntu-22-04
+The following instructions do not work as the server does not start correctly. May have to install Docker desktop on Windows as in the previous link.
+
+https://dev.to/luckierdodge/how-to-install-and-use-docker-in-wsl2-217l
+
+https://dev.to/felipecrs/simply-run-docker-on-wsl2-3o8
+
+https://stackoverflow.com/questions/60708229/wsl2-cannot-connect-to-the-docker-daemon
+
+These instructions work but need configuration changes
+
+https://dev.solita.fi/2021/12/21/docker-on-wsl2-without-docker-desktop.html
+
+1. Setup pre-requisites
+
+```
+sudo apt update
+sudo apt install ca-certificates curl gnupg lsb-release
+```
+
+2. Add Docker's official key
+
+```
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+```
+
+3. Setup the repository
+
+```
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+4. Update the package index
+
+```
+sudo apt update
+```
+
+5. Install Docker and related packages
+
+```
+sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+```
+
+6. Run the hello-world image
+
+```
+sudo docker run hello-world
+```
+
+7. Check the Docker version
+
+```
+sudo docker version
+```
+
+8. Setup Docker to run without root
+
+```
+sudo usermod -aG docker $USER
+```
 
 Older documentation
 
@@ -174,6 +236,64 @@ dir %userprofile%\AppData\Local\Microsoft\WindowsApps\ubuntu2204.exe
 wsl -d Ubuntu-22.04
 ```
 
+#### Shrink WSL Virtual disk on Windows Home
+
+https://writeabout.net/2021/10/14/shrink-your-wsl2-virtual-disk-on-windows-home/
+
+1. Shutdown WSL
+
+```
+wsl --shutdown
+```
+
+2. Backup WSL to a tar file
+
+```
+wsl --export Ubuntu d:\wsl-backup\Ubuntu.tar
+```
+
+3. Change to directory containing ext4.vhdx file
+
+```
+cd %userprofile%\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState
+```
+
+3. Start disk management tool
+
+```
+diskpart
+```
+
+4. Enter path to ext4.vhdx file
+
+```
+select vdisk file=C:\Users\gavin\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\ext4.vhdx
+```
+
+5. List vdisk
+
+```
+list vdisk
+```
+
+6. Detail vdisk
+
+```
+detail vdisk
+```
+
+7. Shrink the virtual disk
+
+```
+compact vdisk
+```
+
+8. Exit
+
+```
+exit
+```
+
 #### Install WSL on a non-system (C) drive
 
 1. Change to the folder that will contain
@@ -286,6 +406,10 @@ LS_COLORS=$LS_COLORS:'ow=34;40:'
 
 ## Setup the Ubuntu bash environment using Ansible
 
+### Install Ansible on Ubuntu
+
+This MAY NOT be needed if using nix
+
 1. Start the bash environment
 
 ```
@@ -298,35 +422,33 @@ wsl
 sudo apt install -y python3-pip
 ```
 
-### Install Ansible on Ubuntu
-
-This MAY NOT be needed if using nix
+3. Install ansible
 
 ```
 # install ansible using pip3 (default on Ubuntu 18.04 or higher)
 sudo pip3 install ansible
 ```
 
-1. Check version or Ansible
+4. Check version or Ansible
 
 ```
 ansible --version
 ```
 
-2. Test the execution of Ansible on localhost
+5. Test the execution of Ansible on localhost
 
 ```
 ansible all -i localhost, -c local -m ping
 ```
 
-3. Run Ansible as sudo on localhost
+6. Run Ansible as sudo on localhost
 
 ```
 cd ansible
 sudo ansible-playbook -i localhost, -c local playbook.yml -e 'ansible_python_interpreter=python3'
 ```
 
-4. Setup autojump by adding this line to your ~/.bashrc file
+7. Setup autojump by adding this line to your ~/.bashrc file
 
 ```
 source /usr/share/autojump/autojump.sh
@@ -456,7 +578,7 @@ bash-it enable completion docker
 sudo apt install -y graphviz
 ```
 
-## install sqlite - already available in Ubuntu 20.04
+## install sqlite - already available in Ubuntu 22.04 and 20.04
 
 Install the latest version instead of one in repo
 
@@ -533,44 +655,50 @@ vim
 
 ## neovim (nvim) setup
 
-1. Install neovim (not installed using nix)
+1. Add neovim repo
 
 ```
-sudo apt install neovim
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
 ```
 
-2. Check version
+2. Install neovim (not installed using nix)
+
+```
+sudo apt install -y neovim
+```
+
+3. Check version
 
 ```
 nvim -version
 ```
 
-3. Setup nvim plug
+4. Setup nvim plug
 
 ```
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-4. Start nvim
+5. Start nvim
 
 ```
 nvim
 ```
 
-5. Install plugins
+6. Install plugins
 
 ```
 :PlugInstall
 ```
 
-6. Update remote plugins
+7. Update remote plugins
 
 ```
 :UpdateRemotePlugins
 ```
 
-7. Check health
+8. Check health
 
 ```
 :checkhealth
@@ -591,6 +719,41 @@ Notes:
 
 https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
 https://github.com/equalsraf/win32yank
+
+## Install Lunar vim (based on neovim)
+
+https://www.lunarvim.org/docs/installation
+
+1. Install Lunar vim
+
+```
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+```
+
+2. Start Lunar vim
+
+```
+lvim
+```
+
+3. Update Lunar vim
+
+```
+:LvimUpdate
+```
+
+4. The configuration file is `~/.config/lvim/config.lua`
+
+### Setup an LSP language server
+
+1. Open a file of a type like *.py or *.rs
+
+2. Install the LSP server for that file
+
+```
+:LspInstall
+
+```
 
 ## Windows source code font
 

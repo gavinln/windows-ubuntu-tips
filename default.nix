@@ -73,6 +73,8 @@ let
 
     nnn  # command line file manager
 
+    nodejs  # install nodejs
+
     nushell  # alternative shell
 
     pandoc  # convert documents into multiple formats
