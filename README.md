@@ -598,6 +598,8 @@ sqlite3 -version
 
 ## Install node.js and npm
 
+Do not install as installed using nix.
+
 Install the latest verions of node.js and npm
 
 https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
@@ -631,6 +633,12 @@ No need to install npm as it is automatically installed with nodejs.
 sudo npm install -g pyright
 ```
 
+## Install the rust toolchain
+
+```
+curl https://sh.rustup.rs -sSf | sh
+```
+
 ## vim setup
 
 
@@ -655,50 +663,52 @@ vim
 
 ## neovim (nvim) setup
 
-1. Add neovim repo
+1. Find the latest version of neovim https://github.com/neovim/neovim/releases/tag/stable
+
+2. Download latest stable deb file
 
 ```
-sudo add-apt-repository ppa:neovim-ppa/unstable -y
+curl -OL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
 ```
 
-2. Install neovim (not installed using nix)
+3. Install neovim from the deb file
 
 ```
-sudo apt install -y neovim
+sudo apt install ./nvim-linux64.deb
 ```
 
-3. Check version
+4. Check version
 
 ```
 nvim -version
 ```
 
-4. Setup nvim plug
+5. Setup nvim plug
 
 ```
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-5. Start nvim
+6. Start nvim
 
 ```
 nvim
 ```
 
-6. Install plugins
+7. Install plugins
 
 ```
 :PlugInstall
 ```
 
-7. Update remote plugins
+8. Update remote plugins
 
 ```
 :UpdateRemotePlugins
 ```
 
-8. Check health
+9. Check health
 
 ```
 :checkhealth
@@ -727,7 +737,7 @@ https://www.lunarvim.org/docs/installation
 1. Install Lunar vim
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ```
 
 2. Start Lunar vim
@@ -742,7 +752,20 @@ lvim
 :LvimUpdate
 ```
 
-4. The configuration file is `~/.config/lvim/config.lua`
+4. Update the plugins
+
+```
+:LvimSyncCorePlugins
+```
+
+5. The configuration file is `~/.config/lvim/config.lua`
+
+
+6. Uninstall LunarVim using the bundled uninstal script
+
+```
+bash ~/.local/share/lunarvim/lvim/utils/installer/uninstall.sh
+```
 
 ### Setup an LSP language server
 
