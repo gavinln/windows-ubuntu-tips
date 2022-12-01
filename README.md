@@ -730,6 +730,20 @@ Notes:
 https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
 https://github.com/equalsraf/win32yank
 
+Alternatively clip.exe is already present in windows
+
+1. From WSL
+
+```
+pwd | clip.exe
+```
+
+2. From Windows command line
+
+```
+cd | clip.exe
+```
+
 ## Install Lunar vim (based on neovim)
 
 https://www.lunarvim.org/docs/installation
