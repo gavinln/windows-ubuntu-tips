@@ -119,6 +119,8 @@ let
 
     xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
 
+    zellij  # tmux alternative
+
     zoxide  # smarter cd command like z or autojump
   ];
 
