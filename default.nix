@@ -75,6 +75,8 @@ let
 
     nodejs  # install nodejs
 
+    nodePackages.pyright  # Python type checker
+
     nushell  # alternative shell
 
     pandoc  # convert documents into multiple formats
@@ -102,6 +104,8 @@ let
     tokei  # count lines of code
 
     tree  # directories as a tree
+
+    tree-sitter  # parser for programming languages
 
     unzip  # unzip files
 
