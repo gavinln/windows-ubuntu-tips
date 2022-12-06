@@ -93,6 +93,8 @@ let
 
     ripgrep  # alternative to grep
 
+    rust-analyzer  # semantic analysis of Rust code
+
     shellcheck  # shell script static analysis tool
 
     sqlite  # sqlite command line interface
