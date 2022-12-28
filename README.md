@@ -182,6 +182,19 @@ wsl --terminate "Ubuntu-18.04--"
 
 4. List available distributions
 
+#### List vhdx files
+
+1. Change to directory contaning vhdx files
+
+```
+cd %userprofile%\AppData\Local
+```
+
+2. List files
+
+```
+dir/s *.vhdx
+```
 
 #### Move Windows subsystem for Linux
 
@@ -406,9 +419,7 @@ LS_COLORS=$LS_COLORS:'ow=34;40:'
 
 ## Setup the Ubuntu bash environment using Ansible
 
-### Install Ansible on Ubuntu
-
-This MAY NOT be needed if using nix
+### Install Ansible on Ubuntu - MAY NOT be needed if using nix
 
 1. Start the bash environment
 
@@ -555,6 +566,12 @@ git config --list
 
 ## Install bash-it
 
+On WSL Ubuntu 22.04 may see the following error
+
+```
+-bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+```
+
 ```
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 ~/.bash_it/install.sh
@@ -627,7 +644,7 @@ node -v
 
 No need to install npm as it is automatically installed with nodejs.
 
-### Install pyright to type check Python code
+### Install pyright to type check Python code - installed using nix
 
 ```
 sudo npm install -g pyright
@@ -749,6 +766,8 @@ cd | clip.exe
 https://www.lunarvim.org/docs/installation
 
 1. Install Lunar vim
+
+May want to install pre-requisites using nix before installing lvim
 
 ```
 LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
