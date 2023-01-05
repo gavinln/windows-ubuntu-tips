@@ -63,6 +63,8 @@ let
 
     # REMOVE mc  # midnight commander - file manager that works with sftp
 
+    lnav  # view/search log files
+
     minio  # S3 compatible server
 
     # minio-client  # S3 compatible client - clashes with midnight commander
