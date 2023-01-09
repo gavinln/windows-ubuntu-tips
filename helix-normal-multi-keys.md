@@ -66,3 +66,7 @@
 * K - swap with split above
 * H - swap with left split
 * J - swap with split below
+
+## Limitations
+
+* Cannot resize window splits as of 2023-01-08

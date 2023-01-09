@@ -101,6 +101,8 @@ let
 
     sqlite  # sqlite command line interface
 
+    taplo-cli  # rust toml parser used by helix editor
+
     tig  # terminal ui for git
 
     tmux  # terminal multiplexer
