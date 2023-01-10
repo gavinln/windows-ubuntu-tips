@@ -97,6 +97,8 @@ let
 
     rust-analyzer  # semantic analysis of Rust code
 
+    ruff  # Python linter replaces pyflakes, isort, pydocstyle, ...
+
     shellcheck  # shell script static analysis tool
 
     sqlite  # sqlite command line interface
