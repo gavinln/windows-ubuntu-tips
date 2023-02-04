@@ -30,7 +30,6 @@
 * a - select around object (class/function/argument)
 * i - select inside object (class/function/argument)
 
-
 ## z - views and scrolling
 
 * z - align view center
