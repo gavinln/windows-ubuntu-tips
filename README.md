@@ -736,6 +736,7 @@ nvim
 1. Run the following to use neovim with the Windows WSL clipboard
 
 ```
+# Update to https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
 curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
 unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
 chmod +x /tmp/win32yank.exe
@@ -817,6 +818,26 @@ Install a font designed for [source
 code](https://github.com/source-foundry/Hack). Use the font in terminals by changing the settings. Use the font in vim by changing the guifont
 settings.
 
+## Neovide - neovim frontend
+
+Do not install neovide using choco as WSL mode does not work correctly
+
+Download neovide from https://neovide.dev/
+
+Use Windows_key + R to run
+
+1. Run using neovim on Windows
+
+```
+neovide
+```
+
+2. Run using neovim on WSL
+
+```
+neovide --wsl
+```
+
 ## Windows cli-tools
 
 ### Git
@@ -878,6 +899,13 @@ choco install microsoft-windows-terminal
 [1120]: https://github.com/alacritty/alacritty
 
 Use "Ctrl+Shift+Space" to start VI mode
+
+Run using the following command
+
+```
+alacritty --working-directory d:\ws
+```
+
 
 ```
 choco install alacritty
@@ -1054,3 +1082,7 @@ with remove environments by offering real-time file synchronization and network
 forwarding.
 
 [1110]: https://github.com/mutagen-io/mutagen
+
+#### notify-send for WSL
+
+https://stuartleeks.com/posts/wsl-github-cli-windows-notifications-part-1/

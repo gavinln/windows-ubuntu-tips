@@ -307,6 +307,24 @@ git clone https://github.com/vifm/vifm-colors ~/.config/vifm/colors
 :colorscheme solarized-light
 ```
 
+### aichat
+
+Install aichat to connect with ChatGPT
+
+https://github.com/sigoden/aichat
+
+1. Install aichat
+
+```bash
+cargo install --force aichat
+```
+
+2. Display configuration
+
+```
+aichat --info
+```
+
 ### nnn file manager plugin configuration
 
 1. Setup up plugin p to preview file with bat
