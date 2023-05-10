@@ -133,6 +133,8 @@ let
 
     zellij  # tmux alternative
 
+    zip  # zip files
+
     zoxide  # smarter cd command like z or autojump
   ];
 

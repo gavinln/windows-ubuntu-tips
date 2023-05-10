@@ -795,7 +795,7 @@ lvim
 5. The configuration file is `~/.config/lvim/config.lua`
 
 
-6. Uninstall LunarVim using the bundled uninstal script
+6. Uninstall LunarVim using the bundled uninstall script
 
 ```
 bash ~/.local/share/lunarvim/lvim/utils/installer/uninstall.sh
