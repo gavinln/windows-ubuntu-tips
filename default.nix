@@ -35,6 +35,8 @@ let
 
     fzf  # fuzzy finder
 
+    fzy  # alternative fuzzy finder https://github.com/jhawthorn/fzy
+
     # git  # git version control, already installed ubuntu 20.04
 
     gh  # Gihub command line client
