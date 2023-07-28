@@ -49,22 +49,25 @@ https://dev.solita.fi/2021/12/21/docker-on-wsl2-without-docker-desktop.html
 
 ```
 sudo apt update
-sudo apt install ca-certificates curl gnupg lsb-release
+# sudo apt install ca-certificates curl gnupg  # may not be needed for Ubuntu 22.04
+# sudo apt install lsb-release  # may not be needed
 ```
 
 2. Add Docker's official key
 
 ```
-sudo mkdir -p /etc/apt/keyrings
+sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```
 
 3. Setup the repository
 
 ```
 echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
 4. Update the package index
@@ -76,7 +79,7 @@ sudo apt update
 5. Install Docker and related packages
 
 ```
-sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
 6. Run the hello-world image
