@@ -100,67 +100,6 @@ sudo docker version
 sudo usermod -aG docker $USER
 ```
 
-Older documentation
-
-https://nickymeuleman.netlify.com/blog/linux-on-windows-wsl2-zsh-docker
-
-#### Docker on older versions of Ubuntu
-
-1. Update the software and install pre-requisites
-
-```
-sudo apt update
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
-```
-
-2. Add Docker's GPG-key
-
-```
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-```
-
-3. Verify the key
-
-```
-sudo apt-key fingerprint 0EBFCD88
-```
-
-4. Add the Docker repo
-
-```
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-```
-
-5. Install Docker CE
-
-```
-sudo apt update
-sudo apt install docker-ce
-```
-
-6. Start Docker
-
-```
-sudo service docker start
-```
-
-7. Add the current user to the docker group
-
-```
-sudo usermod -aG docker $USER
-```
-
-8. Run the hello-world container
-
-```
-docker run hello-world
-```
-
-This guide uses [Ansible][30] an open-source automation engine that automates
-software provisioning, configuration management, and application deployment.
-
-[30]: https://www.ansible.com/
-
 ### WSL commands
 
 #### Example wsl commands
@@ -416,11 +355,16 @@ Alternatively add to your .bashrc file
 LS_COLORS=$LS_COLORS:'ow=34;40:'
 ```
 
-[Change colors for directory list][40]
+[Change colors for directory list][30]
 
-[40]: https://askubuntu.com/questions/466198/how-do-i-change-the-color-for-directories-with-ls-in-the-console
+[30]: https://askubuntu.com/questions/466198/how-do-i-change-the-color-for-directories-with-ls-in-the-console
 
 ## Setup the Ubuntu bash environment using Ansible
+
+This guide uses [Ansible][40] an open-source automation engine that automates
+software provisioning, configuration management, and application deployment.
+
+[40]: https://www.ansible.com/
 
 ### Install Ansible on Ubuntu - MAY NOT be needed if using nix
 
