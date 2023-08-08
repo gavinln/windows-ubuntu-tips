@@ -513,11 +513,7 @@ git config --list
 
 ## Install bash-it
 
-On WSL Ubuntu 22.04 may see the following error
-
-```
--bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-```
+1. Clone the repo
 
 ```
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
@@ -534,6 +530,18 @@ vim ~/.bashrc
 
 ```
 bash-it enable completion docker
+```
+
+On WSL Ubuntu 22.04 may see the following error
+
+```
+-bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+```
+
+To solve this error run the command below and select `en_US.UTF-8`
+
+```
+sudo dpkg-reconfigure locales
 ```
 
 ## Install graphviz - installed using nix
@@ -627,6 +635,26 @@ vim
 
 ## neovim (nvim) setup
 
+### Install neovim using tar.gz file
+
+1. Download the latest `nvim.linux64.tar.gz` file
+
+2. Extract it to the ~ directory as Windows share is very slow
+
+3. Create a symbolic link
+
+```
+sudo ln -s /home/gavin/nvim-linux64/bin/nvim /usr/local/bin/nvim
+```
+
+### Install using snap - Do not as it does not work with Lunar Vim
+
+```
+sudo snap install nvim
+```
+
+### Install using deb file
+
 1. Find the latest version of neovim https://github.com/neovim/neovim/releases/tag/stable
 
 2. Download latest stable deb file
@@ -641,44 +669,54 @@ curl -OL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.
 sudo apt install ./nvim-linux64.deb
 ```
 
-4. Check version
+### Setup neovim
+
+1. Check version
 
 ```
 nvim -version
 ```
 
-5. Setup nvim plug
+2. Setup nvim plug
 
 ```
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-6. Start nvim
+3. Start nvim
 
 ```
 nvim
 ```
 
-7. Install plugins
+4. Install plugins
 
 ```
 :PlugInstall
 ```
 
-8. Update remote plugins
+5. Update remote plugins
 
 ```
 :UpdateRemotePlugins
 ```
 
-9. Check health
+6. Check health
 
 ```
 :checkhealth
 ```
 
 ### Copy from/to Windows clipboard
+
+To make neovim use the Windows clipboard from WSL type the following in neovim
+
+```
+:help clipboard-wsl
+```
+
+#### This section may be obsolete
 
 1. Run the following to use neovim with the Windows WSL clipboard
 
@@ -709,6 +747,20 @@ pwd | clip.exe
 cd | clip.exe
 ```
 
+### On Windows (not WSL) install neovim using winget
+
+1. Search for neovim
+
+```
+winget search neovim
+```
+
+2. Install neovim using winget
+
+```
+winget install -i Neovim.Neovim
+```
+
 ## Install Lunar vim (based on neovim)
 
 https://www.lunarvim.org/docs/installation
@@ -718,7 +770,11 @@ https://www.lunarvim.org/docs/installation
 May want to install pre-requisites using nix before installing lvim
 
 ```
-LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+sudo apt install python3-pip
+```
+
+```
+LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 ```
 
 2. Start Lunar vim
@@ -748,6 +804,10 @@ lvim
 bash ~/.local/share/lunarvim/lvim/utils/installer/uninstall.sh
 ```
 
+7. Configure lvim as described here
+
+https://www.lunarvim.org/docs/configuration
+
 ### Setup an LSP language server
 
 1. Open a file of a type like *.py or *.rs
@@ -765,13 +825,59 @@ Install a font designed for [source
 code](https://github.com/source-foundry/Hack). Use the font in terminals by changing the settings. Use the font in vim by changing the guifont
 settings.
 
+1. Search for the font using winget
+
+```
+winget search HackFonts
+```
+
+2. Install the HackFonts
+
+```
+winget install --id SourceFoundry.HackFonts
+```
+
+### Patch the Hack font using nerd-fonts
+
+1. Clone the repo
+
+```
+git clone --filter=blob:none --sparse git@github.com:ryanoasis/nerd-fonts
+cd nerd-fonts
+git sparse-checkout add patched-fonts/Hack
+```
+
+2. In Windows Powershell set the execution policy
+
+```
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+```
+
+3. Run the install script
+
+```
+./install.ps1 Hack
+```
+
+4. Select the patched Hack font in the Windows Terminal settings.
+
 ## Neovide - neovim frontend
+
+### Install by downloading file
 
 Do not install neovide using choco as WSL mode does not work correctly
 
 Download neovide from https://neovide.dev/
 
-Use Windows_key + R to run
+### Install using winget
+
+```
+winget install -i Neovide.Neovide
+```
+
+### Run neovide
+
+Use `Windows_key` + R to run
 
 1. Run using neovim on Windows
 
@@ -793,7 +899,25 @@ neovide --wsl
 
 [1000]: https://github.com/tj/git-extras.git
 
-Using choco install the following
+### Install using winget
+
+1. Search for package
+
+```
+winget search ripgrep
+```
+
+2. Install the following
+
+```
+winget install --id sharkdp.fd
+winget install --id BurntSushi.ripgrep.MSVC
+winget install --id sharkdp.bat
+```
+
+### Install using choco 
+
+No need to install these packages if using winget
 
 List local packages with
 
@@ -1015,6 +1139,24 @@ Configuration files
 2. wsl.conf - for WSL 1 or WSL 2
 
 https://docs.microsoft.com/en-us/windows/wsl/wsl-config
+
+## Powershell
+
+### Equivalent commands
+
+* pwd - Get-Location
+* cd - Set-Location
+* grep - Select-String
+
+To get the Powershell version
+
+`$PSVersionTable`
+
+To copy the current directory to the clipboard
+
+```
+Set-Clipboard -Path .
+```
 
 ### Other software
 

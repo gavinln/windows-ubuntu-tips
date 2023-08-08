@@ -27,6 +27,10 @@ use-sqlite-wal = false
 
 ## Setup nix
 
+Enable systemd on Ubuntu on WSL
+
+https://learn.microsoft.com/en-us/windows/wsl/wsl-config#systemd-support
+
 ### Install nix on the Windows subsystem for Linux
 
 https://nix.dev/tutorials/install-nix
@@ -41,6 +45,12 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 ```
 if [ -e /home/gavin/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gavin/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+```
+
+3. Display nix version
+
+```
+nix --version
 ```
 
 ## Ubuntu
@@ -149,7 +159,7 @@ export XDG_DATA_DIRS="$HOME/.nix-profile/share:${XDG_DATA_DIRS:-/usr/local/share
 nix-env -<TAB>
 ```
 
-### For zsh shell users
+### For zsh shell users - typically on a Mac
 
 1. Install zsh completions
 
@@ -231,6 +241,8 @@ source /usr/share/autojump/autojump.sh
 ```
 
 ### Install bash-it
+
+This is also in the README.md file.
 
 [Bash-it][30] is a collection of scripts for Bash that includes autocompletion, themes, aliases and custom functions.
 
