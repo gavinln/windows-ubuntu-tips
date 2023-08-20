@@ -441,7 +441,7 @@ sudo apt install -y universal-ctags
 ```
 sudo apt install -y make build-essential libssl-dev zlib1g-dev
 sudo apt install -y libbz2-dev libreadline-dev libsqlite3-dev
-sudo apt install -y wget curl llvm libncursesw5-dev xz-utils
+sudo apt install -y curl libncursesw5-dev xz-utils
 sudo apt install -y tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 ```
 
@@ -909,10 +909,14 @@ winget search ripgrep
 
 2. Install the following
 
+May need to restart the Terminal window after installing.
+
 ```
 winget install --id sharkdp.fd
 winget install --id BurntSushi.ripgrep.MSVC
 winget install --id sharkdp.bat
+winget install --id Git.Git
+winget install --id Python.Python.3.11
 ```
 
 ### Install using choco 
@@ -1147,6 +1151,7 @@ https://docs.microsoft.com/en-us/windows/wsl/wsl-config
 * pwd - Get-Location
 * cd - Set-Location
 * grep - Select-String
+* which - Get-Command
 
 To get the Powershell version
 
@@ -1157,6 +1162,32 @@ To copy the current directory to the clipboard
 ```
 Set-Clipboard -Path .
 ```
+
+### Enable PSReadLine
+
+```
+https://learn.microsoft.com/en-us/powershell/module/psreadline/about/about_psreadline?view=powershell-5.1
+```
+
+1. Enable PSReadLine
+
+```
+Install-Module -Name PSReadLine -AllowClobber -Force
+```
+
+2. Enable the emacs key bindings
+
+```
+Set-PSReadLineOption -EditMode Emacs
+```
+
+### Install Visual Studio Code
+
+1. Download Visual Studio Code from https://code.visualstudio.com/download#
+
+2. Install Remote Development extension pack. https://code.visualstudio.com/docs/remote/wsl
+
+3. Setup Python in VSCode https://code.visualstudio.com/docs/languages/python
 
 ### Other software
 
