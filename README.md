@@ -716,6 +716,28 @@ To make neovim use the Windows clipboard from WSL type the following in neovim
 :help clipboard-wsl
 ```
 
+Add this to the `~/.config/nvim/init.vim` file
+
+```
+" use system clipboard
+set clipboard=unnamedplus
+
+" on WSL
+" https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
+let g:clipboard = {
+	\   'name': 'WslClipboard',
+	\   'copy': {
+	\      '+': 'clip.exe',
+	\      '*': 'clip.exe',
+	\    },
+	\   'paste': {
+	\      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+	\      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+	\   },
+	\   'cache_enabled': 0,
+	\ }
+```
+
 #### This section may be obsolete
 
 1. Run the following to use neovim with the Windows WSL clipboard
@@ -819,6 +841,36 @@ https://www.lunarvim.org/docs/configuration
 
 ```
 
+## Disable Ctrl+C and Ctrl+V in Windows Terminal
+
+1. In Windows terminal open the settings using Ctrl + ,
+
+2. Select "Open JSON file" on the bottom left
+
+3. Edit the file to remove only the copy and paste commands
+
+```
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions":
+    [
+        {
+            "command":
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        }
+    ]
+}
+```
+
 ## Windows source code font
 
 Install a font designed for [source
@@ -919,7 +971,7 @@ winget install --id Git.Git
 winget install --id Python.Python.3.11
 ```
 
-### Install using choco 
+### Install using choco
 
 No need to install these packages if using winget
 
