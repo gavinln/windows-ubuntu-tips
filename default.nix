@@ -103,7 +103,8 @@ let
 
     ruff  # Python linter replaces pyflakes, isort, pydocstyle, ...
 
-    rye  # Python package manager - not tried
+    # https://github.com/mitsuhiko/rye/issues/371
+    rye  # Python package manager - not tried, custom .venv location not allowed
 
     shellcheck  # shell script static analysis tool
 
