@@ -657,52 +657,52 @@ sudo snap install nvim
 
 1. Find the latest version of neovim https://github.com/neovim/neovim/releases/tag/stable
 
-2. Download latest stable deb file
+2. Download latest stable `nvim.appimage` file
+
+3. Make the file executable
 
 ```
-curl -OL https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+chmod u+x nvim.appimage
 ```
 
-3. Install neovim from the deb file
+4. Create a link to the file
 
 ```
-sudo apt install ./nvim-linux64.deb
+ln -s /home/gavin/nvim.appimage /usr/local/bin/nvim
 ```
 
-### Setup neovim
-
-1. Check version
+5. Check version
 
 ```
 nvim -version
 ```
 
-2. Setup nvim plug
+6. Setup nvim plug
 
 ```
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-3. Start nvim
+7. Start nvim
 
 ```
 nvim
 ```
 
-4. Install plugins
+8. Install plugins
 
 ```
 :PlugInstall
 ```
 
-5. Update remote plugins
+9. Update remote plugins
 
 ```
 :UpdateRemotePlugins
 ```
 
-6. Check health
+10. Check health
 
 ```
 :checkhealth

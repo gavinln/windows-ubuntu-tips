@@ -101,6 +101,8 @@ let
 
     ruff  # Python linter replaces pyflakes, isort, pydocstyle, ...
 
+    rye  # Python package manager - not tried
+
     shellcheck  # shell script static analysis tool
 
     sqlite  # sqlite command line interface
