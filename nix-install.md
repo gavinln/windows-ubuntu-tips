@@ -455,6 +455,9 @@ pipx install speedtest-cli  # test internet bandwith
 pipx install stormssh  # manage the ~/.ssh/config file
 pipx install tmuxp  # manage tmux sessions
 pipx install visidata  # explore tabular data
+pipx install chatblade  # cli for chatgpt
+
+https://github.com/npiv/chatblade
 
 # may not be so useful
 # pipx install httpie  # user-friendly curl. e.g. http python.org
