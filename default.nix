@@ -61,6 +61,8 @@ let
 
     lazygit  # alternative terminal ui for git
 
+    lsd  # next generation ls command - ls-deluxe
+
     gitui  # modern git terminal ui in Rust
 
     kondo  # clean up projects. Supports Cargo, Python, Jupyter and others
@@ -125,6 +127,8 @@ let
     unzip  # unzip files
 
     usql  # command line sql client
+
+    universal-ctags  # ctags
 
     viddy  # watch replacement with history
 
