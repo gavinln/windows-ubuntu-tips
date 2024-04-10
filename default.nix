@@ -53,6 +53,8 @@ let
 
     helix  # vim like modal terminal editor with lsp support
 
+    hugo  # static site generator
+
     hyperfine  # command line benchmarking tool
 
     imagemagick  # image view, modify tools
@@ -93,6 +95,8 @@ let
 
     pueue  # command line manager for parallel/long running task
 
+    ollama  # install and run llms
+
     pv  # monitor the progress of data through a pipeline
 
     rclone  # rsync for the cloud (like S3)
@@ -101,11 +105,12 @@ let
 
     ripgrep  # alternative to grep
 
+    ripgrep-all  # ripgrep search through docx, pdf, zip, tar.gz ...
+
     rust-analyzer  # semantic analysis of Rust code
 
     ruff  # Python linter replaces pyflakes, isort, pydocstyle, ...
 
-    # https://github.com/mitsuhiko/rye/issues/371
     rye  # Python package manager - not tried, custom .venv location not allowed
 
     shellcheck  # shell script static analysis tool

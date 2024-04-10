@@ -208,6 +208,12 @@ https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 
 3. Logout and login to setup environment variables.
 
+## Update nix-channel
+
+```
+nix-channel --update
+```
+
 ## Github setup
 
 On WSL the ssh configuration is in $HOME/.ssh
@@ -456,8 +462,7 @@ pipx install stormssh  # manage the ~/.ssh/config file
 pipx install tmuxp  # manage tmux sessions
 pipx install visidata  # explore tabular data
 pipx install chatblade  # cli for chatgpt
-
-https://github.com/npiv/chatblade
+pipx install aider-chat  # AI pair programming cli that integrates with git
 
 # may not be so useful
 # pipx install httpie  # user-friendly curl. e.g. http python.org

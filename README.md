@@ -550,7 +550,14 @@ sudo dpkg-reconfigure locales
 sudo apt install -y graphviz
 ```
 
-## install sqlite - already available in Ubuntu 22.04 and 20.04
+## install sqlite
+
+May already be available in Ubuntu 22.04 and 20.04 but not WSL
+
+```
+sudo apt update && sudo apt upgrade
+sudo apt install sqlite3
+```
 
 Install the latest version instead of one in repo
 
@@ -653,7 +660,7 @@ sudo ln -s /home/gavin/nvim-linux64/bin/nvim /usr/local/bin/nvim
 sudo snap install nvim
 ```
 
-### Install using deb file
+### Install using appimage file
 
 1. Find the latest version of neovim https://github.com/neovim/neovim/releases/tag/stable
 
