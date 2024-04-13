@@ -152,6 +152,10 @@ let
     zip  # zip files
 
     zoxide  # smarter cd command like z or autojump
+
+    # linters, formatters, etc for ALE and pre-commit
+
+    stylua  # https://github.com/JohnnyMorganz/StyLua
   ];
 
 in all
