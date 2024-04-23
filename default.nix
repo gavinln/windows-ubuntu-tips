@@ -27,9 +27,9 @@ let
 
     difftastic  # semantic diff
 
-    exa  # replacement for ls - not maintained
+    # exa  # replacement for ls - not maintained
 
-    # eza  # maintained replacement for ls
+    eza  # maintained replacement for ls
 
     fd  # alternative to find
 
