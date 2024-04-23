@@ -1105,6 +1105,8 @@ lazygit -c > config.yml
 
 6. Change the `selectedLineBgColor` from `blue` to `reverse`
 
+7. Change the `selectedRangeBgColor` from `blue` to `reverse`
+
 ### Cloud tools
 
 ```
