@@ -1069,6 +1069,42 @@ choco install lazygit hub
 [1210]: https://github.com/jesseduffield/lazygit
 [1220]: https://github.com/github/hub
 
+#### Lazygit config
+
+https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+
+1. Print configuration dir
+
+```
+lazygit --print-config-dir
+```
+
+2. Change to config dir
+
+```
+cd $(lazygit --print-config-dir)
+```
+
+3. List the default config dir
+
+```
+ls config.yml
+```
+
+4. Print configuration
+
+```
+lazygit -c
+```
+
+5. Overwrite default config
+
+```
+lazygit -c > config.yml
+```
+
+6. Change the `selectedLineBgColor` from `blue` to `reverse`
+
 ### Cloud tools
 
 ```
