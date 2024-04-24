@@ -33,6 +33,70 @@ cat /etc/lsb-release
 
 #### Docker on Ubuntu 22.04
 
+https://docs.docker.com/engine/install/ubuntu/
+
+1. Setup pre-requisites
+
+```
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+```
+
+2. Add Docker's official GPG key:
+
+```
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+```
+
+3. Setup the repository
+
+```
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+4. Update the package index
+
+```
+sudo apt-get update
+```
+
+5.  Install Docker and related packages
+
+```
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+6. Start the Docker daemon
+
+```
+sudo service docker start
+```
+
+7. Run the hello-world image
+
+```
+sudo docker run hello-world
+```
+
+8. Check the Docker version
+
+```
+sudo docker version
+```
+
+9. Setup Docker to run without root
+
+```
+sudo usermod -aG docker $USER
+```
+
+#### Docker on Ubuntu 22.04 old
+
 The following instructions do not work as the server does not start correctly. May have to install Docker desktop on Windows as in the previous link.
 
 https://dev.to/luckierdodge/how-to-install-and-use-docker-in-wsl2-217l
