@@ -13,6 +13,8 @@ let
   all = [
     nix-bash-completions  # nix bash completions
 
+    act  # run github actions locally
+
     bat  # replacement for cat with syntax highlighting
 
     bottom  # htop replacement, command btm
