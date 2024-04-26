@@ -224,6 +224,38 @@ Check access to github using ssh
 ssh -T git@github.com
 ```
 
+### Github authentication
+
+The `gh` utility is setup automatically using nix
+
+To login use `gh auth login` as described here:
+
+https://cli.github.com/manual/gh_auth
+
+### `gh` dashboard setup
+
+The dashboard displays pull requests and issues with custom filters. Github actions are not displayed.
+
+https://github.com/dlvhdr/gh-dash
+
+1. Install the dashboard extension
+
+```
+gh extension install dlvhdr/gh-dash
+```
+
+2. Get help on dashboard
+
+```
+gh dash --help
+```
+
+3. Run the dashboard
+
+```
+gh dash
+```
+
 ## Install packages that cannot be installed by nix
 
 ### Autojump
