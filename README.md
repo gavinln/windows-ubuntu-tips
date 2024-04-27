@@ -1104,9 +1104,11 @@ Run using the following command
 alacritty --working-directory d:\ws
 ```
 
+The config-file is stored in directory `%USERPROFILE%\%APPDATA%\alacritty\alacritty.toml`
+
 
 ```
-choco install alacritty
+winget install --id Alacritty.Alacritty
 ```
 
 Install [alacritty-colorscheme][1130]
