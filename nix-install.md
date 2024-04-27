@@ -306,7 +306,7 @@ vim ~/.bashrc
 1. Enable completions
 
 ```
-bash-it enable completion awscli bash-it cargo conda docker-compose docker
+bash-it enable completion awscli bash-it cargo conda docker
 bash-it enable completion fabric git github-cli invoke makefile notify-send
 bash-it enable completion npm pip pip3 pipenv pipx rustup ssh tmux todo
 ```
@@ -484,7 +484,6 @@ sudo apt install python3.10-venv
 
 ```
 pipx install gita  # manage multiple git repositories
-pipx install docker-compose  # manage Docker environments
 pipx install kedro  # manage machine learning pipeline
 pipx install pipenv  # manage virtual environments with pipenv
 pipx install poetry  # manage virtual environments instead of pipenv
