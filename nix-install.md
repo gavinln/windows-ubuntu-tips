@@ -329,11 +329,29 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 #### Install tmux plugins
 
-Add to the `~/.tmux.conf`
+The tmux config file is `~/.tmux.conf`
+
+Add to the tmux config file at the top
 
 ```
 set -g @plugin 'tmux-plugins/tpm'  # tmux plugin manager on github
 ```
+
+Add to the tmux config file at the bottom
+
+```
+run '~/.tmux/plugins/tpm/tpm'
+```
+
+Reload the tmux environment to load tpm
+
+```
+tmux source ~/.tmux.conf
+```
+
+Install the tmux plugins
+
+Press <prefix> + I
 
 Choose plugins from the [plugins list](https://github.com/tmux-plugins/list).
 
