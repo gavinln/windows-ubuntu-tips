@@ -19,6 +19,8 @@ let
 
     bottom  # htop replacement, command btm
 
+    broot  # directory navigator
+
     # cargo  # rust package manager
 
     chezmoi  # manage user configurations (dotfiles) across machines
@@ -66,6 +68,8 @@ let
     lazygit  # alternative terminal ui for git
 
     lsd  # next generation ls command - ls-deluxe
+
+    lf  # terminal file manager
 
     gitui  # modern git terminal ui in Rust
 
@@ -148,6 +152,8 @@ let
     # wuzz  # HTTP utilities
 
     xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
+
+    yazi  # terminal file manager
 
     zellij  # tmux alternative
 
