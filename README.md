@@ -1040,6 +1040,7 @@ winget install --id BurntSushi.ripgrep.MSVC
 winget install --id sharkdp.bat
 winget install --id Git.Git
 winget install --id Python.Python.3.11
+winget install --id Obsidian.Obsidian
 ```
 
 ### Install using choco
