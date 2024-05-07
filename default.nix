@@ -67,6 +67,8 @@ let
 
     lazygit  # alternative terminal ui for git
 
+    lazydocker  # terminal ui to manage Docker
+
     lsd  # next generation ls command - ls-deluxe
 
     lf  # terminal file manager
