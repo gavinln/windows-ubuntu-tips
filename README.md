@@ -1174,6 +1174,37 @@ lazygit -c > config.yml
 
 7. Change the `selectedRangeBgColor` from `blue` to `reverse`
 
+### Lazydocker config
+
+1. The config directory is ~/.config/lazydocker
+
+2. Change to config dir
+
+```
+cd ~/.config/lazydocker
+```
+
+3. List the default config dir
+
+```
+ls config.yml
+```
+
+4. Print configuration
+
+```
+lazydocker -c
+```
+
+5. Overwrite default config
+
+```
+
+lazydocker -c > config.yml
+```
+
+6. Change the `selectedLineBgColor` from `blue` to `reverse`
+
 ### Cloud tools
 
 ```
