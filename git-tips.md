@@ -34,6 +34,26 @@ Press +/_ multiple times as need
 
 4. Scroll up and down to compare selected commit with others
 
+## Git file changes
+
+### Use lazygit
+1. Open lazygit
+lazygit
+
+2. Switch to commits view by typing 4
+
+3. Press enter to select commit
+
+4. Scroll to file
+
+5. Press Ctrl-t to view in external diff tool - git difftool
+
+### Use git
+
+```
+git log --since="1day" --name-only --oneline
+```
+
 ## View Git untracked files
 
 1. Using git

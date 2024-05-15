@@ -567,6 +567,10 @@ export EDITOR="/usr/bin/vim"
 ```
 git config --global user.name "Gavin Noronha"
 git config --global user.email "gavinln@hotmail.com"
+
+git config --global difftool.prompt true
+git config --global diff.tool nvimdiff
+git config --global difftool.nvimdiff.cmd 'nvim -d "$LOCAL" "$REMOTE"'
 ```
 
 2. Check git settings
