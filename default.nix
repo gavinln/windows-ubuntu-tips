@@ -31,6 +31,8 @@ let
 
     difftastic  # semantic diff
 
+    # entr  # watch file system - investigate
+
     # exa  # replacement for ls - not maintained
 
     eza  # maintained replacement for ls
