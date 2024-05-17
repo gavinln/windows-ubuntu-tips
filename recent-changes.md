@@ -30,6 +30,14 @@ Using vifm
 vifm -c 'set sort=-mtime,dir' -c view!
 ```
 
+## Recently visited directories
+
+zoxide
+
+```
+zoxide query -i
+```
+
 ## Git
 
 git log --pretty=format:"%h%x09%as%x09%s" --date=short
