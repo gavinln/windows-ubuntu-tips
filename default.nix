@@ -133,6 +133,8 @@ let
 
     tmux  # terminal multiplexer
 
+    tlrc  # rust client for tldr. e.g. tldr tar
+
     tokei  # count lines of code
 
     tree  # directories as a tree
