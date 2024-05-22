@@ -161,6 +161,8 @@ let
 
     yazi  # terminal file manager
 
+    ytfzf  # youtube fuzzy finder. e.g. ytfzf -IL langchain
+
     zellij  # tmux alternative
 
     zip  # zip files
