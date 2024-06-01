@@ -172,6 +172,8 @@ let
     # linters, formatters, etc for ALE and pre-commit
 
     stylua  # https://github.com/JohnnyMorganz/StyLua
+
+    yamlfmt  # yaml formatter from google
   ];
 
 in all
