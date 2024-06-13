@@ -47,6 +47,9 @@ let
 
     # git  # git version control, already installed ubuntu 20.04
 
+    # https://github.com/kamranahmedse/git-standup
+    git-standup  # keep track of git commits with git-standup -s
+
     gh  # Gihub command line client
 
     go  # go language
