@@ -765,17 +765,14 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim
 ```
 
-8. Install plugins
+8. Open Lazy plugin managerOpen Lazy plugin managerOpen Lazy plugin managerOpen
+   Lazy plugin manager
 
 ```
-:PlugInstall
+:Lazy
 ```
 
-9. Update remote plugins
-
-```
-:UpdateRemotePlugins
-```
+9. Update plugins by typing "U"
 
 10. Check health
 
