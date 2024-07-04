@@ -539,10 +539,15 @@ require("lazy").setup()
 :Lazy
 ```
 
-9. Update plugins by typing "U"
+9. Update plugins
 
+```
+:Lazy sync
+```
 
-### Copy from/to Windows clipboard
+10. Update plugins by typing "U"
+
+### Copy from/to Windows clipboard - may not be needed
 
 To make neovim use the Windows clipboard from WSL type the following in neovim
 
@@ -630,7 +635,7 @@ sudo apt install python3-pip
 ```
 
 ```
-LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
 ```
 
 2. Start Lunar vim
