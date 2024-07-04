@@ -192,7 +192,7 @@ nix-env -f default.nix -i
 
 ### Setup zoxide (replacement for z or autojump)
 
-1. Add to ~/.bashrc
+1. Add to ~/.profile after nix.sh is called (added by nix installer)
 
 ```
 eval "$(zoxide init bash)"
@@ -222,6 +222,18 @@ Check access to github using ssh
 
 ```
 ssh -T git@github.com
+```
+
+If you have setup ssh successfully the output will be
+
+```
+You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+If you have an ERROR in your ssh setup the output will be
+
+```
+git@github.com: Permission denied (publickey)
 ```
 
 ### Github authentication
@@ -258,24 +270,41 @@ gh dash
 
 ## Install packages that cannot be installed by nix
 
-### Autojump
-
-This may NOT be needed.
-
-[Autojump][20] is a `cd` command that learns making navigating directories easier.
-
-[20]: https://github.com/wting/autojump
-
-1. Install autojump
+### Install nodejs & npm
 
 ```
-sudo apt install autojump
+sudo apt install node
+sudo apt install npm
 ```
 
-2. Setup autojump by adding this line to your ~/.bashrc file
+Check nodejs version
 
 ```
-source /usr/share/autojump/autojump.sh
+node --version
+```
+
+Check npm version
+
+```
+npm --version
+```
+
+### Install pyright to type check Python code
+
+```
+sudo npm install -g pyright
+```
+
+Check pyright version
+
+```
+pyright --version
+```
+
+## Install the rust toolchain
+
+```
+curl https://sh.rustup.rs -sSf | sh
 ```
 
 ### Install bash-it
@@ -303,18 +332,12 @@ vim ~/.bashrc
 
 #### bash-it extensions
 
-1. Enable completions
+1. Enable completions - may not be needed, check this
 
 ```
-bash-it enable completion awscli bash-it cargo conda docker
+bash-it enable completion awscli bash-it cargo docker
 bash-it enable completion fabric git github-cli invoke makefile notify-send
 bash-it enable completion npm pip pip3 pipenv pipx rustup ssh tmux todo
-```
-
-2. Enable autojump - NOT NEEDED
-
-```
-bash-it enable plugin autojump
 ```
 
 ### Tmux plugins
@@ -475,50 +498,41 @@ sudo apt install -y ttf-mscorefonts-installer
 sudo apt install python3-pip
 ```
 
-2. Install and update pipx
+2. For Ubuntu 23.04 or above
 
 ```
-python3 -m pip install --user pipx
-python3 -m pip install --user -U pipx
+sudo apt update
+sudo apt install pipx
+pipx ensurepath
 ```
 
-WARNING: The script userpath is installed in '/home/gavin/.local/bin' which is
-not on PATH.
-
-3. Install pipx
+For older versions of Ubuntu
 
 ```
-python3 -m pip install --user pipx
-python3 -m pipx ensurepath
-```
-
-4. Install venv for Ubuntu 22.04
-
-```
-sudo apt install python3.10-venv
+# python3 -m pip install --user pipx
+# python3 -m pip install --user -U pipx
 ```
 
 #### Install Python packages using pipx
 
 ```
 pipx install gita  # manage multiple git repositories
-pipx install kedro  # manage machine learning pipeline
-pipx install pipenv  # manage virtual environments with pipenv
 pipx install poetry  # manage virtual environments instead of pipenv
 pipx install pre-commit  # add pre-commit checks to git
 pipx install speedtest-cli  # test internet bandwith
-pipx install stormssh  # manage the ~/.ssh/config file
 pipx install tmuxp  # manage tmux sessions
 pipx install visidata  # explore tabular data
 pipx install chatblade  # cli for chatgpt
 pipx install aider-chat  # AI pair programming cli that integrates with git
+```
 
+```
 # may not be so useful
 # pipx install httpie  # user-friendly curl. e.g. http python.org
 # pipx install http-prompt  # interactive httpie
 # pipx install cookiecutter  # template to create projects
-# do not install pipenv using pipx. Use the default Python
-# pipx install pipenv  # manage environments using Pipenv
+# pipx install kedro  # manage machine learning pipeline
+# pipx install stormssh  # Manage ~/.ssh/config file. Archived on https://github.com/emre/storm
 ```
 
 ### fzf aliases
@@ -583,10 +597,10 @@ eval "$(direnv hook bash)"
 
 ### Setup alias for ls
 
-Setup the alias in `~/.bashrc` for exa
+Setup the alias in `~/.bashrc` for eza (maintained version of exa)
 
 ```
-alias lg='exa -l --git'
+alias lg='eza -l --git'
 ```
 
 ## New utilities to try

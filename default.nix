@@ -45,7 +45,7 @@ let
 
     fzy  # alternative fuzzy finder https://github.com/jhawthorn/fzy
 
-    # git  # git version control, already installed ubuntu 20.04
+    # git  # git version control, already installed on Ubuntu
 
     # https://github.com/kamranahmedse/git-standup
     git-standup  # keep track of git commits with git-standup -s
@@ -96,9 +96,7 @@ let
 
     nnn  # command line file manager
 
-    nodejs  # install nodejs
-
-    nodePackages.pyright  # Python type checker
+    # nodejs  # do not install as cannot install npm packages globally
 
     nushell  # alternative shell
 

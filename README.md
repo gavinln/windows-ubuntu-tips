@@ -31,7 +31,7 @@ cat /etc/lsb-release
 
 ### Install Docker
 
-#### Docker on Ubuntu 22.04
+#### Docker on Ubuntu 24.04 and 22.04
 
 https://docs.docker.com/engine/install/ubuntu/
 
@@ -95,75 +95,6 @@ sudo docker version
 sudo usermod -aG docker $USER
 ```
 
-#### Docker on Ubuntu 22.04 old
-
-The following instructions do not work as the server does not start correctly. May have to install Docker desktop on Windows as in the previous link.
-
-https://dev.to/luckierdodge/how-to-install-and-use-docker-in-wsl2-217l
-
-https://dev.to/felipecrs/simply-run-docker-on-wsl2-3o8
-
-https://stackoverflow.com/questions/60708229/wsl2-cannot-connect-to-the-docker-daemon
-
-These instructions work but need configuration changes
-
-https://dev.solita.fi/2021/12/21/docker-on-wsl2-without-docker-desktop.html
-
-1. Setup pre-requisites
-
-```
-sudo apt update
-# sudo apt install ca-certificates curl gnupg  # may not be needed for Ubuntu 22.04
-# sudo apt install lsb-release  # may not be needed
-```
-
-2. Add Docker's official key
-
-```
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-```
-
-3. Setup the repository
-
-```
-echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-```
-
-4. Update the package index
-
-```
-sudo apt update
-```
-
-5. Install Docker and related packages
-
-```
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-
-6. Run the hello-world image
-
-```
-sudo docker run hello-world
-```
-
-7. Check the Docker version
-
-```
-sudo docker version
-```
-
-8. Setup Docker to run without root
-
-```
-sudo usermod -aG docker $USER
-```
-
 ### WSL commands
 
 #### Example wsl commands
@@ -216,13 +147,13 @@ wsl --shutdown
 
 ```
 mkdir d:\wsl-backup
-wsl --export Ubuntu-22.04 d:\wsl-backup\Ubuntu-22.04.tar
+wsl --export Ubuntu-24.04 d:\wsl-backup\Ubuntu-24.04.tar
 ```
 
 3. Remove files from the original location
 
 ```
-wsl --unregister Ubuntu-22.04
+wsl --unregister Ubuntu-24.04
 ```
 
 4. Create a directory for the WSL Linux image
@@ -234,25 +165,25 @@ mkdir d:\wsl
 5. Import the image
 
 ```
-wsl --import Ubuntu-22.04 d:\wsl d:\wsl-backup\Ubuntu-22.04.tar
+wsl --import Ubuntu-24.04 d:\wsl d:\wsl-backup\Ubuntu-24.04.tar
 ```
 
 6. Get location of wsl executable
 
 ```
-dir %userprofile%\AppData\Local\Microsoft\WindowsApps\ubuntu2204.exe
+dir %userprofile%\AppData\Local\Microsoft\WindowsApps\ubuntu2404.exe
 ```
 
 7. Setup the default username for WSL
 
 ```
-%userprofile%\AppData\Local\Microsoft\WindowsApps\ubuntu2204.exe config --default-user user-name
+%userprofile%\AppData\Local\Microsoft\WindowsApps\ubuntu2404.exe config --default-user user-name
 ```
 
 6. Start the WSL environment
 
 ```
-wsl -d Ubuntu-22.04
+wsl -d Ubuntu-24.04
 ```
 
 #### Shrink WSL Virtual disk on Windows Home
@@ -490,204 +421,7 @@ Add these functions to your ~/.bashrc file from the vimrc project
 source fzf-functions.sh
 ```
 
-## Install ctags
-
-Do not install ctags using nix. Install ctags using the following command.
-
-```
-sudo apt install -y universal-ctags
-```
-
-## Install pyenv
-
-1. Install build-essential
-
-```
-sudo apt install -y make build-essential libssl-dev zlib1g-dev
-sudo apt install -y libbz2-dev libreadline-dev libsqlite3-dev
-sudo apt install -y curl libncursesw5-dev xz-utils
-sudo apt install -y tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-```
-
-2. Install pyenv
-
-```
-curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-```
-
-3. Add to .bashrc
-
-```
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-```
-
-4. Update pyenv
-
-```
-pyenv update
-```
-
-5. List python versions
-
-```
-pyenv install --list
-```
-
-## Using curl, httpie
-
-An example of using curl
-
-```
-curl -X GET "http://petstore.swagger.io/v2/pet/findByStatus?status=pending" -H  "accept: application/xml" -H  "content-type: application/json"
-```
-
-The same example using httpie
-
-```
-http petstore.swagger.io/v2/pet/findByStatus?status=pending
-```
-
-Filtering the results using jq
-
-```
-http petstore.swagger.io/v2/pet/findByStatus?status=pending | jq '.[] | {cat_id: .category.id, name: .name}'
-```
-
-## Setup git
-
-Git is already install on the latest versions of Ubuntu
-
-Add to ~/.bashrc
-export EDITOR="/usr/bin/vim"
-
-1. Setup git
-
-```
-git config --global user.name "Gavin Noronha"
-git config --global user.email "gavinln@hotmail.com"
-
-git config --global difftool.prompt true
-git config --global diff.tool nvimdiff
-git config --global difftool.nvimdiff.cmd 'nvim -d "$LOCAL" "$REMOTE"'
-```
-
-2. Check git settings
-
-```
-git config --list
-```
-
-## Install bash-it
-
-1. Clone the repo
-
-```
-git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-~/.bash_it/install.sh
-```
-
-2. Change theme to demula using set BASH_IT_THEME=''
-
-```
-vim ~/.bashrc
-```
-
-4. To remove any bash-it theme edit ~/.bashrc and set BASH_IT_THEME=''
-
-```
-bash-it enable completion docker
-```
-
-On WSL Ubuntu 22.04 may see the following error
-
-```
--bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-```
-
-To solve this error run the command below and select `en_US.UTF-8`
-
-```
-sudo dpkg-reconfigure locales
-```
-
-## Install graphviz - installed using nix
-
-```
-sudo apt install -y graphviz
-```
-
-## install sqlite
-
-May already be available in Ubuntu 22.04 and 20.04 but not WSL
-
-```
-sudo apt update && sudo apt upgrade
-sudo apt install sqlite3
-```
-
-Install the latest version instead of one in repo
-
-```
-cd ~
-mkdir ~/sqlite
-cd ~/sqlite
-SQLITE_FILE=sqlite-autoconf-3270100
-wget https://www.sqlite.org/2019/$SQLITE_FILE.tar.gz
-tar xvfz $SQLITE_FILE.tar.gz
-cd $SQLITE_FILE
-./configure --prefix=/usr/local
-make
-sudo make install
-sqlite3 -version
-```
-
-## Install node.js and npm
-
-Do not install as installed using nix.
-
-Install the latest verions of node.js and npm
-
-https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
-
-1. Download the node setup script
-
-```
-curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
-```
-
-2. Setup the repositories
-
-```
-sudo -E bash nodesource_setup.sh
-```
-
-3. Install nodejs and check the version
-
-```
-sudo apt install nodejs
-node -v
-```
-
-4. Install npm and check the version
-
-No need to install npm as it is automatically installed with nodejs.
-
-### Install pyright to type check Python code - installed using nix
-
-```
-sudo npm install -g pyright
-```
-
-## Install the rust toolchain
-
-```
-curl https://sh.rustup.rs -sSf | sh
-```
-
 ## vim setup
-
 
 1. Setup vim plug
 
@@ -710,6 +444,8 @@ vim
 
 ## neovim (nvim) setup
 
+Do not install neovim using snap as it does not work with Lunar Vim.
+
 ### Install neovim using tar.gz file
 
 1. Download the latest `nvim.linux64.tar.gz` file
@@ -722,13 +458,7 @@ vim
 sudo ln -s /home/gavin/nvim-linux64/bin/nvim /usr/local/bin/nvim
 ```
 
-### Install using snap - Do not as it does not work with Lunar Vim
-
-```
-sudo snap install nvim
-```
-
-### Install using appimage file
+### Install using appimage file - requires FUSE to work
 
 1. Find the latest version of neovim https://github.com/neovim/neovim/releases/tag/stable
 
@@ -746,27 +476,64 @@ chmod u+x nvim.appimage
 ln -s /home/gavin/nvim.appimage /usr/local/bin/nvim
 ```
 
-5. Check version
+### Check neovim installation
+
+1. Check version
 
 ```
 nvim -version
 ```
 
-6. Setup nvim plug
-
-```
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-```
-
-7. Start nvim
+2. Start nvim
 
 ```
 nvim
 ```
 
-8. Open Lazy plugin managerOpen Lazy plugin managerOpen Lazy plugin managerOpen
-   Lazy plugin manager
+3. Check health
+
+```
+:checkhealth
+```
+
+### Setup neovim plugin manager
+
+1. Make neovim config directory
+
+```
+mkdir -p ~/.config/nvim
+```
+
+2. Add a ~/.config/nvim/init.lua file with the following contents
+
+```
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup()
+```
+
+3. Open neovim and check Lazy plugin manager health
+
+```
+:checkhealth lazy
+```
+
+8. Open Lazy plugin manager
 
 ```
 :Lazy
@@ -774,11 +541,6 @@ nvim
 
 9. Update plugins by typing "U"
 
-10. Check health
-
-```
-:checkhealth
-```
 
 ### Copy from/to Windows clipboard
 
@@ -1406,3 +1168,126 @@ https://stuartleeks.com/posts/wsl-github-cli-windows-notifications-part-1/
 ### Most popular repositories on Github
 
 https://github.com/EvanLi/Github-Ranking
+
+
+## Install ctags
+
+Do not install ctags using nix. Install ctags using the following command.
+
+```
+sudo apt install -y universal-ctags
+```
+
+## Install pyenv
+
+1. Install build-essential
+
+```
+sudo apt install -y make build-essential libssl-dev zlib1g-dev
+sudo apt install -y libbz2-dev libreadline-dev libsqlite3-dev
+sudo apt install -y curl libncursesw5-dev xz-utils
+sudo apt install -y tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+```
+
+2. Install pyenv
+
+```
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+```
+
+3. Add to .bashrc
+
+```
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+```
+
+4. Update pyenv
+
+```
+pyenv update
+```
+
+5. List python versions
+
+```
+pyenv install --list
+```
+
+## Using curl, httpie
+
+An example of using curl
+
+```
+curl -X GET "http://petstore.swagger.io/v2/pet/findByStatus?status=pending" -H  "accept: application/xml" -H  "content-type: application/json"
+```
+
+The same example using httpie
+
+```
+http petstore.swagger.io/v2/pet/findByStatus?status=pending
+```
+
+Filtering the results using jq
+
+```
+http petstore.swagger.io/v2/pet/findByStatus?status=pending | jq '.[] | {cat_id: .category.id, name: .name}'
+```
+
+## Setup git
+
+Git is already install on the latest versions of Ubuntu
+
+Add to ~/.bashrc
+export EDITOR="/usr/bin/vim"
+
+1. Setup git
+
+```
+git config --global user.name "Gavin Noronha"
+git config --global user.email "gavinln@hotmail.com"
+
+git config --global difftool.prompt true
+git config --global diff.tool nvimdiff
+git config --global difftool.nvimdiff.cmd 'nvim -d "$LOCAL" "$REMOTE"'
+```
+
+2. Check git settings
+
+```
+git config --list
+```
+
+## Install bash-it
+
+1. Clone the repo
+
+```
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+~/.bash_it/install.sh
+```
+
+2. Change theme to demula using set BASH_IT_THEME=''
+
+```
+vim ~/.bashrc
+```
+
+4. To remove any bash-it theme edit ~/.bashrc and set BASH_IT_THEME=''
+
+```
+bash-it enable completion docker
+```
+
+On WSL Ubuntu 22.04 may see the following error
+
+```
+-bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+```
+
+To solve this error run the command below and select `en_US.UTF-8`
+
+```
+sudo dpkg-reconfigure locales
+```
