@@ -535,6 +535,26 @@ pipx install aider-chat  # AI pair programming cli that integrates with git
 # pipx install stormssh  # Manage ~/.ssh/config file. Archived on https://github.com/emre/storm
 ```
 
+### Command line browser
+
+Install ddgr - duck duck go command line browser: https://github.com/jarun/ddgr
+
+```
+pipx install ddgr
+```
+
+Setup the BROWSER environment variable
+
+```
+export BROWSER='/mnt/c/Program Files/Mozilla FireFox/Firefox.exe'
+```
+
+Example search returning 4 results (type o to open browser)
+
+```
+ddgr -n 4 "Hello World"
+```
+
 ### fzf aliases
 
 Add these functions to your ~/.bashrc file from the vimrc project
@@ -602,6 +622,23 @@ Setup the alias in `~/.bashrc` for eza (maintained version of exa)
 ```
 alias lg='eza -l --git'
 ```
+
+## Troubleshooting issues
+
+If you get the message
+
+```
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+```
+
+Run the following
+
+```
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
+```
+
+https://nixos.wiki/wiki/Locales
+
 
 ## New utilities to try
 
