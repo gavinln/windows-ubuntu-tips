@@ -60,3 +60,11 @@ you can use the non-package mode in the `pyproject.toml` file.
 [tool.poetry]
 package-mode = false
 ```
+
+## Poetry plugins
+
+### Poetry plugin up
+
+[Poetry plugin up][300] is a Poetry plugin that updates dependencies and bumps their versions in the pyproject.toml file.
+
+[300]: https://github.com/MousaZeidBaker/poetry-plugin-up
