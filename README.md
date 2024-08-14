@@ -316,6 +316,17 @@ tee /etc/wsl.conf << EOF
 default=gavin
 EOF
 ```
+#### Setup WSL configuration
+
+Edit the `.wslconfig` file.
+
+```
+notepad %userprofile%\.wslconfig
+```
+
+Change the settings as described in the documentation.
+
+https://learn.microsoft.com/en-us/windows/wsl/wsl-config
 
 #### Notes
 
