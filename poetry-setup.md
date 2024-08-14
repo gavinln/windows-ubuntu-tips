@@ -45,3 +45,18 @@ poetry new . --name api_logic_server-samples
 ```
 poetry env use /home/gavin/.pyenv/versions/3.11.9/bin/python3
 ```
+
+## poetry package mode
+
+Poetry can be operated in two different modes. The default mode is the package
+mode, which is the right mode if you want to package your project into an sdist
+or a wheel. Further, the project itself will be installed in editable mode when
+running poetry install.
+
+If you want to use Poetry only for dependency management but not for packaging,
+you can use the non-package mode in the `pyproject.toml` file.
+
+```
+[tool.poetry]
+package-mode = false
+```
