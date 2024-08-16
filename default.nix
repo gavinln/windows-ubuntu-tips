@@ -21,6 +21,8 @@ let
 
     broot  # directory navigator
 
+    btop  # resources monitor https://github.com/aristocratos/btop
+
     # cargo  # rust package manager
 
     chezmoi  # manage user configurations (dotfiles) across machines
@@ -103,6 +105,8 @@ let
     pandoc  # convert documents into multiple formats
 
     pastel  # colors in the terminal
+
+    pet  # command line snippet manager https://github.com/knqyf263/pet
 
     pueue  # command line manager for parallel/long running task
 
