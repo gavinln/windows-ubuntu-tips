@@ -270,10 +270,18 @@ gh dash
 
 ## Install packages that cannot be installed by nix
 
+### Install luarocks
+
+The luarocks package manager for lua is needed to build neovim plugins
+
+```
+sudo apt install luarocks
+```
+
 ### Install nodejs & npm
 
 ```
-sudo apt install node
+sudo apt install nodejs
 sudo apt install npm
 ```
 
@@ -301,7 +309,7 @@ Check pyright version
 pyright --version
 ```
 
-## Install the rust toolchain
+### Install the rust toolchain
 
 ```
 curl https://sh.rustup.rs -sSf | sh
@@ -342,6 +350,8 @@ bash-it enable completion npm pip pip3 pipenv pipx rustup ssh tmux todo
 
 ### Tmux plugins
 
+Setup dotfiles in the section below "### Manage dotfiles" before setting up tmux.
+
 Install [tmux plugins][40]
 
 [40]: https://github.com/tmux-plugins/tpm
@@ -381,6 +391,9 @@ Choose plugins from the [plugins list](https://github.com/tmux-plugins/list).
 ### vifm color schemes
 
 1. Remove the default color scheme directory with only one colorscheme
+
+May not need to do this for new versions of vifm "0.13" or later.
+(e.g. vifm --version) 
 
 ```
 rm -rf ~/.config/vifm/colors
