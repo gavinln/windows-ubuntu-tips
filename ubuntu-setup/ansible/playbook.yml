@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  gather_facts: yes
+
+  pre_tasks:
+    - name: Update apt cache if needed.
+      apt: update_cache=yes cache_valid_time=3600
+      become: yes
+
+  tasks:
+    - include: windows-bash-setup.yml
+    - include: cli_setup.yml
+    - include: py3-setup.yml

@@ -1,0 +1,22 @@
+---
+# tasks executed as logged in user
+- hosts: localhost
+  gather_facts: yes
+
+  tasks:
+    - name: install bash_it for better bash
+      git:
+        repo: https://github.com/Bash-it/bash-it.git
+        dest: ~/.bash_it
+        depth: 1
+
+    - name: pull fzf repository
+      git:
+        repo: https://github.com/junegunn/fzf.git
+        dest: ~/.fzf
+        depth: 1
+      register: fzf_status
+
+    - name: install fzf
+      command: "~/.fzf/install --all"
+      when: fzf_status.changed

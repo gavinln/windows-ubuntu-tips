@@ -1,0 +1,30 @@
+---
+- name: install httpie
+  pip: name=httpie state=present
+
+- name: install stormssh
+  pip: name=stormssh state=present
+
+- name: install legit
+  pip: name=legit state=present
+
+- name: install http-prompt
+  pip: name=http_prompt state=present
+
+- name: install flake8
+  pip: name=flake8 state=present
+
+- name: install joblib
+  pip: name=joblib state=present
+
+- name: install pipenv
+  pip: name=pipenv state=present
+
+- name: install proselint
+  pip: name=proselint state=present
+
+- name: install dotbot to manage dot files
+  pip: name=dotbot state=present
+
+- name: install tmuxp to manage tmux session
+  pip: name=tmuxp state=present
