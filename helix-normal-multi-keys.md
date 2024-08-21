@@ -19,7 +19,10 @@
 * m last modified file
 * n next buffer
 * p previous buffer
+* k move up
+* j move down
 * . last modification
+* w jump to 2 char label
 
 ## m - match surround
 
@@ -65,6 +68,11 @@
 * K - swap with split above
 * H - swap with left split
 * J - swap with split below
+* n - new split scratch buffer
+
+## space - lsp & others
+
+## " - registers
 
 ## Limitations
 
