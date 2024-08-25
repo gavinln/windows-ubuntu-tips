@@ -176,6 +176,8 @@ let
 
     # linters, formatters, etc for ALE and pre-commit
 
+    nixfmt-rfc-style  # nix official formatter
+
     stylua  # https://github.com/JohnnyMorganz/StyLua
 
     yamlfmt  # yaml formatter from google
