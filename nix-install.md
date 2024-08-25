@@ -393,7 +393,7 @@ Choose plugins from the [plugins list](https://github.com/tmux-plugins/list).
 1. Remove the default color scheme directory with only one colorscheme
 
 May not need to do this for new versions of vifm "0.13" or later.
-(e.g. vifm --version) 
+(e.g. vifm --version)
 
 ```
 rm -rf ~/.config/vifm/colors
@@ -537,6 +537,7 @@ pipx install tmuxp  # manage tmux sessions
 pipx install visidata  # explore tabular data
 pipx install chatblade  # cli for chatgpt
 pipx install aider-chat  # AI pair programming cli that integrates with git
+pipx install jc  # convert CLI tools and files to JSON format
 ```
 
 ```
