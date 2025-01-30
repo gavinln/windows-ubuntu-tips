@@ -181,6 +181,11 @@ let
     stylua  # https://github.com/JohnnyMorganz/StyLua
 
     yamlfmt  # yaml formatter from google
+
+    # language servers
+
+    nodePackages.prettier  # for html/css/javascript
+
   ];
 
 in all
