@@ -270,6 +270,20 @@ gh dash
 
 ## Install packages that cannot be installed by nix
 
+### Install [uv][20] a Python package and project manager
+
+[20]: https://github.com/astral-sh/uv
+
+```
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+If the uv package is installed using the shell script update uv to the latest version.
+
+```
+uv self update
+```
+
 ### Install luarocks
 
 The luarocks package manager for lua is needed to build neovim plugins
