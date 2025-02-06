@@ -6,6 +6,11 @@
 * kitty - does not run on windows
 * wezterm - runs on windows - TODO: try it
 
+### wezterm
+
+* Wezterm documentation: https://wezfurlong.org/wezterm/index.html
+* Wezterm review: https://alexplescan.com/posts/2024/08/10/wezterm/
+
 ## File explorer
 
 * vifm - 2.6k stars
