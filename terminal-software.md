@@ -4,6 +4,7 @@
 
 * alacritty - does not support ligatures and difficult to setup
 * kitty - does not run on windows
+* wezterm - runs on windows - TODO: try it
 
 ## File explorer
 

@@ -822,6 +822,7 @@ winget install --id sharkdp.bat
 winget install --id Git.Git
 winget install --id Python.Python.3.11
 winget install --id Obsidian.Obsidian
+winget install --id wez.wezterm
 ```
 
 ### Install using choco
