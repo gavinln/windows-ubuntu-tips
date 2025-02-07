@@ -10,6 +10,7 @@
 
 * Wezterm documentation: https://wezfurlong.org/wezterm/index.html
 * Wezterm review: https://alexplescan.com/posts/2024/08/10/wezterm/
+* Wezterm setup: https://mwop.net/blog/2024-07-04-how-i-use-wezterm.html
 
 ## File explorer
 
