@@ -329,6 +329,12 @@ pyright --version
 curl https://sh.rustup.rs -sSf | sh
 ```
 
+Update rustup
+
+```
+rustup update
+```
+
 ### Install bash-it
 
 This is also in the README.md file.
@@ -552,6 +558,13 @@ pipx install visidata  # explore tabular data
 pipx install chatblade  # cli for chatgpt
 pipx install aider-chat  # AI pair programming cli that integrates with git
 pipx install jc  # convert CLI tools and files to JSON format
+pipx install playwright  # scrape web pages
+```
+
+Install dependencies for playwright
+
+```
+playwright install --with-deps chromium
 ```
 
 ```
