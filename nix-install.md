@@ -546,6 +546,12 @@ For older versions of Ubuntu
 # python3 -m pip install --user -U pipx
 ```
 
+Install dependencies for playwright installed below
+
+```
+sudo apt install chromium-browser
+```
+
 #### Install Python packages using pipx
 
 ```
@@ -556,15 +562,10 @@ pipx install speedtest-cli  # test internet bandwith
 pipx install tmuxp  # manage tmux sessions
 pipx install visidata  # explore tabular data
 pipx install chatblade  # cli for chatgpt
-pipx install aider-chat  # AI pair programming cli that integrates with git
+pipx install aider-chat[browser]  # AI pair programming cli that integrates with git
+pipx runpip aider-chat install playwright  # install playwright within aider-chat
 pipx install jc  # convert CLI tools and files to JSON format
 pipx install playwright  # scrape web pages
-```
-
-Install dependencies for playwright
-
-```
-sudo apt install chromium-browser
 ```
 
 ```
