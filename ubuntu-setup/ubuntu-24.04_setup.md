@@ -27,6 +27,12 @@ lsb_release -a
 uname -mrs
 ```
 
+## Install Ubuntu desktop
+
+```
+sudo apt install ubuntu-desktop
+```
+
 ## Links
 
 https://www.cyberciti.biz/faq/how-to-upgrade-from-ubuntu-22-04-lts-to-ubuntu-24-04-lts/

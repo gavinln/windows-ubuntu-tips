@@ -564,7 +564,7 @@ pipx install playwright  # scrape web pages
 Install dependencies for playwright
 
 ```
-playwright install --with-deps chromium
+sudo apt install chromium-browser
 ```
 
 ```
