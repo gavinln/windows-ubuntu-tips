@@ -525,6 +525,19 @@ sudo apt install -y ttf-mscorefonts-installer
 
 ### Setup pipx and  Python utilities (cannot be installed using nix)
 
+To run a command in the same virtual environment as a Python tool
+
+```
+# display virtual environment python location for aider-chat tool
+pipx runpip aider-chat -m
+
+# run the pip module in the Python virtual environment
+/home/gavin/.local/share/pipx/venvs/aider-chat/bin/python -m pip list
+
+# run a module in the Python virtual environment
+/home/gavin/.local/share/pipx/venvs/aider-chat/bin/python -m aider.scrape http://m.cnn.com/
+```
+
 1. Install pip if needed
 
 ```
