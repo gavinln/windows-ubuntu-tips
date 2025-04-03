@@ -575,10 +575,21 @@ pipx install speedtest-cli  # test internet bandwith
 pipx install tmuxp  # manage tmux sessions
 pipx install visidata  # explore tabular data
 pipx install chatblade  # cli for chatgpt
-pipx install aider-chat[browser]  # AI pair programming cli that integrates with git
+pipx install aider-chat[browser]  # AI pair programming cli
 pipx runpip aider-chat install playwright  # install playwright within aider-chat
 pipx install jc  # convert CLI tools and files to JSON format
-pipx install playwright  # scrape web pages
+pipx install marker-pdf  # pdf to md: marker-pdf[full] for all conversions
+pipx install markitdown[pdf]  # pdf to md: markitdown[all] for all conversions
+pipx install pdftext  # pdf to txt
+pipx runpip pdftext install numpy
+```
+
+Convert pdf to markdown or text
+
+```
+marker_single --output_dir . file.pdf
+markitdown file.pdf -o file.md
+pdftext file.pdf --out_path file.txt
 ```
 
 ```
