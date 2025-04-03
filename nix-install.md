@@ -587,7 +587,7 @@ pipx runpip pdftext install numpy
 Convert pdf to markdown or text
 
 ```
-marker_single --output_dir . file.pdf
+TORCH_DEVICE=cpu marker_single --output_dir . file.pdf  # GPU sometimes hangs
 markitdown file.pdf -o file.md
 pdftext file.pdf --out_path file.txt
 ```
@@ -704,7 +704,6 @@ export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 ```
 
 https://nixos.wiki/wiki/Locales
-
 
 ## New utilities to try
 
