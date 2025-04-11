@@ -671,7 +671,6 @@ lvim
 
 5. The configuration file is `~/.config/lvim/config.lua`
 
-
 6. Uninstall LunarVim using the bundled uninstall script
 
 ```
@@ -889,7 +888,6 @@ alacritty --working-directory d:\ws
 
 The config-file is stored in directory `%USERPROFILE%\%APPDATA%\alacritty\alacritty.toml`
 
-
 ```
 winget install --id Alacritty.Alacritty
 ```
@@ -1019,6 +1017,12 @@ choco install osquery pandoc graphviz
 [1460]: https://kubernetes.io/docs/tasks/tools/install-kubectl/
 [1470]: https://github.com/xo/usql
 
+To convert markdown to a standalone html that embeds images as base64
+
+```
+pandoc file.md -s --embed-resources=true -o file.html
+```
+
 Other tools to install on windows
 
 * [ctags.exe][1500]: ctags utility
@@ -1038,6 +1042,12 @@ Other tools to install on windows
 [1550]: https://github.com/BurntSushi/xsv
 [1560]: https://www.gimp.org/
 [1570]: https://imagemagick.org/index.php
+
+To convert a jpeg image to webp format at 50% quality but similar file size using imagemagick
+
+```
+magick image.jpeg -quality 50 image.webp
+```
 
 ### Python tools
 
@@ -1187,7 +1197,6 @@ https://stuartleeks.com/posts/wsl-github-cli-windows-notifications-part-1/
 ### Most popular repositories on Github
 
 https://github.com/EvanLi/Github-Ranking
-
 
 ## Install ctags
 
