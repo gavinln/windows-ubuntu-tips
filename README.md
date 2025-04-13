@@ -821,7 +821,8 @@ winget install --id sharkdp.bat
 winget install --id Git.Git
 winget install --id Python.Python.3.11
 winget install --id Obsidian.Obsidian
-winget install --id wez.wezterm
+winget install -e --id Adobe.Acrobat.Reader.64-bit
+winget install --id wez.wezterm  # may not be needed
 ```
 
 ### Install using choco
