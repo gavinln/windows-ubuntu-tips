@@ -33,7 +33,25 @@ uname -mrs
 sudo apt install ubuntu-desktop
 ```
 
+## Install Chrome
+
+1. Download the Chrome deb file
+
+```
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+```
+
+2. Install the deb file
+
+```
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+```
+
 ## Links
+
+[Install Chrome][1000]
+
+[1000]: https://www.xda-developers.com/how-install-chrome-ubuntu/
 
 https://www.cyberciti.biz/faq/how-to-upgrade-from-ubuntu-22-04-lts-to-ubuntu-24-04-lts/
 
