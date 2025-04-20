@@ -53,6 +53,10 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 [1000]: https://www.xda-developers.com/how-install-chrome-ubuntu/
 
+[Things to do][1010] after installing Ubuntu 24.04
+
+[1010]: https://jumpcloud.com/blog/things-to-do-after-installing-ubuntu-24-04
+
 https://www.cyberciti.biz/faq/how-to-upgrade-from-ubuntu-22-04-lts-to-ubuntu-24-04-lts/
 
 https://www.cherryservers.com/blog/upgrade-from-ubuntu-2204-to-ubuntu-2404-lts
