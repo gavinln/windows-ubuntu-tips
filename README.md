@@ -1123,6 +1123,14 @@ Issues with Docker on WSL
 
 https://www.tcg.com/blog/yes-you-can-run-docker-and-virtualbox-on-windows-10-home/
 
+### Install Docker Desktop
+
+Install Docker Desktop
+
+```
+winget install --id Docker.DockerDesktop
+```
+
 ## Links
 
 Configuration files
