@@ -468,7 +468,7 @@ Search for releases on the github website: https://github.com/neovim/neovim
 3. Create a symbolic link
 
 ```
-sudo ln -s /home/gavin/nvim-linux64/bin/nvim /usr/local/bin/nvim
+sudo ln -s /home/gavin/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
 ```
 
 ### Install using appimage file - requires FUSE to work
@@ -1129,6 +1129,16 @@ Install Docker Desktop
 
 ```
 winget install --id Docker.DockerDesktop
+```
+
+## Install Editors
+
+### Install Cursor
+
+Install Cursor editor on Windows
+
+```
+winget install --id Anysphere.Cursor
 ```
 
 ## Links

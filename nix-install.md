@@ -408,6 +408,37 @@ Press <prefix> + I
 
 Choose plugins from the [plugins list](https://github.com/tmux-plugins/list).
 
+### vifm configuration
+
+If you get the following error message
+
+```
+The `$WAYLAND_DISPLAY` condition seems to be relying on a bug, please revise it
+to add `!= ''` to check for an empty string or `+ 0` to suppress this warning.
+
+(This is a once per session warning, `:messages` can contain more.)
+(The need for `+ 0` will be gone along with the bug and this warning in the next release.)
+
+warning: checking for string length using a boolean context is a bug, update
+`$WAYLAND_DISPLAY` to use `!= ''` to avoid issues in the future
+```
+
+Updated the $MYVIFMRC file as in the link below
+
+1. Start vifm
+
+2. Type `edit $MYVIFMRC`
+
+3. Modify lines containing `if $WAYLAND_DISPLAY` or `elseif $WAYLAND_DISPLAY` to add the following
+
+```
+!= ''
+```
+
+4. You may also need to do it for the $TERMINAL variable
+
+https://q2a.vifm.info/1983/the-waylanddisplay-condition-seems-to-be-relying-on-a-bug
+
 ### vifm color schemes
 
 1. Remove the default color scheme directory with only one colorscheme
