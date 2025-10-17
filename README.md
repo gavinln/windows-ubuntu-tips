@@ -517,6 +517,13 @@ nvim
 mkdir -p ~/.config/nvim
 ```
 
+2. Check nvim paths
+
+```
+:echo stdpath('config')
+:echo stdpath('data')
+```
+
 2. Add a ~/.config/nvim/init.lua file with the following contents
 
 ```
