@@ -162,6 +162,8 @@ let
 
     # wuzz  # HTTP utilities
 
+    wkhtmltopdf  # pandoc -t html doc1.md --pdf-engine=wkhtmltopdf -o doc1.pdf
+
     xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
 
     yazi  # terminal file manager
