@@ -830,6 +830,8 @@ winget install --id Python.Python.3.11
 winget install --id Obsidian.Obsidian
 winget install -e --id Adobe.Acrobat.Reader.64-bit
 winget install --id wez.wezterm  # may not be needed
+winget install --id gPodder.gPodder  # podcast app
+winget install --id Audacity.Audacity  # audio editor
 ```
 
 ### Install using choco
