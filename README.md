@@ -832,6 +832,7 @@ winget install -e --id Adobe.Acrobat.Reader.64-bit
 winget install --id wez.wezterm  # may not be needed
 winget install --id gPodder.gPodder  # podcast app
 winget install --id Audacity.Audacity  # audio editor
+winget install --id FlorianHeidenreich.Mp3tag  # tag mp3 files
 ```
 
 ### Install using choco

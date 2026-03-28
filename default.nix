@@ -25,6 +25,8 @@ let
 
     # cargo  # rust package manager
 
+    chafa  # terminal image viewer
+
     chezmoi  # manage user configurations (dotfiles) across machines
 
     gitAndTools.delta  # view git diff with colors
