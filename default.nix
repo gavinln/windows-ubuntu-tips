@@ -166,7 +166,8 @@ let
 
     wkhtmltopdf  # pandoc -t html doc1.md --pdf-engine=wkhtmltopdf -o doc1.pdf
 
-    xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
+    # xsv archived, try qsv
+    # xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
 
     yazi  # terminal file manager
 
