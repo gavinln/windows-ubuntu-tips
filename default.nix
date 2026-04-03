@@ -56,6 +56,8 @@ let
 
     gh  # Gihub command line client
 
+    glow  # terminal markdown viewer
+
     go  # go language
 
     graphviz  # language for drawing graphs: executable dot, neato
