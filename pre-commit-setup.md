@@ -43,6 +43,23 @@ Also add the following to the pyproject.toml file
 line-length = 79
 ```
 
+## Javascript Typescript hooks
+
+### Oxlint
+
+Add to .pre-commit-config.yaml
+
+See https://oxc.rs/docs/guide/usage/linter/ci.html#pre-commit
+
+```
+repos:
+  - repo: https://github.com/oxc-project/mirrors-oxlint
+    rev: v0.0.0
+    hooks:
+      - id: oxlint
+        verbose: true
+```
+
 ## Markdown hooks
 
 ## json hooks

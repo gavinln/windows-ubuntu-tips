@@ -92,7 +92,8 @@ let
 
     lnav  # view/search log files
 
-    minio  # S3 compatible server
+    # minio open-source community edition abandoned
+    # minio  # S3 compatible server
 
     # minio-client  # S3 compatible client - clashes with midnight commander
 
@@ -105,6 +106,10 @@ let
     # nodejs  # do not install as cannot install npm packages globally
 
     nushell  # alternative shell
+
+    oxlint  # javascript and typescript linter
+
+    oxfmt  # javascript and typescript formatter
 
     pandoc  # convert documents into multiple formats
 
@@ -179,11 +184,15 @@ let
 
     zip  # zip files
 
+    zed-editor  # code editor
+
     zoxide  # smarter cd command like z or autojump
 
     # linters, formatters, etc for ALE and pre-commit
 
-    nixfmt-rfc-style  # nix official formatter
+    # renamed to nixfmt
+    # nixfmt-rfc-style  # nix official formatter
+    nixfmt
 
     stylua  # https://github.com/JohnnyMorganz/StyLua
 

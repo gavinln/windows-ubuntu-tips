@@ -613,6 +613,7 @@ pipx install marker-pdf  # pdf to md: marker-pdf[full] for all conversions
 pipx install markitdown[pdf]  # pdf to md: markitdown[all] for all conversions
 pipx install pdftext  # pdf to txt
 pipx runpip pdftext install numpy
+pipx install identify  # Python utility to identify files using identify-cli
 ```
 
 Convert pdf to markdown or text
