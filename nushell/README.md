@@ -24,10 +24,22 @@ List files, sort by size, filter and reverse
 ls | sort-by size | where size > 1kb | reverse
 ```
 
-List processes where cpu usage is greater than 5
+List running processes
 
 ```
-ps | where cpu > 5
+ps | where status == Running
+```
+
+Run external ps command
+
+```
+^ps aux
+```
+
+Show the types of the table's columns
+
+```
+ps | describe
 ```
 
 Display help on the each command
@@ -46,6 +58,18 @@ Alternate commands to do the same
 
 ```
 help commands | where name == each | get 0.params.name
+```
+
+Use "search" in the Help system
+
+```
+help --find filesize
+```
+
+Explore the help
+
+```
+help commands | explore
 ```
 
 ## Nushell features
