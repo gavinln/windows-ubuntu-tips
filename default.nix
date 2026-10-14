@@ -31,9 +31,9 @@ let
 
     gitAndTools.delta  # view git diff with colors
 
-    direnv  # directory environments
-
     difftastic  # semantic diff
+
+    direnv  # directory environments
 
     # entr  # watch file system - investigate
 
@@ -51,10 +51,12 @@ let
 
     # git  # git version control, already installed on Ubuntu
 
+    gh  # Gihub command line client
+
     # https://github.com/kamranahmedse/git-standup
     git-standup  # keep track of git commits with git-standup -s
 
-    gh  # Gihub command line client
+    gitui  # modern git terminal ui in Rust
 
     glow  # terminal markdown viewer
 
@@ -74,23 +76,23 @@ let
 
     imagemagick  # image view, modify tools
 
-    jq jid  # JSON utilities
+    jid  # JSON utility
 
-    lazygit  # alternative terminal ui for git
-
-    lazydocker  # terminal ui to manage Docker
-
-    lsd  # next generation ls command - ls-deluxe
-
-    lf  # terminal file manager
-
-    gitui  # modern git terminal ui in Rust
+    jq  # JSON utility
 
     kondo  # clean up projects. Supports Cargo, Python, Jupyter and others
 
-    # REMOVE mc  # midnight commander - file manager that works with sftp
+    lazydocker  # terminal ui to manage Docker
+
+    lazygit  # alternative terminal ui for git
+
+    lf  # terminal file manager
 
     lnav  # view/search log files
+
+    lsd  # next generation ls command - ls-deluxe
+
+    # REMOVE mc  # midnight commander - file manager that works with sftp
 
     # minio open-source community edition abandoned
     # minio  # S3 compatible server
@@ -98,6 +100,10 @@ let
     # minio-client  # S3 compatible client - clashes with midnight commander
 
     ncdu  # display disk usage
+
+    # renamed to nixfmt
+    # nixfmt-rfc-style  # nix official formatter
+    nixfmt
 
     # neovim  # neovim editor causes nix to crash
 
@@ -107,9 +113,11 @@ let
 
     nushell  # alternative shell
 
-    oxlint  # javascript and typescript linter
+    ollama  # install and run llms
 
     oxfmt  # javascript and typescript formatter
+
+    oxlint  # javascript and typescript linter
 
     pandoc  # convert documents into multiple formats
 
@@ -117,9 +125,9 @@ let
 
     pet  # command line snippet manager https://github.com/knqyf263/pet
 
-    pueue  # command line manager for parallel/long running task
+    nodePackages.prettier  # for html/css/javascript
 
-    ollama  # install and run llms
+    pueue  # command line manager for parallel/long running task
 
     pv  # monitor the progress of data through a pipeline
 
@@ -131,15 +139,17 @@ let
 
     ripgrep-all  # ripgrep search through docx, pdf, zip, tar.gz ...
 
-    rust-analyzer  # semantic analysis of Rust code
-
     ruff  # Python linter replaces pyflakes, isort, pydocstyle, ...
+
+    rust-analyzer  # semantic analysis of Rust code
 
     rye  # Python package manager - not tried, custom .venv location not allowed
 
     shellcheck  # shell script static analysis tool
 
     sqlite  # sqlite command line interface
+
+    stylua  # https://github.com/JohnnyMorganz/StyLua
 
     taplo-cli  # rust toml parser used by helix editor
 
@@ -155,11 +165,11 @@ let
 
     tree-sitter  # parser for programming languages
 
+    universal-ctags  # ctags
+
     unzip  # unzip files
 
     usql  # command line sql client
-
-    universal-ctags  # ctags
 
     viddy  # watch replacement with history
 
@@ -175,32 +185,19 @@ let
 
     # xsv archived, try qsv
     # xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
+    yamlfmt  # yaml formatter from google
 
     yazi  # terminal file manager
 
     ytfzf  # youtube fuzzy finder. e.g. ytfzf -IL langchain
 
+    zed-editor  # code editor
+
     zellij  # tmux alternative
 
     zip  # zip files
 
-    zed-editor  # code editor
-
     zoxide  # smarter cd command like z or autojump
-
-    # linters, formatters, etc for ALE and pre-commit
-
-    # renamed to nixfmt
-    # nixfmt-rfc-style  # nix official formatter
-    nixfmt
-
-    stylua  # https://github.com/JohnnyMorganz/StyLua
-
-    yamlfmt  # yaml formatter from google
-
-    # language servers
-
-    nodePackages.prettier  # for html/css/javascript
 
   ];
 
