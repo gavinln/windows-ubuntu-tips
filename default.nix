@@ -35,10 +35,6 @@ let
 
     direnv  # directory environments
 
-    # entr  # watch file system - investigate
-
-    # exa  # replacement for ls - not maintained
-
     eza  # maintained replacement for ls
 
     fd  # alternative to find
@@ -46,8 +42,6 @@ let
     fpp  # pick file paths on the command line
 
     fzf  # fuzzy finder
-
-    fzy  # alternative fuzzy finder https://github.com/jhawthorn/fzy
 
     # git  # git version control, already installed on Ubuntu
 
@@ -89,13 +83,6 @@ let
     lnav  # view/search log files
 
     lsd  # next generation ls command - ls-deluxe
-
-    # REMOVE mc  # midnight commander - file manager that works with sftp
-
-    # minio open-source community edition abandoned
-    # minio  # S3 compatible server
-
-    # minio-client  # S3 compatible client - clashes with midnight commander
 
     ncdu  # display disk usage
 
@@ -141,9 +128,6 @@ let
 
     rust-analyzer  # semantic analysis of Rust code
 
-    # archived and no longer maintained - replaced by uv
-    # rye  # Python package manager - not tried, custom .venv location not allowed
-
     shellcheck  # shell script static analysis tool
 
     sqlite  # sqlite command line interface
@@ -180,8 +164,6 @@ let
 
     wkhtmltopdf  # pandoc -t html doc1.md --pdf-engine=wkhtmltopdf -o doc1.pdf
 
-    # xsv archived, try qsv
-    # xsv  # csv utilities: https://github.com/BurntSushi/xsv/releases/latest
     yamlfmt  # yaml formatter from google
 
     yazi  # terminal file manager
@@ -195,7 +177,6 @@ let
     zip  # zip files
 
     zoxide  # smarter cd command like z or autojump
-
   ];
 
 in all
