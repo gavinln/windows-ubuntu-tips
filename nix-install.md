@@ -480,6 +480,20 @@ cargo install --force aichat
 aichat --info
 ```
 
+### jj version control
+
+Install jj version control system compatible with git
+
+https://github.com/jj-vcs/jj
+
+1. Install jj
+
+```
+cargo install jj-cli
+```
+
+TODO: Check for install using nix
+
 ### nnn file manager plugin configuration
 
 1. Setup up plugin p to preview file with bat
