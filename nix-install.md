@@ -721,6 +721,12 @@ Setup the alias in `~/.bashrc` for eza (maintained version of exa)
 alias lg='eza -l --git'
 ```
 
+### Setup carapace completion for nushell
+
+Follow instructions as on this page:
+
+https://carapace-sh.github.io/carapace-bin/setup.html
+
 ## Troubleshooting issues
 
 If you get the message
