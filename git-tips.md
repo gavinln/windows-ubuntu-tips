@@ -103,3 +103,41 @@ git ls-files -o -i --exclude-standard
 ```
 git clean -n -x -d
 ```
+
+## Setup Difftastic
+
+1. Add this to `~/.gitconfig` file
+
+```
+[difftool "difftastic"]
+    # See `man git-difftool` for a description of MERGED, LOCAL and REMOTE.
+    cmd = difft --display side-by-side "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
+```
+
+2. Also turn of the prompt by changing this in the `~/.gitconfig` file
+
+```
+[difftool]
+    # Run the difftool immediately, don't ask 'are you sure' each time.
+    prompt = false
+```
+
+3. Add this to `~/.gitconfig` to make using difft easier
+
+```
+[diff]
+    external = difft
+```
+
+4. Use the inbuilt git diff
+
+```
+# git -c diff.external=difft diff
+git diff
+```
+
+5. Use the external git difftool
+
+```
+git difftool -t difftastic
+```
