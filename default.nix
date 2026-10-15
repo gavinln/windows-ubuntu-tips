@@ -23,6 +23,8 @@ let
 
     btop  # resources monitor https://github.com/aristocratos/btop
 
+    carapace  # shell completion, works well on nushell
+
     # cargo  # rust package manager
 
     chafa  # terminal image viewer
