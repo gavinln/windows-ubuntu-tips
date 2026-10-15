@@ -70,8 +70,6 @@ let
 
     hadolint  # Dockerfile linter
 
-    helix  # vim like modal terminal editor with lsp support
-
     hugo  # static site generator
 
     hyperfine  # command line benchmarking tool
@@ -153,8 +151,6 @@ let
     sqlite  # sqlite command line interface
 
     stylua  # https://github.com/JohnnyMorganz/StyLua
-
-    taplo-cli  # rust toml parser used by helix editor
 
     tig  # terminal ui for git
 
