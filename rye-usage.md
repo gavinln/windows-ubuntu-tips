@@ -1,5 +1,7 @@
 # Rye usage
 
+Rye is archived and no longer maintained. The tool uv is its successor.
+
 [Rye][100] is a project and package management solution for Python.
 
 [100]: https://rye.astral.sh/
