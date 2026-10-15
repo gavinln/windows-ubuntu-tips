@@ -145,7 +145,8 @@ let
 
     rust-analyzer  # semantic analysis of Rust code
 
-    rye  # Python package manager - not tried, custom .venv location not allowed
+    # archived and no longer maintained - replaced by uv
+    # rye  # Python package manager - not tried, custom .venv location not allowed
 
     shellcheck  # shell script static analysis tool
 
