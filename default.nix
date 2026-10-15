@@ -17,8 +17,6 @@ let
 
     bat  # replacement for cat with syntax highlighting
 
-    bottom  # htop replacement, command btm
-
     broot  # directory navigator
 
     btop  # resources monitor https://github.com/aristocratos/btop
