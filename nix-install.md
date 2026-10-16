@@ -292,11 +292,24 @@ The luarocks package manager for lua is needed to build neovim plugins
 sudo apt install luarocks
 ```
 
-### Install nodejs & npm
+### Install nvm
 
 ```
-sudo apt install nodejs
-sudo apt install npm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash
+```
+
+### Install nodejs & npm
+
+List available LTS versions
+
+```
+nvm ls-remote | grep LTS
+```
+
+Install the latest LTS version
+
+```
+nvm install --lts
 ```
 
 Check nodejs version
