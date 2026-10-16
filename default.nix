@@ -84,6 +84,8 @@ let
 
     lsd # next generation ls command - ls-deluxe
 
+    markdownlint-cli # markdown linter
+
     ncdu # display disk usage
 
     # renamed to nixfmt
