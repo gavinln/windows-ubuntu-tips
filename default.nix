@@ -29,7 +29,7 @@ let
 
     chezmoi # manage user configurations (dotfiles) across machines
 
-    gitAndTools.delta # view git diff with colors
+    delta # view git diff with colors
 
     difftastic # semantic diff
 
