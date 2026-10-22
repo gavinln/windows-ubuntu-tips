@@ -179,6 +179,12 @@ let
     zip # zip files
 
     zoxide # smarter cd command like z or autojump
+
+    # investigate pagers, alternatives for less or more
+    # https://github.com/walles/moor
+    # https://github.com/noborus/ov
+
+    # find files with a sql like syntax: https://github.com/jhspetersson/fselect
   ];
 
 in
