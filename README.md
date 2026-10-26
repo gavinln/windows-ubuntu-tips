@@ -328,6 +328,10 @@ Change the settings as described in the documentation.
 
 https://learn.microsoft.com/en-us/windows/wsl/wsl-config
 
+To improve networking applications access on WSL follow these instructions
+
+https://learn.microsoft.com/en-us/windows/wsl/networking
+
 #### Notes
 
 1. Install Ubuntu 22.04 on WSL
