@@ -86,6 +86,8 @@ let
 
     markdownlint-cli # markdown linter
 
+    miniserve # serve files and dirs over HTTP
+
     ncdu # display disk usage
 
     # renamed to nixfmt
