@@ -37,6 +37,8 @@ let
 
     eza # maintained replacement for ls
 
+    fabric-ai # command line AI
+
     fd # alternative to find
 
     fpp # pick file paths on the command line

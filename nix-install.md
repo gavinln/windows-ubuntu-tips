@@ -268,6 +268,20 @@ gh dash --help
 gh dash
 ```
 
+## Setup fabric-ai installed by nix
+
+1. Show help
+
+```
+fabric --help
+```
+
+2. Run the setup
+
+```
+fabric --setup
+```
+
 ## Install packages that cannot be installed by nix
 
 ### Install [uv][20] a Python package and project manager
