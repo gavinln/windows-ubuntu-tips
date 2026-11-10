@@ -122,6 +122,8 @@ let
 
     pv # monitor the progress of data through a pipeline
 
+    qsv # csv processor in Rust, replacement for xsv
+
     rclone # rsync for the cloud (like S3)
 
     redis # key value store
