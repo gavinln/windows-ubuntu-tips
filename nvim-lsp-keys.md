@@ -57,3 +57,13 @@ Try :lua vim.lsp.buf.<tab>
 * signature_help
 * type_definition
 * workspace_symbol
+
+## Neovim Language Server Protocol setup
+
+[Neovim][100] integrated LSP.
+
+[100]: https://neovim.io/doc/user/lsp/
+
+LSP [server configurations][110]
+
+[110]: https://github.com/neovim/nvim-lspconfig
