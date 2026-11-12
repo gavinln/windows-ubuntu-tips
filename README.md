@@ -369,6 +369,14 @@ LS_COLORS=$LS_COLORS:'ow=34;40:'
 
 [30]: https://askubuntu.com/questions/466198/how-do-i-change-the-color-for-directories-with-ls-in-the-console
 
+## Enable bash option globstar
+
+Add this to your .bashrc file to enable `**` to match recursively.
+
+```
+shopt -s globstar
+```
+
 ## Setup the Ubuntu bash environment using Ansible
 
 This guide uses [Ansible][40] an open-source automation engine that automates

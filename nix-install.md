@@ -4,7 +4,7 @@
 
 [10]: https://nixos.org/
 
-###  Windows subsystem for Linux
+### Windows subsystem for Linux
 
 This section is OUTDATED
 
@@ -29,11 +29,15 @@ use-sqlite-wal = false
 
 Enable systemd on Ubuntu on WSL
 
+```
 https://learn.microsoft.com/en-us/windows/wsl/wsl-config#systemd-support
+```
 
 ### Install nix on the Windows subsystem for Linux
 
+```
 https://nix.dev/tutorials/install-nix
+```
 
 1. Setup Nix on WSL using the single-user installation for Linux
 
@@ -44,7 +48,10 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 2. Check whether this command is added to ~/.profile
 
 ```
-if [ -e /home/gavin/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gavin/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# added by Nix installer
+if [ -e /home/gavin/.nix-profile/etc/profile.d/nix.sh ]; then
+    . /home/gavin/.nix-profile/etc/profile.d/nix.sh
+fi
 ```
 
 3. Display nix version
@@ -246,7 +253,8 @@ https://cli.github.com/manual/gh_auth
 
 ### `gh` dashboard setup
 
-The dashboard displays pull requests and issues with custom filters. Github actions are not displayed.
+The dashboard displays pull requests and issues with custom filters. Github
+actions are not displayed.
 
 https://github.com/dlvhdr/gh-dash
 
@@ -366,7 +374,8 @@ rustup update
 
 This is also in the README.md file.
 
-[Bash-it][30] is a collection of scripts for Bash that includes autocompletion, themes, aliases and custom functions.
+[Bash-it][30] is a collection of scripts for Bash that includes autocompletion,
+themes, aliases and custom functions.
 
 [30]: https://github.com/Bash-it/bash-it
 
@@ -431,7 +440,7 @@ tmux source ~/.tmux.conf
 
 Install the tmux plugins
 
-Press <prefix> + I
+Press `<prefix> + I`
 
 Choose plugins from the [plugins list](https://github.com/tmux-plugins/list).
 
@@ -444,7 +453,8 @@ The `$WAYLAND_DISPLAY` condition seems to be relying on a bug, please revise it
 to add `!= ''` to check for an empty string or `+ 0` to suppress this warning.
 
 (This is a once per session warning, `:messages` can contain more.)
-(The need for `+ 0` will be gone along with the bug and this warning in the next release.)
+(The need for `+ 0` will be gone along with the bug and this warning
+in the next release.)
 
 warning: checking for string length using a boolean context is a bug, update
 `$WAYLAND_DISPLAY` to use `!= ''` to avoid issues in the future
@@ -456,7 +466,8 @@ Updated the $MYVIFMRC file as in the link below
 
 2. Type `edit $MYVIFMRC`
 
-3. Modify lines containing `if $WAYLAND_DISPLAY` or `elseif $WAYLAND_DISPLAY` to add the following
+3. Modify lines containing `if $WAYLAND_DISPLAY` or `elseif $WAYLAND_DISPLAY`
+   to add the following
 
 ```
 != ''
