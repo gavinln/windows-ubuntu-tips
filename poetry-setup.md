@@ -65,7 +65,8 @@ package-mode = false
 
 ### Poetry plugin up
 
-[Poetry plugin up][300] is a Poetry plugin that updates dependencies and bumps their versions in the pyproject.toml file.
+[Poetry plugin up][300] is a Poetry plugin that updates dependencies and bumps
+their versions in the pyproject.toml file.
 
 [300]: https://github.com/MousaZeidBaker/poetry-plugin-up
 

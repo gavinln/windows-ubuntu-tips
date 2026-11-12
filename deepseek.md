@@ -55,6 +55,6 @@ clients:
 
 ## Links
 
-[Deepseek models][200]
+[Deepseek models][210]
 
-[200]: https://api-docs.deepseek.com/quick_start/pricing
+[210]: https://api-docs.deepseek.com/quick_start/pricing

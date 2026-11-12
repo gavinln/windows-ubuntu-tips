@@ -8,9 +8,11 @@
 
 ### wezterm
 
+```
 * Wezterm documentation: https://wezfurlong.org/wezterm/index.html
 * Wezterm review: https://alexplescan.com/posts/2024/08/10/wezterm/
 * Wezterm setup: https://mwop.net/blog/2024-07-04-how-i-use-wezterm.html
+```
 
 ## File explorer
 
@@ -48,7 +50,11 @@ fd -t f -g '*.py' | vifm - -c view!
 
 touch ~/.config/lf/lfrc
 
-2. Use lfrc example from https://github.com/gokcehan/lf/blob/master/etc/lfrc.example
+2. Use lfrc example from this location:
+
+```
+https://github.com/gokcehan/lf/blob/master/etc/lfrc.example
+```
 
 #### Tips
 

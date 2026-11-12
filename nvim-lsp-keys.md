@@ -13,6 +13,7 @@ Created similar to LunarVim - lvim
 
 ## Lsp
 
+```
 * <Space>la - Code Action
 * <Space>ld - Buffer Diagnostics
 * <Space>lf - Format
@@ -25,6 +26,7 @@ Created similar to LunarVim - lvim
 * <Space>ls - Document Symbols
 * <Space>lS - Workspace Symbols
 * <Space>lw - Diagnostics
+```
 
 ## Nvim lsp functions
 

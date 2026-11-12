@@ -1,6 +1,7 @@
 # Github actions
 
-[GitHub Actions][100] is an automation tool integrated within GitHub that enables automation of software workflows directly in your repository.
+[GitHub Actions][100] is an automation tool integrated within GitHub that
+enables automation of software workflows directly in your repository.
 
 [100]: https://docs.github.com/en/actions
 
@@ -8,7 +9,8 @@
 
 1. Create a yaml file in the .github/workflows directory of your repository
 
-2. In the yaml file (any name can be used) define the actions as in the example below
+2. In the yaml file (any name can be used) define the actions as in the example
+   below
 
 ```yaml
 name: Example Workflow
@@ -30,9 +32,9 @@ jobs:
 
 ## Starter workflows
 
-The starter workflows are in the repository:
+The starter workflows are in the [repository][110]:
 
-https://github.com/actions/starter-workflows
+[110]: https://github.com/actions/starter-workflows
 
 Run the commands below in the repository to find python workflow files.
 

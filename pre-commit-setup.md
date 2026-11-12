@@ -26,13 +26,13 @@ pre-commit install
 pre-commit run --all-files
 ```
 
-5. Install appropriate hooks from https://pre-commit.com/hooks.html
+5. Install appropriate hooks from `https://pre-commit.com/hooks.html`
 
 ## Python hooks
 
 ### black
 
-See https://github.com/psf/black repository
+See `https://github.com/psf/black repository`
 
 See the `black/docs/integrations/source_version_control.md` file
 
@@ -49,7 +49,7 @@ line-length = 79
 
 Add to .pre-commit-config.yaml
 
-See https://oxc.rs/docs/guide/usage/linter/ci.html#pre-commit
+See `https://oxc.rs/docs/guide/usage/linter/ci.html#pre-commit`
 
 ```
 repos:

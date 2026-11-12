@@ -1,8 +1,9 @@
 # Makefile to shell script
 
-To convert a Makefile used as a task runner to a shell script view the `run` shell script in the root of this repository.
+To convert a Makefile used as a task runner to a shell script view the `run`
+shell script in the root of this [repository][100].
 
-https://github.com/nickjj/docker-flask-example
+[100]: https://github.com/nickjj/docker-flask-example
 
 ## Example run.sh script
 

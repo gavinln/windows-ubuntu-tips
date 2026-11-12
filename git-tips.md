@@ -29,9 +29,9 @@ Walk through git commits affecting a single file.
 ```
 
 2. In the diffview://panels compare adjacent commits
-Type <tab> to compare adjacent changes
+Type `<tab>` to compare adjacent changes
 
-### Use lazygit
+### Using lazygit
 
 1. Open lazygit logs and filter by path
 
@@ -111,7 +111,8 @@ git clean -n -x -d
 ```
 [difftool "difftastic"]
     # See `man git-difftool` for a description of MERGED, LOCAL and REMOTE.
-    cmd = difft --display side-by-side "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
+    cmd = difft --display side-by-side "$MERGED" "$LOCAL" "abcdef1" "100644"\
+        "$REMOTE" "abcdef2" "100644"
 ```
 
 2. Also turn of the prompt by changing this in the `~/.gitconfig` file
