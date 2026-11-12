@@ -4,7 +4,9 @@
 
 ### Dowwnload the Windows driver
 
+```
 https://www.nvidia.com/Download/index.aspx
+```
 
 Select the driver for Thinkpad P16 Gen 1
 
@@ -19,7 +21,9 @@ Select the driver for Thinkpad P16 Gen 1
 
 Without a WSL-Ubuntu driver running nvidia-smi shows 'Segmentation fault'
 
+```
 https://developer.nvidia.com/cuda-downloads
+```
 
 Choose
 
@@ -51,9 +55,12 @@ Run `nvidia-smi` command to display the GPU card details.
 
 ### Nvidia cuda toolkit
 
-Do not install the CUDA toolkit using the command below as it will install the Linux version of the drivers rather than the WSL version as shown above.
+Do not install the CUDA toolkit using the command below as it will install the
+Linux version of the drivers rather than the WSL version as shown above.
 
-See https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform
+```
+https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform
+```
 
 ```
 echo sudo apt install nvidia-cuda-toolkit
@@ -86,4 +93,6 @@ make
 
 RAPIDS has GPU-accelerated Python libraries
 
+```
 https://docs.rapids.ai/notices/rgn0024/
+```
