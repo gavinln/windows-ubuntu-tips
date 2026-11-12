@@ -8,7 +8,8 @@ Rye is archived and no longer maintained. The tool uv is its successor.
 
 ## Install rye
 
-Rye is installed by nix. When running it for the first time it tries to install in `~/.rye`. Choose no.
+Rye is installed by nix. When running it for the first time it tries to install
+in `~/.rye`. Choose no.
 
 ## Use Rye with Python projects
 
