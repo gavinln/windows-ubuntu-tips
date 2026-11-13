@@ -892,9 +892,9 @@ choco install fd 7zip fzf jq bat vifm ripgrep
 choco install microsoft-windows-terminal
 ```
 
-* [microsoft-windows-terminal][1110]: Windows terminal
+* [microsoft-windows-terminal][1120]: Windows terminal
 
-[1110]: https://github.com/Microsoft/Terminal
+[1120]: https://github.com/Microsoft/Terminal
 
 #### Alacritty terminal
 
@@ -1153,6 +1153,12 @@ Install Docker Desktop
 ```
 winget install --id Docker.DockerDesktop
 ```
+
+## Windows personalization
+
+1. Remove Windows [Ads][1700]
+
+[1700]: https://www.pcworld.com/article/2545435/windows-11s-ads-are-way-too-pushy-these-9-settings-fix-the-worst-of-it.html
 
 ## Install Editors
 
