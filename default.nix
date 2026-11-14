@@ -45,6 +45,8 @@ let
 
     fzf # fuzzy finder
 
+    gcc # for treesitter
+
     # git  # git version control, already installed on Ubuntu
 
     gh # Gihub command line client
