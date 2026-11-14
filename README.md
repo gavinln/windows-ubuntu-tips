@@ -469,6 +469,12 @@ vim
 
 Do not install neovim using snap as it does not work with Lunar Vim.
 
+Here is a Neovim video setup guide.
+
+- [part 1](https://www.youtube.com/watch?v=cdAMq2KcF4w)
+- [part 2](https://www.youtube.com/watch?v=qp1OcolI6x0)
+- [part 3](https://www.youtube.com/watch?v=JN4Zbs0ypwM)
+
 ### Install neovim using tar.gz file
 
 Search for releases on the github website: https://github.com/neovim/neovim
@@ -476,6 +482,10 @@ Search for releases on the github website: https://github.com/neovim/neovim
 1. Download the latest `nvim.linux64.tar.gz` file
 
 2. Extract it to the ~ directory as Windows share is very slow
+
+```
+tar -xvf nvim.linux64.tar.gz
+```
 
 3. Create a symbolic link
 
