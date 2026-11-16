@@ -88,6 +88,8 @@ let
 
     lsd # next generation ls command - ls-deluxe
 
+    luarocks # Lua module package manager
+
     markdownlint-cli # markdown linter
 
     miniserve # serve files and dirs over HTTP
@@ -142,8 +144,6 @@ let
 
     sqlite # sqlite command line interface
 
-    stylua # https://github.com/JohnnyMorganz/StyLua
-
     tig # terminal ui for git
 
     tmux # terminal multiplexer
@@ -194,11 +194,16 @@ let
 
     # find files with a sql like syntax: https://github.com/jhspetersson/fselect
 
-    # lsp - language servers
+    # lsp - language servers, linters, formatters
+
+    pyrefly # For Python
 
     lua-language-server # For Lua, also called lua_ls
 
-    pyrefly # For Python
+    lua52Packages.luacheck # Lua linter
+
+    stylua # Lua formatter https://github.com/JohnnyMorganz/StyLua
+
   ];
 
 in
