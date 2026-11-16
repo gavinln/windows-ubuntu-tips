@@ -193,6 +193,12 @@ let
     # https://github.com/noborus/ov
 
     # find files with a sql like syntax: https://github.com/jhspetersson/fselect
+
+    # lsp - language servers
+
+    lua-language-server # For Lua, also called lua_ls
+
+    pyrefly # For Python
   ];
 
 in
