@@ -1089,15 +1089,15 @@ magick image.jpeg -quality 50 image.webp
 * [mycli][1610]
 * [httpie][1620]
 * [http-prompt][1630]
-* conda install python-language-server[all] [python-language-server][1640]
+* `conda install python-language-server[all]` [python-language-server][1640]
 * pip install [pre-commit][1650]
 
 Using [pre-commit with Python][1660]
 
-[1610]:
-[1620]:
-[1630]:
-[1640]:
+[1610]: https://github.com/dbcli/mycli
+[1620]: https://github.com/httpie/cli
+[1630]: https://github.com/httpie/http-prompt
+[1640]: https://github.com/palantir/python-language-server
 [1650]: https://pre-commit.com/
 [1660]: https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/
 
