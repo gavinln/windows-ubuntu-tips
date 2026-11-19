@@ -72,7 +72,7 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 ## Test a nix package without installing it
 
-1. Find the system  pandoc
+1. Find the system pandoc
 
 ```
 which pandoc
@@ -650,7 +650,7 @@ sudo apt install git-extras
 sudo apt install -y ttf-mscorefonts-installer
 ```
 
-### Setup pipx and  Python utilities (cannot be installed using nix)
+### Setup pipx and Python utilities (cannot be installed using nix)
 
 To run a command in the same virtual environment as a Python tool
 
@@ -879,6 +879,6 @@ Nix [example][1030]
 
 Nix pinning
 
-* https://nixos.wiki/wiki/FAQ/Pinning_Nixpkgs
+- https://nixos.wiki/wiki/FAQ/Pinning_Nixpkgs
 
-* https://vaibhavsagar.com/blog/2018/05/27/quick-easy-nixpkgs-pinning/
+- https://vaibhavsagar.com/blog/2018/05/27/quick-easy-nixpkgs-pinning/
