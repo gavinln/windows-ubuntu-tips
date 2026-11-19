@@ -306,6 +306,50 @@ If the uv package is installed using the shell script update uv to the latest ve
 uv self update
 ```
 
+### Install mbake to format Makefiles
+
+1. Check installed tools
+
+```sh
+uv tool list
+```
+
+2. Install the Python tool
+
+```sh
+uv too install mbake
+```
+
+3. Show version
+
+```sh
+uvx mbake --version
+```
+
+4. Get help
+
+```sh
+uvx mbake --help
+```
+
+5. Create config file
+
+```sh
+uvx mbake init --config .bake.toml
+```
+
+6. Check Makefile
+
+```sh
+uvx mbake format --config .bake.toml -c Makefile
+```
+
+7. Fix format
+
+```sh
+uvx mbake format --config .bake.toml Makefile
+```
+
 ### Install luarocks
 
 The luarocks package manager for lua is needed to build neovim plugins
