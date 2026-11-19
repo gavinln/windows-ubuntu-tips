@@ -1,4 +1,4 @@
-## Neovim setup
+# Neovim setup
 
 Neovim video setup guide.
 
@@ -6,7 +6,7 @@ Neovim video setup guide.
 - [part 2](https://www.youtube.com/watch?v=qp1OcolI6x0)
 - [part 3](https://www.youtube.com/watch?v=JN4Zbs0ypwM)
 
-### Check install
+## Check install
 
 1. Check version
 
@@ -20,7 +20,7 @@ nvim --version
 nvim -c :checkhealth
 ```
 
-### Setup config
+## Setup config
 
 1. Create the config directory
 
@@ -78,7 +78,7 @@ echo 'require("config.options")' > lua/config/init.lua
 nvim lua/config/options.lua
 ```
 
-### Setup keymaps
+## Setup keymaps
 
 1. Edit file in `~/config/nvim/lua/config` directory
 
@@ -88,7 +88,7 @@ nvim keymaps.lua
 
 ## lSP setup in neovim
 
-https://dotfiles.substack.com/p/native-lsp-in-neovim-012
+[Neovim lsp setup](https://dotfiles.substack.com/p/native-lsp-in-neovim-012)
 
 If you have nvim-lspconfig installed, run :help lspconfig-all
 
@@ -136,9 +136,9 @@ vim.lsp.log.set_level('trace')
 vim.cmd('tabnew ' .. vim.lsp.log.get_filename())
 ```
 
-## Treesiter setup in neovim
+## Treesitter setup in neovim
 
-https://www.qu8n.com/posts/nvim-treesitter
+[Treesitter setup](https://www.qu8n.com/posts/nvim-treesitter)
 
 ### Install `tree-sitter` cli using nix
 
