@@ -17,3 +17,11 @@ pre-commit:  ## run pre-commit
 	@markdownlint --disable MD029 MD040 -i ubuntu-setup -i README.md \
 		-i nix-install.md -- *.md
 	@nixfmt *.nix
+
+.PHONY: oxfmt
+oxfmt: ## format files using oxfmt
+	oxfmt $(shell fd -t f -g '*.md')
+
+.PHONY: oxcheck
+oxcheck: ## check files format using oxfmt
+	oxfmt --check $(shell fd -t f -g '*.md')
