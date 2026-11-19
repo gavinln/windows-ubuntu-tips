@@ -37,20 +37,20 @@ To configure aichat create a file in ~/.config/aichat/config.yaml like
 ```yaml
 model: deepseek:deepseek-chat
 clients:
-  - type: openai-compatible
-    name: deepseek
-    api_base: https://api.deepseek.com
-    api_key: xxx
+    - type: openai-compatible
+      name: deepseek
+      api_base: https://api.deepseek.com
+      api_key: xxx
 ```
 
 ```yaml
 model: openai:gpt-4o
 clients:
-  # See https://platform.openai.com/docs/quickstart
-  - type: openai
-    api_base: https://api.openai.com/v1               # Optional
-    api_key: xxx
-    # organization_id: org-xxx                          # Optional
+    # See https://platform.openai.com/docs/quickstart
+    - type: openai
+      api_base: https://api.openai.com/v1 # Optional
+      api_key: xxx
+      # organization_id: org-xxx                          # Optional
 ```
 
 ## Links
