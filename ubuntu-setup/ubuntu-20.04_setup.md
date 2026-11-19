@@ -195,14 +195,20 @@ proprietary graphics driver is the recommended one in the list.
 ### UI settings
 
 1. Install synaptic package manager
+
+```
 sudo apt install -y synaptic
+```
 
 ### Other libraries
 
 1. Install complete multimedia support
-sudo apt install ubuntu-restricted-extras
 
-4. Install Microsoft True Type fonts
+```
+sudo apt install ubuntu-restricted-extras
+```
+
+2. Install Microsoft True Type fonts
 
 https://itsfoss.com/install-microsoft-fonts-ubuntu/
 
@@ -274,7 +280,6 @@ else
     rm -f google-chrome-stable_current_i386.deb
 fi
 ```
-
 
 ## Setup VNC screen sharing
 
@@ -596,6 +601,7 @@ wget -O - http://download.videolan.org/pub/debian/videolan-apt.asc|sudo apt-key 
 ```
 
 ## Install Kodi
+
 https://linuxconfig.org/how-to-install-kodi-on-ubuntu-18-04-bionic-beaver-linux
 
 ## Install Apache
@@ -682,6 +688,7 @@ https://uvacollab.screenstepslive.com/s/7291/m/52584/l/611578-how-do-i-set-up-we
 ```
 sudo apt-get install cadaver
 ```
+
 2. Connect to webdav server
 
 ```
@@ -693,12 +700,18 @@ cadaver http://server/webdav
 1. Download Virtual box from https://www.virtualbox.org/wiki/Linux_Downloads
 
 2. Install the package
-sudo dpkg -i virtualbox-5.2_5.2.20-125813~Ubuntu~bionic_amd64.deb
+
+```
+sudo dpkg -i virtualbox-5.2_5.2.20-125813~~Ubuntu~~bionic_amd64.deb
+```
 
 ## Install vagrant
 
 1. Install the package
+
+```
 sudo apt install vagrant
+```
 
 ## Install kubernetes
 
@@ -835,7 +848,9 @@ nohup .dropbox-dist/dropboxd &
 jobs
 ```
 
-## [Taskwarrior](https://taskwarrior.org/docs/)
+## [Taskwarrior][800]
+
+[800]: https://taskwarrior.org/docs/
 
 1. Install taskwarrior
 
@@ -855,8 +870,9 @@ task config data.location ~/Dropbox/taskwarrior
 task commands
 ```
 
-3. To setup [vim-taskwarrior](https://github.com/blindFS/vim-taskwarrior)
-add to ~/.vimrc
+3. To setup [vim-taskwarrior][810] add to ~/.vimrc
+
+[810]: https://github.com/blindFS/vim-taskwarrior
 
 ```
 " Specify a directory for plugins
@@ -883,13 +899,13 @@ call plug#end
 
 2. Change port forwarding to point to gavinsvr web server
 
-4. Copy video files to new machine
+3. Copy video files to new machine
 
-5. Copy workspace files we to new machine
+4. Copy workspace files we to new machine
 
-6. Setup ssh key login
+5. Setup ssh key login
 
-7. Update ssh config file to simplify ssh login
+6. Update ssh config file to simplify ssh login
 
 ## Setup pyenv - second version
 
@@ -960,7 +976,9 @@ sudo apt-get install git-extras
 
 ## Install tmux plugins
 
-### Install [tmux plugin manager](https://github.com/tmux-plugins/tpm)
+### Install [tmux plugin manager][900]
+
+[900]: https://github.com/tmux-plugins/tpm
 
 1. Clone the tmux plugin manager
 
@@ -975,7 +993,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 run -b '~/.tmux/plugins/tpm/tpm'
 ```
 
-### Install [tmux resurrect](https://github.com/tmux-plugins/tmux-resurrect)
+### Install [tmux resurrect][910]
+
+[910]: https://github.com/tmux-plugins/tmux-resurrect
+
 plugin to save & restore session
 
 1. Add this to the list of tmux plugins
