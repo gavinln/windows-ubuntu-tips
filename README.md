@@ -317,6 +317,7 @@ tee /etc/wsl.conf << EOF
 default=gavin
 EOF
 ```
+
 #### Setup WSL configuration
 
 Edit the `.wslconfig` file.
@@ -881,13 +882,13 @@ choco install git hackfont
 choco install fd 7zip fzf jq bat vifm ripgrep
 ```
 
-* [fd.exe][1010]: fast find utility
-* [7zip][1020]: archiving utility
-* [fzf][1030]: fuzzy finder
-* [jq][1040]: command line json processor
-* [bat.exe][1050]: Cat with color formatting
-* [vifm.exe][1060]: terminal file manager with vi like shortcuts
-* [ripgrep][1070]: recursively search directories
+- [fd.exe][1010]: fast find utility
+- [7zip][1020]: archiving utility
+- [fzf][1030]: fuzzy finder
+- [jq][1040]: command line json processor
+- [bat.exe][1050]: Cat with color formatting
+- [vifm.exe][1060]: terminal file manager with vi like shortcuts
+- [ripgrep][1070]: recursively search directories
 
 [1010]: https://github.com/sharkdp/fd
 [1020]: https://en.wikipedia.org/wiki/7-Zip
@@ -903,7 +904,7 @@ choco install fd 7zip fzf jq bat vifm ripgrep
 choco install microsoft-windows-terminal
 ```
 
-* [microsoft-windows-terminal][1120]: Windows terminal
+- [microsoft-windows-terminal][1120]: Windows terminal
 
 [1120]: https://github.com/Microsoft/Terminal
 
@@ -943,9 +944,9 @@ Get colors from https://github.com/aarowill/base16-alacritty
 choco install lazygit hub
 ```
 
-* [git][1200]: Git for Windows
-* [lazygit][1210]: Git terminal user interface
-* [hub.exe][1220]: command line tool to work with Github
+- [git][1200]: Git for Windows
+- [lazygit][1210]: Git terminal user interface
+- [hub.exe][1220]: command line tool to work with Github
 
 [1200]: https://gitforwindows.org/
 [1210]: https://github.com/jesseduffield/lazygit
@@ -1026,7 +1027,7 @@ lazydocker -c > config.yml
 choco install rclone
 ```
 
-* [rclone][1300]: rsync for cloud storage
+- [rclone][1300]: rsync for cloud storage
 
 [1300]: https://github.com/ncw/rclone
 
@@ -1036,13 +1037,13 @@ choco install rclone
 choco install osquery pandoc graphviz
 ```
 
-* [osquery][1400]: query operating systems using SQL
-* [pandoc][1420]: convert documents from one format to another
-* [hackfont][1430]: font for source code
-* [chezmoi][1440]: manage dot files
-* [graphviz][1450]: Graph visualization
-* [kubectl][1460]: control Kubernetes
-* [usql.exe][1470]: command line sql tool for multiple database
+- [osquery][1400]: query operating systems using SQL
+- [pandoc][1420]: convert documents from one format to another
+- [hackfont][1430]: font for source code
+- [chezmoi][1440]: manage dot files
+- [graphviz][1450]: Graph visualization
+- [kubectl][1460]: control Kubernetes
+- [usql.exe][1470]: command line sql tool for multiple database
 
 [1400]: https://osquery.io/
 [1420]: https://pandoc.org/
@@ -1060,14 +1061,14 @@ pandoc file.md -s --embed-resources=true -o file.html
 
 Other tools to install on windows
 
-* [ctags.exe][1500]: ctags utility
-* [dbxcli.exe][1510]: command line client for Dropbox
-* [sqlite3.exe][1520]: Sqlite database
-* [jid.exe][1530]: json incremental debugger
-* [wuzz.exe][1540]: Interactive cli tool for HTTP
-* [xsv.exe][1550]: Command line CSV toolkit
-* [gimp][1560]: Image manipulation tool - like Photoshop
-* [imagemagick][1570]: CLI image tool
+- [ctags.exe][1500]: ctags utility
+- [dbxcli.exe][1510]: command line client for Dropbox
+- [sqlite3.exe][1520]: Sqlite database
+- [jid.exe][1530]: json incremental debugger
+- [wuzz.exe][1540]: Interactive cli tool for HTTP
+- [xsv.exe][1550]: Command line CSV toolkit
+- [gimp][1560]: Image manipulation tool - like Photoshop
+- [imagemagick][1570]: CLI image tool
 
 [1500]: https://github.com/universal-ctags/ctags
 [1510]: https://github.com/dropbox/dbxcli
@@ -1086,11 +1087,11 @@ magick image.jpeg -quality 50 image.webp
 
 ### Python tools
 
-* [mycli][1610]
-* [httpie][1620]
-* [http-prompt][1630]
-* `conda install python-language-server[all]` [python-language-server][1640]
-* pip install [pre-commit][1650]
+- [mycli][1610]
+- [httpie][1620]
+- [http-prompt][1630]
+- `conda install python-language-server[all]` [python-language-server][1640]
+- pip install [pre-commit][1650]
 
 Using [pre-commit with Python][1660]
 
@@ -1152,8 +1153,8 @@ Use [nix](./nix-install.md) to install packages
 
 Issues with Docker on WSL
 
-* Need WSL2
-* May stop VirtualBox from working (may work with Virtualbox 6.x)
+- Need WSL2
+- May stop VirtualBox from working (may work with Virtualbox 6.x)
 
 https://www.tcg.com/blog/yes-you-can-run-docker-and-virtualbox-on-windows-10-home/
 
@@ -1194,10 +1195,10 @@ https://docs.microsoft.com/en-us/windows/wsl/wsl-config
 
 ### Equivalent commands
 
-* pwd - Get-Location
-* cd - Set-Location
-* grep - Select-String
-* which - Get-Command
+- pwd - Get-Location
+- cd - Set-Location
+- grep - Select-String
+- which - Get-Command
 
 To get the Powershell version
 
