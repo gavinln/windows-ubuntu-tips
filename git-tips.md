@@ -29,6 +29,7 @@ Walk through git commits affecting a single file.
 ```
 
 2. In the diffview://panels compare adjacent commits
+
 Type `<tab>` to compare adjacent changes
 
 ### Using lazygit
@@ -40,6 +41,7 @@ lazygit log -f <filename>
 ```
 
 2. Switch to two panel layout
+
 Press +/_ multiple times as need
 
 3. Select diff options by pressing W and enter
