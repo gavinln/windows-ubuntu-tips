@@ -4,12 +4,12 @@ Created similar to LunarVim - lvim
 
 ## Goto
 
-* gd - Goto Definition
-* gD - Goto declaration
-* gI - Goto Implementation
-* gl - Show line diagnostics
-* gr - Goto references
-* gs - show signature help
+- gd - Goto Definition
+- gD - Goto declaration
+- gI - Goto Implementation
+- gl - Show line diagnostics
+- gr - Goto references
+- gs - show signature help
 
 ## Lsp
 
@@ -34,31 +34,31 @@ Created similar to LunarVim - lvim
 Try :lua vim.lsp.buf.<tab>
 ```
 
-* add_workspace_folder
-* clear_references
-* code_action
-* completion
-* declaration
-* definition
-* document_highlight
-* document_symbol
-* execute_command
-* format
-* formatting
-* hover
-* implementation
-* incoming_calls
-* list_workspace_folders
-* outgoing_calls
-* range_code_action
-* range_formatting
-* references
-* remove_workspace_folder
-* rename
-* server_ready
-* signature_help
-* type_definition
-* workspace_symbol
+- add_workspace_folder
+- clear_references
+- code_action
+- completion
+- declaration
+- definition
+- document_highlight
+- document_symbol
+- execute_command
+- format
+- formatting
+- hover
+- implementation
+- incoming_calls
+- list_workspace_folders
+- outgoing_calls
+- range_code_action
+- range_formatting
+- references
+- remove_workspace_folder
+- rename
+- server_ready
+- signature_help
+- type_definition
+- workspace_symbol
 
 ## Neovim Language Server Protocol setup
 
