@@ -11,15 +11,24 @@ SHELL := bash
 help:  ## help for this Makefile
 	@grep -E '^[a-zA-Z0-9_\-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "%-30s %s\n", $$1, $$2}'
 
-.PHONY: pre-commit
-pre-commit:  ## run pre-commit
+.PHONY: markdownlint
+markdownlint:  ## lint markdown files
 	@# markdownlint --disable MD029 MD040 -- **/*.md
 	@markdownlint --disable MD029 MD040 -i ubuntu-setup -i README.md \
 		-i nix-install.md -- *.md
+
+.PHONY: nixfmt
+nixfmt:  ## format nix files
 	@nixfmt *.nix
 
 .PHONY: oxfmt
-oxfmt: ## format files using oxfmt
+oxfmt: ## format files using oxfmt fl=<file>
+	@test -n "$(fl)" || { echo "fl= not specified"; exit 1; }
+	@test -f "$(fl)" || { echo "$(fl) does not exist"; exit 1; }
+	oxfmt -- $(fl)
+
+.PHONY: oxfmt-all
+oxfmt-all: ## format files using oxfmt fl=<file>
 	oxfmt $(shell fd -t f -g '*.md')
 
 .PHONY: oxcheck
