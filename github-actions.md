@@ -18,16 +18,16 @@ name: Example Workflow
 on: [push]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other commands you need
-        echo This is a multi-line script
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Run a one-line script
+              run: echo Hello, world!
+            - name: Run a multi-line script
+              run: |
+                  echo Add other commands you need
+                  echo This is a multi-line script
 ```
 
 ## Starter workflows
