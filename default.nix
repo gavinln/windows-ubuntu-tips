@@ -72,7 +72,9 @@ let
 
     imagemagick # image view, modify tools
 
-    jid # JSON utility
+    jid # interactive JMESPath expressions
+
+    jnv # interactive jq utility
 
     jq # JSON utility
 
