@@ -10,12 +10,12 @@ https://www.nvidia.com/Download/index.aspx
 
 Select the driver for Thinkpad P16 Gen 1
 
-* Product Type: NVIDIA RTX/Quadro
-* Product Series: NVIDIA RTX Series (Notebooks)
-* Product: NVIDIA RTX A1000 Laptop GPU
-* Operating System: Windows 11
-* Download Type: Production Branch/Studio
-* Language: English (US)
+- Product Type: NVIDIA RTX/Quadro
+- Product Series: NVIDIA RTX Series (Notebooks)
+- Product: NVIDIA RTX A1000 Laptop GPU
+- Operating System: Windows 11
+- Download Type: Production Branch/Studio
+- Language: English (US)
 
 ### Download the CUDA toolkit for WSL-Ubuntu
 
@@ -27,11 +27,11 @@ https://developer.nvidia.com/cuda-downloads
 
 Choose
 
-* Operating system: Linux
-* Architecture: `x86_64`
-* Distribution: WSL-Ubuntu
-* Version: 2.0
-* Installer Type: deb(local)
+- Operating system: Linux
+- Architecture: `x86_64`
+- Distribution: WSL-Ubuntu
+- Version: 2.0
+- Installer Type: deb(local)
 
 ```
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
